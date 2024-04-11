@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="alternate" type="application/atom+xml" href="/rss.xml" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="https://fav.farm/🔥" />
+		%sveltekit.head%
+		<script type="module">
+			const theme = localStorage.getItem('color-scheme');
+
+			theme
+				? document.documentElement.setAttribute('color-scheme', theme)
+				: localStorage.setItem('color-scheme', 'dark');
+		</script>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

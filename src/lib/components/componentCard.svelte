@@ -1,0 +1,55 @@
+<script lang="ts">
+	export let component: string;
+	export let count: number;
+</script>
+
+<a href="/component/{component}" class="component">
+	<strong class="component-title">{component}</strong>
+	<small class="component-count">
+		{count}
+		{#if count > 1}
+			Techniques
+		{:else}
+			Technique
+		{/if}
+	</small>
+</a>
+
+<style lang="scss">
+	.component-title {
+		font-size: var(--font-size-fluid-1);
+		text-transform: capitalize;
+	}
+
+	.component-count {
+		font-size: var(--font-size-fluid-0);
+	}
+
+	.component {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		padding: var(--size-3) var(--size-4);
+		border-radius: var(--radius-3);
+		color: var(--link);
+		box-shadow:
+			inset 0 0 0 2px var(--link),
+			0 6px 0 0 var(--link);
+
+		&:hover,
+		&:focus {
+			transform: translateY(2px);
+			box-shadow:
+				inset 0 0 0 2px var(--link),
+				0 2px 0 0 var(--link);
+			color: var(--link);
+			margin: 0;
+			text-decoration: none;
+		}
+
+		&:active {
+			transform: translateY(4px);
+			box-shadow: inset 0 0 0 2px var(--link);
+		}
+	}
+</style>
