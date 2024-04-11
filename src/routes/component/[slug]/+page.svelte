@@ -5,10 +5,12 @@
 		slug: string;
 		introText?: string;
 	};
+
+	console.log(data.posts);
 </script>
 
 <svelte:head>
-	<title>{config.title}</title>
+	<title>{config.title} - techniques for {data.slug}</title>
 </svelte:head>
 
 <!-- Posts -->
