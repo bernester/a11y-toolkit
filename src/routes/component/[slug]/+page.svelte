@@ -1,6 +1,10 @@
 <script lang="ts">
 	import * as config from '$lib/config';
-	export let data;
+	export let data: {
+		posts: any;
+		slug: string;
+		introText?: string;
+	};
 </script>
 
 <svelte:head>
@@ -9,6 +13,11 @@
 
 <!-- Posts -->
 <section>
+	<h1 class="page-title">{data.slug}</h1>
+	{#if data.introText}
+		{@html data.introText}
+	{/if}
+
 	<ul class="posts">
 		{#each data.posts as post}
 			<li class="post">
@@ -19,6 +28,10 @@
 </section>
 
 <style>
+	.page-title {
+		margin-bottom: var(--size-5);
+		text-transform: capitalize;
+	}
 	.posts {
 		display: grid;
 		gap: 2rem;
