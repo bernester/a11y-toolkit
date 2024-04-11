@@ -5,8 +5,6 @@
 		slug: string;
 		introText?: string;
 	};
-
-	console.log(data.posts);
 </script>
 
 <svelte:head>
