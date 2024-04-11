@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils';
-
-	export let data;
+	export let data: {
+		url: string;
+		content: any;
+		meta: any;
+	};
 </script>
 
 <!-- SEO -->
