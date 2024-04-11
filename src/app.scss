@@ -8,6 +8,9 @@ html {
 	--font-sans: 'Lexend', sans-serif;
 	--font-mono: monospace;
 
+	--size-header-1: initial;
+	--size-content-3: initial;
+
 	/* dark */
 	--brand-dark: var(--orange-3);
 	--link-dark: #bba5ff;
@@ -26,9 +29,9 @@ html {
 	--text-1-light: #{$surface-1-dark};
 	--text-2-light: #{lighten($surface-1-dark, 40%)};
 	--surface-1-light: #{$surface-1-light};
-	--surface-2-light: #{lighten($surface-1-light, 10%)};
-	--surface-3-light: #{lighten($surface-1-light, 20%)};
-	--surface-4-light: #{lighten($surface-1-light, 30%)};
+	--surface-2-light: #{darken($surface-1-light, 10%)};
+	--surface-3-light: #{darken($surface-1-light, 20%)};
+	--surface-4-light: #{darken($surface-1-light, 30%)};
 	--background-light: #fdfbf7;
 	--border-light: var(--gray-4);
 }
@@ -162,11 +165,29 @@ li {
 .page-heading {
 	font-size: var(--font-size-fluid-2);
 	max-inline-size: initial;
-	margin-bottom: var(--size-8);
 }
 
 .section-heading {
 	font-size: var(--font-size-fluid-2);
 	max-inline-size: initial;
-	margin-bottom: var(--size-8);
+}
+
+.section-subheading {
+	font-size: var(--font-size-fluid-1);
+	max-inline-size: initial;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.lucide-icon {
+	display: inline-flex;
 }
