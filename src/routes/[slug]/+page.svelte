@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Link from '$lib/components/link.svelte';
+
 	export let data: {
 		url: string;
 		content: any;
@@ -16,41 +18,46 @@
 <article>
 	<!-- Title -->
 	<hgroup>
-		<h1>{data.meta.title}</h1>
+		<h1 class="page-heading">{data.meta.title}</h1>
+		<!-- Tags -->
+		<div class="tags">
+			{#each data.meta.components as component}
+				<a href="/component/{component}" class="surface-2">&num;{component}</a>
+			{/each}
+		</div>
 	</hgroup>
-
-	<!-- Tags -->
-	<div class="tags">
-		{#each data.meta.components as component}
-			<a href="/component/{component}" class="surface-2">&num;{component}</a>
-		{/each}
-	</div>
 
 	<!-- Post -->
 	<div class="prose">
 		<svelte:component this={data.content} />
 	</div>
+
+	<section>
+		<h2 class="section-subheading">Here you can read more:</h2>
+		{#if data.meta.source}
+			<Link ariaLabel={`Our source for ${data.meta.title}`} href={data.meta.source} target="_blank"
+				>Our source for this technique</Link
+			>
+		{/if}
+	</section>
 </article>
 
 <style>
-	article {
-		max-inline-size: var(--size-content-3);
-		margin-inline: auto;
+	.page-heading {
+		margin-bottom: var(--size-4);
 	}
 
-	h1 {
-		text-transform: capitalize;
+	.section-subheading {
+		margin-bottom: var(--size-4);
 	}
 
-	h1 + p {
-		margin-top: var(--size-2);
-		color: var(--text-2);
+	.prose {
+		margin-bottom: var(--size-8);
 	}
 
 	.tags {
 		display: flex;
 		gap: var(--size-3);
-		margin-top: var(--size-7);
 	}
 
 	.tags > * {
