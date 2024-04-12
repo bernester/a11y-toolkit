@@ -1,5 +1,5 @@
 ---
-title: Clickable button area advanced
+title: Advanced clickable button area
 description: Buttons should have a clickable area of min. 44x44px
 date: '2024-4-10'
 categories:

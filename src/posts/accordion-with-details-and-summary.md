@@ -1,5 +1,6 @@
 ---
-title: Create an accordion-like component with details and summary
+title: Accordion with details and summary
+description: Create an accordion-like component with details and summary
 date: '2024-4-10'
 categories:
   - content
@@ -11,6 +12,7 @@ successCriteria:
   - '2.1.1'
   - '3.2.3'
   - '4.1.2'
+level: recommended
 source: https://www.scottohara.me/blog/2018/09/03/details-and-summary.html
 ---
 

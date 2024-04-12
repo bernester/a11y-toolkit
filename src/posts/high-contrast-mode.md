@@ -1,11 +1,13 @@
 ---
-title: Confirm that high contrast mode is supported
+title: high contrast mode
+description: Confirm that high contrast mode is supported
 date: '2024-4-10'
 categories:
   - basics
 components:
   - color
 published: true
+level: advanced
 successCriteria:
   - '1.4.6'
 ---
