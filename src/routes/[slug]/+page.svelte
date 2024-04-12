@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Link from '$lib/components/link.svelte';
 	import wcagData from '$lib/wcag.json';
+	import BackButton from '$lib/components/backButton.svelte';
 
 	export let data: {
 		url: string;
@@ -41,34 +42,38 @@
 <article>
 	<!-- Title -->
 	<hgroup>
+		<BackButton />
 		<h1 class="page-title">{data.meta.title}</h1>
-		<!-- Tags -->
-		<div class="tags">
-			{#each data.meta.components as component}
-				<a href="/component/{component}" class="surface-2">&num;{component}</a>
-			{/each}
-		</div>
+		{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
+			<div class="tags space-1">
+				<div class="tag surface-3">WCAG 2.2</div>
+				{#if data.meta.level}
+					<div class="tag accent {data.meta.level}">
+						{data.meta.level}
+					</div>
+				{/if}
+				{#if data.meta.components.length > 0}
+					{#each data.meta.components as component}
+						<a href="/component/{component}" class="tag link">&num;{component}</a>
+					{/each}
+				{/if}
+			</div>
+		{/if}
 	</hgroup>
 
 	<!-- Post -->
 	<div class="prose">
-		<svelte:component this={data.content} />
+		<div class="space-2">
+			<svelte:component this={data.content} />
+		</div>
+
+		{#if data.meta.source}
+			<Link ariaLabel={`Our source for ${data.meta.title}`} href={data.meta.source} target="_blank"
+				>Source of this technique</Link
+			>
+		{/if}
 	</div>
 
-	{#if data.meta.source}
-		<section>
-			<!-- <h2 class="page-subheader">Here you can read more:</h2> -->
-			<ul>
-				<li>
-					<Link
-						ariaLabel={`Our source for ${data.meta.title}`}
-						href={data.meta.source}
-						target="_blank">Our source for this technique</Link
-					>
-				</li>
-			</ul>
-		</section>
-	{/if}
 	{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
 		<section>
 			<h2 class="page-subheader">Learn more about the related success criteria:</h2>
@@ -101,16 +106,6 @@
 
 	.prose {
 		margin-bottom: var(--size-8);
-	}
-
-	.tags {
-		display: flex;
-		gap: var(--size-3);
-	}
-
-	.tags > * {
-		padding: var(--size-2) var(--size-3);
-		border-radius: var(--radius-round);
 	}
 
 	ul {

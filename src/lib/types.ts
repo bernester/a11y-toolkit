@@ -5,6 +5,7 @@ export type Categories =
 	| 'form'
 	| 'special components'
 	| 'navigation';
+export type Level = 'basic' | 'recommended' | 'advanced';
 export type Components =
 	| string
 	| 'document'
@@ -122,9 +123,11 @@ export type Post = {
 	title: string;
 	slug: string;
 	date: string;
+	description: string;
 	source: string;
 	categories: Categories[];
 	components: Components[];
+	level: Level;
 	published: boolean;
 	successCriteria: SuccessCriterias[];
 };

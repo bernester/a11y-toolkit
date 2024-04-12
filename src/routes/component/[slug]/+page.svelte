@@ -13,41 +13,79 @@
 
 <!-- Posts -->
 <section>
-	<h1 class="page-title">{data.slug}</h1>
-	{#if data.introText}
-		{@html data.introText}
-	{/if}
+	<hgroup>
+		<h1 class="page-title space-2">{data.slug}</h1>
+		{#if data.introText}
+			{@html data.introText}
+		{/if}
+	</hgroup>
 
-	<ul class="posts">
+	<h2 class="page-subheader">Accessibility Techniques:</h2>
+
+	<ul class="techniques">
 		{#each data.posts as post}
-			<li class="post">
-				<a href="/{post.slug}" class="title">{post.title}</a>
+			<li class="technique">
+				<a href="/{post.slug}" class="technique-title">{post.title}</a>
+				{#if post.description}
+					<p>{post.description}</p>
+				{/if}
+				{#if post.level}
+					<div class="tag surface-2">
+						{post.level}
+					</div>
+				{/if}
 			</li>
 		{/each}
 	</ul>
 </section>
 
-<style>
-	.page-title {
+<style lang="scss">
+	hgroup {
 		margin-bottom: var(--size-5);
-		text-transform: capitalize;
-	}
-	.posts {
-		display: grid;
-		gap: 2rem;
 	}
 
-	.post {
-		max-inline-size: var(--size-content-3);
+	.techniques {
+		list-style: none;
+		padding: 0;
 	}
 
-	.post:not(:last-child) {
-		border-bottom: 1px solid var(--border);
-		padding-bottom: var(--size-7);
-	}
+	.technique {
+		padding-left: 0;
+		padding-block: var(--size-4);
+		max-inline-size: inherit;
+		background-image: linear-gradient(
+			90deg,
+			var(--border),
+			var(--border) 50%,
+			transparent 50%,
+			transparent 100%
+		);
+		background-size: 20px 2px;
+		background-position: bottom;
+		background-repeat: repeat-x;
 
-	.title {
-		font-size: var(--font-size-fluid-3);
-		text-transform: capitalize;
+		p {
+			text-wrap: balance;
+			font-size: var(--font-size-1);
+			color: var(--text-2);
+			margin-bottom: var(--size-2);
+		}
+
+		.technique-title {
+			display: block;
+			// font-size: var(--font-size-fluid-2);
+			font-size: 2rem;
+			text-wrap: balance;
+
+			// &::before {
+			// 	content: '';
+			// 	display: inline-block;
+			// 	background-color: var(--surface-2);
+			// 	width: 0.75em;
+			// 	height: 0.75em;
+			// 	border-radius: var(--radius-2);
+			// 	margin-right: 0.5em;
+			// }
+		}
 	}
 </style>

@@ -25,6 +25,8 @@
 	}
 
 	.links {
+		list-style: none;
+		padding: 0;
 		margin-block: var(--size-7);
 	}
 
