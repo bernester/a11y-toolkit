@@ -2,6 +2,7 @@
 	import Link from '$lib/components/link.svelte';
 	import wcagData from '$lib/wcag.json';
 	import BackButton from '$lib/components/backButton.svelte';
+	import { SquareArrowOutUpRight } from 'lucide-svelte';
 
 	export let data: {
 		url: string;
@@ -43,7 +44,7 @@
 	<!-- Title -->
 	<hgroup>
 		<BackButton />
-		<h1 class="page-title">{data.meta.title}</h1>
+		<h1 class="page-title space-2">{data.meta.title}</h1>
 		{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
 			<div class="tags space-1">
 				<div class="tag surface-3">WCAG 2.2</div>
@@ -62,27 +63,32 @@
 	</hgroup>
 
 	<!-- Post -->
-	<div class="prose">
+	<div class="prose space-3">
 		<div class="space-2">
 			<svelte:component this={data.content} />
 		</div>
 
 		{#if data.meta.source}
-			<Link ariaLabel={`Our source for ${data.meta.title}`} href={data.meta.source} target="_blank"
-				>Source of this technique</Link
+			<a
+				aria-label={`Our source for ${data.meta.title}`}
+				href={data.meta.source}
+				target="_blank"
+				class="btn"
+				>Source of this technique <SquareArrowOutUpRight class="blank-icon" />
+				<span class="sr-only">&nbsp;Opens in a new window</span></a
 			>
 		{/if}
 	</div>
 
 	{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
-		<section>
-			<h2 class="page-subheader">Learn more about the related success criteria:</h2>
+		<section class="enriched">
+			<h2 class="page-subheader space-2">Learn more about the related success criteria:</h2>
 			{#each enrichedSuccessCriteria as { refId, details, references }}
 				<div>
-					<div style="margin-bottom: var(--size-4);">
+					<div class="space-2">
 						<strong>{refId} {details.title}</strong> (Level: {details.level})
 					</div>
-					<ul>
+					<ul class="space-2">
 						{#each references as { url, title }}
 							<li>
 								<Link href={url} target="_blank">{title}</Link>
@@ -96,19 +102,9 @@
 </article>
 
 <style>
-	.page-title {
-		margin-bottom: var(--size-4);
-	}
-
-	.page-subheader {
-		margin-bottom: var(--size-4);
-	}
-
-	.prose {
-		margin-bottom: var(--size-8);
-	}
-
-	ul {
-		margin-bottom: var(--size-6);
+	.enriched {
+		padding: var(--size-6);
+		background-color: var(--surface-2);
+		border-radius: var(--radius-3);
 	}
 </style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BackButton from '$lib/components/backButton.svelte';
 	import * as config from '$lib/config';
 	export let data: {
 		posts: any;
@@ -14,6 +15,7 @@
 <!-- Posts -->
 <section>
 	<hgroup>
+		<BackButton />
 		<h1 class="page-title space-2">{data.slug}</h1>
 		{#if data.introText}
 			{@html data.introText}
@@ -30,7 +32,7 @@
 					<p>{post.description}</p>
 				{/if}
 				{#if post.level}
-					<div class="tag surface-2">
+					<div class="tag accent">
 						{post.level}
 					</div>
 				{/if}
@@ -53,16 +55,19 @@
 		padding-left: 0;
 		padding-block: var(--size-4);
 		max-inline-size: inherit;
-		background-image: linear-gradient(
-			90deg,
-			var(--border),
-			var(--border) 50%,
-			transparent 50%,
-			transparent 100%
-		);
-		background-size: 20px 2px;
-		background-position: bottom;
-		background-repeat: repeat-x;
+
+		&:not(:last-child) {
+			background-image: linear-gradient(
+				90deg,
+				var(--border),
+				var(--border) 50%,
+				transparent 50%,
+				transparent 100%
+			);
+			background-size: 16px 2px;
+			background-position: bottom;
+			background-repeat: repeat-x;
+		}
 
 		p {
 			text-wrap: balance;
@@ -73,7 +78,6 @@
 
 		.technique-title {
 			display: block;
-			// font-size: var(--font-size-fluid-2);
 			font-size: 2rem;
 			text-wrap: balance;
 
