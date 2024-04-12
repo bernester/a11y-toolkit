@@ -7,7 +7,7 @@ components:
   - button
 published: true
 successCriteria:
-  - '4.12'
+  - '4.1.2'
 source: https://www.magentaa11y.com/checklist-web/button/#when-there-are-repeating-buttons
 ---
 

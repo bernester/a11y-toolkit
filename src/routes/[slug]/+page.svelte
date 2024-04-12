@@ -14,18 +14,21 @@
 		return criterion ? criterion.references.map((ref) => ({ url: ref.url, title: ref.title })) : [];
 	}
 
-	function getCriterionDetails(refId) {
+	function getCriterionDetails(refId: string) {
 		const criteria = wcagData[0].success_criteria;
 		const criterion = criteria.find((c) => c.ref_id === refId);
 		return criterion ? { title: criterion.title, level: criterion.level } : null;
 	}
 
-	// Enrich successCriteria with details for rendering
-	const enrichedSuccessCriteria = data.meta.successCriteria.map((refId) => ({
-		refId,
-		details: getCriterionDetails(refId),
-		references: findReferences(refId)
-	}));
+	// Check if successCriteria is available and non-empty before mapping
+	const enrichedSuccessCriteria =
+		data.meta.successCriteria && data.meta.successCriteria.length > 0
+			? data.meta.successCriteria.map((refId: string) => ({
+					refId,
+					details: getCriterionDetails(refId),
+					references: findReferences(refId)
+				}))
+			: [];
 </script>
 
 <!-- SEO -->
@@ -38,7 +41,7 @@
 <article>
 	<!-- Title -->
 	<hgroup>
-		<h1 class="page-heading">{data.meta.title}</h1>
+		<h1 class="page-title">{data.meta.title}</h1>
 		<!-- Tags -->
 		<div class="tags">
 			{#each data.meta.components as component}
@@ -54,7 +57,7 @@
 
 	{#if data.meta.source}
 		<section>
-			<h2 class="section-subheading">Here you can read more:</h2>
+			<!-- <h2 class="page-subheader">Here you can read more:</h2> -->
 			<ul>
 				<li>
 					<Link
@@ -66,33 +69,33 @@
 			</ul>
 		</section>
 	{/if}
-	{#if enrichedSuccessCriteria}
+	{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
 		<section>
-			<h2 class="section-subheading">Covered WCAG 2.2 success criteria:</h2>
-			<ul>
-				{#each enrichedSuccessCriteria as { refId, details, references }}
-					<li>
+			<h2 class="page-subheader">Learn more about the related success criteria:</h2>
+			{#each enrichedSuccessCriteria as { refId, details, references }}
+				<div>
+					<div style="margin-bottom: var(--size-4);">
 						<strong>{refId} {details.title}</strong> (Level: {details.level})
-						<ul>
-							{#each references as { url, title }}
-								<li>
-									<Link href={url} target="_blank">{title}</Link>
-								</li>
-							{/each}
-						</ul>
-					</li>
-				{/each}
-			</ul>
+					</div>
+					<ul>
+						{#each references as { url, title }}
+							<li>
+								<Link href={url} target="_blank">{title}</Link>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
 		</section>
 	{/if}
 </article>
 
 <style>
-	.page-heading {
+	.page-title {
 		margin-bottom: var(--size-4);
 	}
 
-	.section-subheading {
+	.page-subheader {
 		margin-bottom: var(--size-4);
 	}
 
