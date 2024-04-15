@@ -1,16 +1,11 @@
 ---
-title: Accessible icons
-description: Ensure that icon buttons are accessible for screenreader and other assistive technologies.
+title: Properly hide decorative content
 date: '2024-4-15'
 categories:
   - content
 components:
   - icon
   - image
-  - text
-  - link
-  - button
-  - basics
 published: true
 successCriteria:
   - '1.1.1'

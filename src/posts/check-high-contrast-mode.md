@@ -1,5 +1,5 @@
 ---
-title: high contrast mode
+title: Check high contrast mode
 description: Confirm that high contrast mode is supported
 date: '2024-4-10'
 categories:

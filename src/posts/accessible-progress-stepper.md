@@ -5,7 +5,7 @@ date: '2024-4-15'
 categories:
   - navigation
 components:
-  - progress-stepper
+  - progress
 published: true
 successCriteria:
   - '1.3.1'

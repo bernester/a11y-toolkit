@@ -3,7 +3,7 @@ title: Input support
 description: If needed provide user with further information for inputs.
 date: '2024-4-15'
 categories:
-  - content
+  - form
 components:
   - label
   - input

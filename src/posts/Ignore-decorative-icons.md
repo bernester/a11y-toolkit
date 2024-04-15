@@ -1,5 +1,5 @@
 ---
-title: Accessible icons
+title: Ignore decorative icons
 description: Icons with adjacent text can be ignored by assistive technology.
 date: '2024-4-15'
 categories:
@@ -8,6 +8,7 @@ components:
   - icon
   - button
   - link
+  - image
 published: true
 successCriteria:
   - '1.1.1'

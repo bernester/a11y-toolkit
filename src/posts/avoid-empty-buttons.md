@@ -1,5 +1,5 @@
 ---
-title: Accessible icons
+title: Avoid empty buttons
 description: Ensure that icon buttons are accessible for screenreader and other assistive technologies.
 date: '2024-4-15'
 categories:

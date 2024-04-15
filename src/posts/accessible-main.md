@@ -3,7 +3,7 @@ title: Accessible main
 description: Use semantic HTML for main.
 date: '2024-4-15'
 categories:
-  - basic
+  - basics
 components:
   - main
   - layout

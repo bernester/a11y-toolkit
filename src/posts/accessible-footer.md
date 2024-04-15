@@ -3,7 +3,7 @@ title: Accessible footer
 description: Use semantic HTML for footer.
 date: '2024-4-15'
 categories:
-  - basic
+  - basics
 components:
   - footer
   - layout

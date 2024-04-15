@@ -3,7 +3,7 @@ title: Declare mid page language changes
 description: Ensure that icon buttons are accessible for screenreader and other assistive technologies.
 date: '2024-4-15'
 categories:
-  - basic
+  - basics
 components:
   - language
 published: true

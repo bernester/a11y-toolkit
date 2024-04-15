@@ -3,7 +3,7 @@ title: Accessible header
 description: Use semantic HTML for header.
 date: '2024-4-15'
 categories:
-  - basic
+  - basics
 components:
   - header
   - layout

@@ -3,7 +3,7 @@ title: Accessible navigation
 description: Use semantic HTML for navigation.
 date: '2024-4-15'
 categories:
-  - basic
+  - basics
 components:
   - navigation
   - layout
