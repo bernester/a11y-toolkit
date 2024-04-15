@@ -10,7 +10,7 @@ source: https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-compari
 ---
 
 ```html
-<svg role="img" ...>
+<svg role="img" …>
 	<title>What does the fox say?</title>
 	[design code]
 </svg>

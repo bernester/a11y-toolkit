@@ -1,12 +1,10 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex, escapeSvelte } from 'mdsvex'
-import { getHighlighter } from 'shiki'
-import remarkUnwrapImages from 'remark-unwrap-images'
-import remarkToc from 'remark-toc'
-import rehypeSlug from 'rehype-slug'
-
-
+import { mdsvex, escapeSvelte } from 'mdsvex';
+import { getHighlighter } from 'shiki';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -18,17 +16,16 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
 				themes: ['poimandres'],
-				langs: ['javascript', 'typescript', 'html']
-			})
-			await highlighter.loadLanguage('javascript', 'typescript', 'html')
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }))
-			return `{@html \`${html}\` }`
+				langs: ['javascript', 'typescript', 'html', 'css']
+			});
+			await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
+			return `{@html \`${html}\` }`;
 		}
 	},
 	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
 	rehypePlugins: [rehypeSlug]
-}
-
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

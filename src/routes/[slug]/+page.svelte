@@ -3,6 +3,7 @@
 	import wcagData from '$lib/wcag.json';
 	import BackButton from '$lib/components/backButton.svelte';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
+	import LevelTag from '$lib/components/levelTag.svelte';
 
 	export let data: {
 		url: string;
@@ -49,9 +50,7 @@
 			<div class="tags space-1">
 				<div class="tag surface-3">WCAG 2.2</div>
 				{#if data.meta.level}
-					<div class="tag accent {data.meta.level}">
-						{data.meta.level}
-					</div>
+					<LevelTag level={data.meta.level} />
 				{/if}
 				{#if data.meta.components.length > 0}
 					{#each data.meta.components as component}

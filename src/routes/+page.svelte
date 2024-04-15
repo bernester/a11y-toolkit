@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as config from '$lib/config';
 	import ComponentCard from '$lib/components/componentCard.svelte';
-	export let data: { summary: Summary }; // Assert the type of data
+	export let data: { summary: Summary };
 
 	interface Summary {
 		[category: string]: {

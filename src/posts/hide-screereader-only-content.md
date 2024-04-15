@@ -1,0 +1,35 @@
+---
+title: Accessible icons
+description: Ensure that icon buttons are accessible for screenreader and other assistive technologies.
+date: '2024-4-15'
+categories:
+  - content
+components:
+  - icon
+  - image
+  - text
+  - link
+  - button
+  - basics
+published: true
+successCriteria:
+  - '1.1.1'
+level: basic
+source: https://kittygiraudel.com/2021/02/17/hiding-content-responsibly/
+---
+
+```css
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+```
