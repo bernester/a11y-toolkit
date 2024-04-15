@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BackButton from '$lib/components/backButton.svelte';
+	import LevelTag from '$lib/components/levelTag.svelte';
 	import * as config from '$lib/config';
 	export let data: {
 		posts: any;
@@ -32,9 +33,7 @@
 					<p>{post.description}</p>
 				{/if}
 				{#if post.level}
-					<div class="tag accent">
-						{post.level}
-					</div>
+					<LevelTag level={post.level} />
 				{/if}
 			</li>
 		{/each}

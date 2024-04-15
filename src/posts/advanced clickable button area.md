@@ -9,8 +9,7 @@ components:
 published: true
 successCriteria:
   - '2.5.5'
-level:
-  - 'advanced'
+level: advanced
 ---
 
 Buttons are for clicking. By ensuring that they are big enough, you make sure that your users can click them with ease, even if they sit in a bumpy train or they have shaky hands. 44px is about the size of a standard thumb tip, so it also work for touch interfaces.
