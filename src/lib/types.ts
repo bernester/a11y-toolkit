@@ -1,10 +1,4 @@
-export type Categories =
-	| 'basics'
-	| 'content'
-	| 'data'
-	| 'form'
-	| 'special components'
-	| 'navigation';
+export type Category = 'basics' | 'content' | 'data' | 'form' | 'special components' | 'navigation';
 export type Level = 'basic' | 'recommended' | 'advanced';
 export type Components =
 	| string
@@ -125,7 +119,7 @@ export type Post = {
 	date: string;
 	description: string;
 	source: string;
-	categories: Categories[];
+	category: Category;
 	components: Components[];
 	level: Level;
 	published: boolean;

@@ -260,3 +260,18 @@ p {
 	border-radius: var(--radius-round);
 	@extend .surface-2;
 }
+
+.tint-link {
+	color: var(--link);
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+	display: table-cell;
+}

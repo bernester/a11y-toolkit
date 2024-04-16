@@ -1,3 +1,12 @@
+<script>
+	import BackButton from '$lib/components/backButton.svelte';
+</script>
+
+<svelte:head>
+	<title>What's the A11y toolkit?</title>
+</svelte:head>
+
+<BackButton />
 <h1>What's the A11y toolkit?</h1>
 <p>
 	Since 2019 the organisation WebAIM (Web Accessibility In Mind) cunducts an yearly accessibility
