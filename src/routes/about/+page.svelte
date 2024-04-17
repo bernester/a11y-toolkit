@@ -1,5 +1,5 @@
 <script>
-	import BackButton from '$lib/components/backButton.svelte';
+	import BackButton from '$components/BackButton.svelte';
 </script>
 
 <svelte:head>

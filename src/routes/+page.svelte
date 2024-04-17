@@ -3,9 +3,9 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import * as config from '$lib/config';
-	import ComponentCard from '$lib/components/componentCard.svelte';
+	import ComponentCard from '$components/ComponentCard.svelte';
 	import { derived, writable } from 'svelte/store';
-	import RadioButton from '$lib/components/radioButton.svelte';
+	import RadioButton from '$components/RadioButton.svelte';
 
 	let categoriesData = writable(null);
 	const selectedLevel = derived(page, ($page) => $page.url.searchParams.get('level') || 'AA');
@@ -28,7 +28,6 @@
 	}
 
 	function handleLevelChange(event) {
-		console.log('ping');
 		updateLevel(event.target.value);
 	}
 </script>
@@ -73,12 +72,13 @@
 		</fieldset>
 	</form>
 
-	<h2 class="page-header space-3">Select a category</h2>
+	<h2 class="page-subheader space-3">Select a category</h2>
 	{#each Object.keys($categoriesData) as category}
 		<section class="space-3">
 			<hgroup class="category-hgroup space-2">
-				<h3 class="page-subheader">{category}</h3>
-				<a href={`/category/${category}?level={$selectedLevel}`} class="btn">Show all techniques</a>
+				<h3 class="page-header">{category}</h3>
+				<a href={`/category/${category}?level=${$selectedLevel}`} class="btn">Show all techniques</a
+				>
 			</hgroup>
 			<ul class="techniques unstyled">
 				{#each Object.entries($categoriesData[category].components) as [component, count]}

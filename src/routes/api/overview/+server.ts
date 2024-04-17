@@ -5,8 +5,6 @@ const { parse } = pkg;
 import type { RequestHandler } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
-console.log('test');
-
 interface Technique {
 	title: string;
 	description?: string;

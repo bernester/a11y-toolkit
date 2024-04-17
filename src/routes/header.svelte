@@ -1,7 +1,6 @@
 <script lang="ts">
-	import * as config from '$lib/config';
-	import Toggle from '$lib/components/toggle.svelte';
-	import Logo from '$lib/components/logo.svelte';
+	import Toggle from '$components/Toggle.svelte';
+	import Logo from '$components/Logo.svelte';
 </script>
 
 <nav>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import BackButton from '$lib/components/backButton.svelte';
-	import LevelTag from '$lib/components/levelTag.svelte';
+	import BackButton from '$components/BackButton.svelte';
+	import LevelTag from '$components/LevelTag.svelte';
 	import * as config from '$lib/config';
 	export let data: {
 		posts: any;

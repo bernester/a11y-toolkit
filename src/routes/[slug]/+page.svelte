@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Link from '$lib/components/link.svelte';
+	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
-	import BackButton from '$lib/components/backButton.svelte';
+	import BackButton from '$components/BackButton.svelte';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
-	import LevelTag from '$lib/components/levelTag.svelte';
+	import LevelTag from '$components/LevelTag.svelte';
 
 	export let data: {
 		url: string;
