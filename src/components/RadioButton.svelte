@@ -47,7 +47,7 @@
 		&:hover {
 			.radiobutton {
 				border-color: var(--link);
-				border-width: var(--size-1);
+				border-width: 0.25rem;
 			}
 		}
 
@@ -59,25 +59,25 @@
 	}
 
 	.radiobutton {
-		width: var(--size-4);
-		height: var(--size-4);
+		width: 1.25rem;
+		height: 1.25rem;
 		border: 2px solid var(--border);
 		background-color: var(--surface-1);
 		border-radius: 100vh;
-		margin: 4px 8px 4px 4px;
+		margin: 4px 12px 4px 8px;
 		flex: none;
 	}
 
 	input:checked + label {
 		.radiobutton {
 			border-color: var(--link);
-			border-width: var(--size-1);
+			border-width: 0.25rem;
 		}
 
 		&:hover {
 			.radiobutton {
 				border-color: var(--link);
-				border-width: var(--size-0);
+				border-width: 0.4rem;
 			}
 		}
 	}

@@ -16,11 +16,11 @@ html {
 	--bold: var(--font-weight-8);
 
 	/* dark */
-	--accent-dark: var(--jungle-11);
+	--accent-dark: var(--cyan-3);
 	--brand-dark: var(--orange-3);
 	--link-dark: #bba5ff;
 	--text-1-dark: var(--gray-1);
-	--text-2-dark: var(--gray-5);
+	--text-2-dark: var(--gray-3);
 	--text-contrast-dark: #{$surface-1-dark};
 	--surface-1-dark: #{$surface-1-dark};
 	--surface-2-dark: #{lighten($surface-1-dark, 4%)};
@@ -152,7 +152,7 @@ ol {
 
 .accent {
 	background-color: var(--accent);
-	color: var(--text-1);
+	color: var(--text-contrast);
 }
 
 .link {
@@ -191,7 +191,6 @@ ol {
 .page-title,
 .page-header,
 .page-subheader {
-	text-transform: capitalize;
 	max-inline-size: initial;
 }
 
@@ -246,7 +245,7 @@ p {
 	font-size: var(--font-size-00);
 	font-weight: var(--bold);
 	border-radius: var(--radius-2);
-	text-transform: uppercase;
+	// text-transform: uppercase;
 }
 
 .pills,

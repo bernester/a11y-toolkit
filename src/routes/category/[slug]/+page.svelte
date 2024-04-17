@@ -1,42 +1,112 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import { derived, writable } from 'svelte/store';
-	import ComponentCard from '$components/ComponentCard.svelte';
+	import BackButton from '$components/BackButton.svelte';
+	import LevelTag from '$components/LevelTag.svelte';
 
-	let techniques = writable([]);
-	const category = derived(page, ($page) => $page.params.category);
-	const level = derived(page, ($page) => $page.url.searchParams.get('level') || 'AA');
-
-	onMount(() => {
-		const unsubscribe = derived([category, level], ([$category, $level]) => {
-			console.log($category);
-			fetch(`/api/category?level=${$level}&category=${$category}`)
-				.then((response) => response.json())
-				.then((data) => techniques.set(data))
-				.catch(console.error);
-		}).subscribe();
-
-		return unsubscribe; // cleanup the subscription
-	});
+	export let data: {
+		techniques: any;
+		category: string;
+		level: string;
+	};
 </script>
 
 <svelte:head>
-	<title>{$level} Techniques in {$category}</title>
+	<title>{data.level} techniques for {data.category}</title>
 </svelte:head>
+<section>
+	<hgroup>
+		<BackButton />
+		<h1 class="page-title space-2">{data.level} techniques for {data.category}</h1>
+	</hgroup>
 
-<h1>{$level} Techniques for {$category}</h1>
+	{#if data.techniques && data.techniques.length > 0}
+		<ul class="techniques unstyled">
+			{#each data.techniques as technique}
+				<li class="technique">
+					<div class="technique--left">
+						<a href={`/${technique.slug}`} class="technique-title">{technique.title}</a>
+						{#if technique.description}
+							<p>{technique.description || 'No description available.'}</p>
+						{/if}
+						{#if technique.components.length > 0}
+							<ul class="components-list">
+								{#each technique.components as component}
+									<li>
+										<a href="/component/{component}" class="tag surface-4">&num;{component}</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</div>
+					<div class="technique--right">
+						{#if technique.level}
+							<LevelTag value={technique.level} />
+						{/if}
+					</div>
+				</li>
+			{/each}
+		</ul>
+	{:else}
+		<p>No techniques found for this category and level.</p>
+	{/if}
+</section>
 
-{#if $techniques.length > 0}
-	<ul class="techniques unstyled">
-		{#each $techniques as technique}
-			<li>
-				<a href={`/technique/${technique.slug}`} class="technique-title">{technique.title}</a>
-				<p>{technique.description || 'No description available.'}</p>
-				<ComponentCard {technique} />
-			</li>
-		{/each}
-	</ul>
-{:else}
-	<p>No techniques found for this category and level.</p>
-{/if}
+<style lang="scss">
+	hgroup {
+		margin-bottom: var(--size-5);
+	}
+
+	.techniques {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		gap: var(--size-4);
+	}
+
+	.technique {
+		padding-left: 0;
+		padding-block: var(--size-3);
+		padding-inline: var(--size-4);
+		border-color: var(--border);
+		border-width: var(--border-size-1);
+		border-radius: var(--radius-3);
+		max-inline-size: inherit;
+		display: flex;
+		gap: var(--size-4);
+
+		&--left {
+			flex: 1;
+		}
+
+		&--right {
+			flex: 0;
+		}
+
+		p {
+			text-wrap: balance;
+			font-size: var(--font-size-1);
+			line-height: var(--font-lineheight-1);
+			color: var(--text-2);
+		}
+
+		.technique-title {
+			display: block;
+			font-size: var(--font-size-fluid-1);
+			line-height: var(--font-lineheight-1);
+			text-wrap: balance;
+			margin-bottom: var(--size-2);
+		}
+	}
+
+	.components-list {
+		list-style: none;
+		display: flex;
+		gap: var(--size-2);
+		padding: 0;
+		margin-top: var(--size-2);
+
+		li {
+			padding: 0;
+		}
+	}
+</style>
