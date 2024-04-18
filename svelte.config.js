@@ -5,6 +5,7 @@ import { getHighlighter } from 'shiki';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
+import path from 'path';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -38,7 +39,12 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$components: path.resolve('./src/components'), // Adjust the path as necessary
+			$lib: path.resolve('./src/lib'),
+			$types: path.resolve('./src/types')
+		}
 	}
 };
 

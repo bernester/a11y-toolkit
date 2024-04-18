@@ -1,12 +1,6 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"$lib/*": ["src/lib/*"],
-			"$components/*": ["src/components/*"],
-			"$app/*": ["node_modules/@sveltejs/kit/types/app/*"]
-		},
 		"types": ["svelte", "@sveltejs/kit"],
 		"allowJs": true,
 		"checkJs": true,
