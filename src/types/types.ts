@@ -1,5 +1,5 @@
 export type Category = 'basics' | 'content' | 'data' | 'form' | 'special components' | 'navigation';
-export type Level = 'basic' | 'recommended' | 'advanced';
+export type Level = 'A' | 'AA' | 'AAA';
 export type Components =
 	| string
 	| 'document'
@@ -113,7 +113,7 @@ export type SuccessCriterias =
 	| '4.1.2'
 	| '4.1.3';
 
-export type Post = {
+export type Technique = {
 	title: string;
 	slug: string;
 	date: string;
@@ -124,4 +124,8 @@ export type Post = {
 	level: Level;
 	published: boolean;
 	successCriteria: SuccessCriterias[];
+};
+
+export type CategoryData = {
+	[key: string]: Technique[];
 };
