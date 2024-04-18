@@ -50,7 +50,7 @@
 			<div class="tags space-1">
 				<div class="tag surface-3">WCAG 2.2</div>
 				{#if data.meta.level}
-					<LevelTag level={data.meta.level} />
+					<LevelTag value={data.meta.level} />
 				{/if}
 				{#if data.meta.components.length > 0}
 					{#each data.meta.components as component}
