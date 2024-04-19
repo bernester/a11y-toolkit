@@ -1,9 +1,10 @@
 <script lang="ts">
 	import BackButton from '$components/BackButton.svelte';
-	import LevelTag from '$components/LevelTag.svelte';
+	import TechniqueCard from '$components/TechniqueCard.svelte';
+	import TechniquesList from '$components/TechniquesList.svelte';
 	import * as config from '$lib/config';
 	export let data: {
-		posts: any;
+		techniques: any;
 		slug: string;
 		introText?: string;
 	};
@@ -17,27 +18,15 @@
 <section>
 	<hgroup>
 		<BackButton />
-		<h1 class="page-title space-2">{data.slug}</h1>
+		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
 		{#if data.introText}
 			{@html data.introText}
 		{/if}
 	</hgroup>
 
-	<h2 class="page-subheader">Accessibility Techniques:</h2>
+	<h2 class="page-subheader space-2">Accessibility Techniques:</h2>
 
-	<ul class="techniques">
-		{#each data.posts as post}
-			<li class="technique">
-				<a href="/{post.slug}" class="technique-title">{post.title}</a>
-				{#if post.description}
-					<p>{post.description}</p>
-				{/if}
-				{#if post.level}
-					<LevelTag level={post.level} />
-				{/if}
-			</li>
-		{/each}
-	</ul>
+	<TechniquesList techniques={data.techniques} />
 </section>
 
 <style lang="scss">
