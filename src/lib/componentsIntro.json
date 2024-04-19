@@ -17,7 +17,7 @@
 	"main": "<p>The main element is an important landmark and belongs to the main structure of your document.</p>",
 	"multi-step": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Multi-step indicators serve as a guiding mechanism, allowing users to seamlessly progress through multi-step processes. Users with disabilities can benefit from structured and well-designed navigation, reducing confusion and frustration.</p><p>Informing people of where they are within a set of pages is accessible to those with cognitive and attention- related disorders.</p>",
 	"navigation": "",
-	"radio-button": "<p>Radio buttons are another important component we use when creating forms and interfaces. Here are some techniques to make sure they are useable for everyone.</p>",
+	"radio": "<p>Radio buttons are another important component we use when creating forms and interfaces. Here are some techniques to make sure they are useable for everyone.</p>",
 	"rating": "",
 	"text": "<p>Content is king. This is also a good reason why you should make sure that the king is accessible for everyone.  A good color contrast and font-size ensures that your audience actually can read the content. Even if the sun shines on their monitor.</p>"
 }

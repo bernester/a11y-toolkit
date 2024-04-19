@@ -99,7 +99,7 @@
 					"desciption": "<p>Missing form input labels is in place rank 4 on the top 6 list of most common WCAG failures with 45.9%. But don't worry, the fix is really simple.</p>"
 				},
 				{
-					"title": "radio-button",
+					"title": "radio",
 					"desciption": "<p>Radio buttons are another important component we use when creating forms and interfaces. Here are some techniques to make sure they are useable for everyone.</p>"
 				},
 				{
