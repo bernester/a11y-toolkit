@@ -57,7 +57,6 @@ export const GET: RequestHandler = async ({ url }) => {
 			categoryData[categoryTitle] = { components: componentsMap };
 		}
 
-		// console.log(categoryData);
 		return new Response(JSON.stringify(categoryData));
 	} catch (err) {
 		return error(500, `Server error: ${err}`);
