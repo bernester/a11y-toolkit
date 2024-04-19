@@ -46,10 +46,10 @@
 	<hgroup>
 		<BackButton />
 		<h1 class="page-title space-2">{data.meta.title}</h1>
-		{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
+		{#if data.meta.level || data.meta.components.length > 0}
 			<div class="tags space-1">
-				<div class="tag surface-3">WCAG 2.2</div>
 				{#if data.meta.level}
+					<div class="tag surface-3">WCAG 2.2</div>
 					<LevelTag value={data.meta.level} />
 				{/if}
 				{#if data.meta.components.length > 0}
