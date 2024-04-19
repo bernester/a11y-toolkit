@@ -115,15 +115,15 @@ export type SuccessCriterias =
 
 export type Technique = {
 	title: string;
-	slug: string;
+	description?: string;
 	date: string;
-	description: string;
-	source: string;
+	published: boolean;
+	slug: string;
 	category: Category;
 	components: Components[];
-	level: Level;
-	published: boolean;
-	successCriteria: SuccessCriterias[];
+	successCriteria?: SuccessCriterias[];
+	level?: Level;
+	source?: string;
 };
 
 export type CategoryData = {
