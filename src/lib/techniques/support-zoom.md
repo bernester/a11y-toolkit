@@ -1,5 +1,5 @@
 ---
-title: Support zoom
+title: Support document zoom
 description: Ensure that users can zoom in.
 date: '2024-4-15'
 category: basics

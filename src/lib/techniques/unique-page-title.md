@@ -1,5 +1,5 @@
 ---
-title: Unique page title
+title: Provide a unique page title
 description: Give users orientation with a unique page title
 date: '2024-4-15'
 category: basics
