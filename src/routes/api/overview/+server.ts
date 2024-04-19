@@ -4,52 +4,60 @@ import pkg from 'yaml';
 const { parse } = pkg;
 import type { RequestHandler } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
+import type { Level, Technique } from '$types/types';
 
-interface Technique {
-	title: string;
-	description?: string;
-	date: string;
-	category: string;
-	components: string[];
-	published: boolean;
-	successCriteria?: string[];
-	level?: string; // Level is optional
-	source?: string;
-}
+const structurePath = 'src/lib/structure.json';
+
+// get the structure from the
+const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
+
+const techniquesDir = path.resolve('src/lib/techniques');
+const files = fs.readdirSync(techniquesDir);
+
+// Define level inclusion based on the requested level
+const validLevels: Record<Level, (string | undefined)[]> = {
+	A: ['A', undefined], // Only level A and undefined (no level specified)
+	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
+	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
+};
 
 export const GET: RequestHandler = async ({ url }) => {
-	const techniquesDir = path.resolve('src/lib/techniques');
-	const categories = ['basics', 'navigation', 'content', 'form'];
-	const level = url.searchParams.get('level') || 'AA';
+	// get the currently selected lebel form the url
+	const level = (url.searchParams.get('level') as Level) || ('AA' as Level);
+	const techniqueMap: Record<string, number> = {};
 	const categoryData: Record<string, { components: Record<string, number> }> = {};
 
-	// Define level inclusion based on the requested level
-	const validLevels = {
-		A: ['A', undefined], // Only level A and undefined (no level specified)
-		AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
-		AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
-	};
-
 	try {
-		for (const category of categories) {
-			const categoryPath = path.join(techniquesDir, category);
-			const files = fs.readdirSync(categoryPath);
+		for (const file of files) {
+			const filePath = path.join(techniquesDir, file);
+			const fileContent = fs.readFileSync(filePath, 'utf-8');
+			const metadata = parse(fileContent.split('---')[1]) as Technique;
+
+			// Check if the post's level is included in the valid levels for the requested level
+			if (metadata.published && validLevels[level].includes(metadata.level)) {
+				metadata.components.forEach((component) => {
+					techniqueMap[component] = (techniqueMap[component] || 0) + 1;
+				});
+			}
+		}
+
+		for (const category of structure.categories) {
 			const componentsMap: Record<string, number> = {};
+			const categoryTitle = category.title;
+			const components = category.components;
 
-			for (const file of files) {
-				const filePath = path.join(categoryPath, file);
-				const content = fs.readFileSync(filePath, 'utf-8');
-				const metadata = parse(content.split('---')[1]) as Technique;
+			for (const component of components) {
+				const componentTitle = component.title;
 
-				// Check if the post's level is included in the valid levels for the requested level
-				if (metadata.published && validLevels[level].includes(metadata.level)) {
-					metadata.components.forEach((component) => {
-						componentsMap[component] = (componentsMap[component] || 0) + 1;
-					});
+				if (techniqueMap[componentTitle]) {
+					componentsMap[componentTitle] = techniqueMap[componentTitle];
 				}
 			}
-			categoryData[category] = { components: componentsMap };
+
+			categoryData[categoryTitle] = { components: componentsMap };
 		}
+
+		// console.log(categoryData);
 		return new Response(JSON.stringify(categoryData));
 	} catch (err) {
 		return error(500, `Server error: ${err}`);

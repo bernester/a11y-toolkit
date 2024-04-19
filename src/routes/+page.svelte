@@ -1,29 +1,24 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import * as config from '$lib/config';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import * as config from '$lib/config';
+	import { derived } from 'svelte/store';
+	import type { Level } from '$types/types';
 	import ComponentCard from '$components/ComponentCard.svelte';
-	import { derived, writable } from 'svelte/store';
 	import RadioButton from '$components/RadioButton.svelte';
 
-	let categoriesData = writable(null);
-	const selectedLevel = derived(page, ($page) => $page.url.searchParams.get('level') || 'AA');
+	export let data;
+	export let techniqueCount = data.techniqueCount;
+	export let categoriesData = data.categoriesData;
 
-	onMount(() => {
-		const unsubscribe = selectedLevel.subscribe((currentLevel) => {
-			fetch(`/api/overview?level=${currentLevel}`)
-				.then((response) => response.json())
-				.then((data) => categoriesData.set(data))
-				.catch((error) => console.error('Error fetching data:', error));
-		});
+	console.log('Received data:', data);
+	console.log('Received categoriesData:', categoriesData);
+	console.log('Received techniqueCount:', techniqueCount);
 
-		return () => {
-			unsubscribe(); // cleanup the subscription
-		};
-	});
+	// get the selected level from url or return 'AA' as a default
+	let selectedLevel = derived(page, ($page) => $page.url.searchParams.get('level') || 'AA');
 
-	function updateLevel(newLevel) {
+	function updateLevel(newLevel: Level) {
 		goto(`?level=${newLevel}`, { replaceState: true });
 	}
 
@@ -36,13 +31,10 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-{#if $categoriesData}
+{#if categoriesData}
 	<h1 class="page-title space-3">
 		<span class="tint-link">
-			{Object.values($categoriesData).reduce(
-				(acc, cur) => acc + Object.keys(cur.components).length,
-				0
-			)} techniques
+			{techniqueCount || 0} techniques
 		</span> to avoid the most common accessibility failures.
 	</h1>
 
@@ -73,7 +65,7 @@
 	</form>
 
 	<h2 class="page-subheader space-3">Select a category</h2>
-	{#each Object.keys($categoriesData) as category}
+	{#each Object.keys(categoriesData) as category}
 		<section class="space-3">
 			<hgroup class="category-hgroup space-2">
 				<h3 class="page-header">{category}</h3>
@@ -81,7 +73,7 @@
 				>
 			</hgroup>
 			<ul class="techniques unstyled">
-				{#each Object.entries($categoriesData[category].components) as [component, count]}
+				{#each Object.entries(categoriesData[category].components) as [component, count]}
 					<li>
 						<ComponentCard {component} {count} level={$selectedLevel} />
 					</li>
