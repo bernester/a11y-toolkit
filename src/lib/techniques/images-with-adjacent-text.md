@@ -1,5 +1,5 @@
 ---
-title: images with adjacent text
+title: Images with adjacent text
 description: Images that are already described by adjacent text can be ignored by assistive technology.
 date: '2024-4-15'
 category: content
