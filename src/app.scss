@@ -130,6 +130,10 @@ ol {
 	}
 }
 
+.capitalize {
+	text-transform: capitalize;
+}
+
 .surface-1 {
 	background-color: var(--surface-1);
 	color: var(--text-2);
