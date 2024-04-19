@@ -11,10 +11,6 @@
 	export let techniqueCount = data.techniqueCount;
 	export let categoriesData = data.categoriesData;
 
-	console.log('Received data:', data);
-	console.log('Received categoriesData:', categoriesData);
-	console.log('Received techniqueCount:', techniqueCount);
-
 	// get the selected level from url or return 'AA' as a default
 	let selectedLevel = derived(page, ($page) => $page.url.searchParams.get('level') || 'AA');
 
@@ -22,8 +18,9 @@
 		goto(`?level=${newLevel}`, { replaceState: true });
 	}
 
-	function handleLevelChange(event) {
-		updateLevel(event.target.value);
+	function handleLevelChange(event: Event): void {
+		const target = event.target as HTMLInputElement; // Ensuring the target is an HTML input element
+		updateLevel(target.value as Level);
 	}
 </script>
 
