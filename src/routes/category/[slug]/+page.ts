@@ -1,39 +1,25 @@
-import { error } from '@sveltejs/kit';
+import type { Level, Technique } from '$types/types';
+
+// Define level inclusion based on the requested level
+const validLevels: Record<Level, (string | undefined)[]> = {
+	A: ['A', undefined], // Only level A and undefined (no level specified)
+	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
+	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
+};
 
 export async function load({ fetch, params, url }) {
-	const category = params.slug;
-	const levelCode = url.searchParams.get('level') || 'AA';
+	const level = (url.searchParams.get('level') as Level) || ('AA' as Level);
+	// Access the slug from the parameters
 
-	const levelTranslation: { [key: string]: string } = {
-		A: 'basic',
-		AA: 'recommended',
-		AAA: 'advanced'
-	};
+	const { slug } = params;
 
-	const levelDescription = levelTranslation[levelCode] || 'recommended'; // Default to "recommended" if not found
+	const response = await fetch('../../api/techniques');
+	const techniques: Technique[] = await response.json();
 
-	try {
-		const response = await fetch(`/api/category?level=${levelCode}&category=${category}`);
-		if (!response.ok) {
-			console.error('Failed to fetch data:', response.statusText);
-			throw new Error('Failed to fetch data');
-		}
-		const data = await response.json();
+	// Filter posts to only include those where the `components` array contains the slug
+	const filteredTechniques = techniques.filter(
+		(technique) => technique.category.includes(slug) && validLevels[level].includes(technique.level)
+	);
 
-		return {
-			techniques: data,
-			category,
-			level: levelDescription
-		};
-	} catch (err) {
-		// Check if the error is an instance of Error
-		if (err instanceof Error) {
-			console.error('Error fetching data:', err.message);
-			return error(500, `Error fetching data: ${err.message}`);
-		} else {
-			// Handle non-Error objects thrown as errors
-			console.error('Error fetching data:', err);
-			return error(500, 'Unknown error occurred');
-		}
-	}
+	return { techniques: filteredTechniques, slug };
 }
