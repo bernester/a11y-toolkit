@@ -1,22 +1,11 @@
-# create-svelte
+# A11y Toolkit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+The A11y toolkit is a collection of techniques and best practices about how to avoid the most common accessibility failures.
 
-## Creating a project
+## Getting started
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Pull or fork the project
+2. `bash npm i `
 
 ```bash
 npm run dev
@@ -36,6 +25,3 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-
-based on https://joyofcode.xyz/sveltekit-markdown-blog#setting-up-mdsvex
