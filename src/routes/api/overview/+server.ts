@@ -5,6 +5,7 @@ const { parse } = pkg;
 import type { RequestHandler } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 import type { Level, Technique } from '$types/types';
+import { validLevels } from '$lib/validLevels';
 
 const structurePath = 'src/lib/structure.json';
 
@@ -13,13 +14,6 @@ const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
 
 const techniquesDir = path.resolve('src/lib/techniques');
 const files = fs.readdirSync(techniquesDir);
-
-// Define level inclusion based on the requested level
-const validLevels: Record<Level, (string | undefined)[]> = {
-	A: ['A', undefined], // Only level A and undefined (no level specified)
-	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
-	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
-};
 
 export const GET: RequestHandler = async ({ url }) => {
 	// get the currently selected lebel form the url

@@ -1,12 +1,6 @@
 import type { Level, Structure, Technique } from '$types/types';
 import structureJson from '$lib/structure.json';
-
-// Define level inclusion based on the requested level
-const validLevels: Record<Level, (string | undefined)[]> = {
-	A: ['A', undefined], // Only level A and undefined (no level specified)
-	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
-	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
-};
+import { validLevels } from '$lib/validLevels';
 
 const structure: Structure = structureJson;
 
@@ -24,7 +18,6 @@ export async function load({ fetch, params, url }) {
 	const { slug } = params;
 	// get the description of the category
 	const introText = getDescription(slug);
-	console.log(introText);
 
 	const response = await fetch('../../api/techniques');
 	const techniques: Technique[] = await response.json();

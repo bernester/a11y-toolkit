@@ -7,17 +7,11 @@ import path from 'path';
 import pkg from 'yaml';
 const { parse } = pkg;
 import type { Level, Technique } from '$types/types';
+import { validLevels } from '$lib/validLevels';
 
 // get the directory of the `.md` files with techniques
 const techniquesDir = path.resolve('src/lib/techniques');
 const files = fs.readdirSync(techniquesDir);
-
-// Define level inclusion based on the requested level
-const validLevels: Record<Level, (string | undefined)[]> = {
-	A: ['A', undefined], // Only level A and undefined (no level specified)
-	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
-	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
-};
 
 export async function load({ fetch, url }) {
 	const level = (url.searchParams.get('level') as Level) || ('AA' as Level);

@@ -1,12 +1,6 @@
 import type { Components, Level, Structure, Technique } from '$types/types';
 import structureJson from '$lib/structure.json';
-
-// Define level inclusion based on the requested level
-const validLevels: Record<Level, (string | undefined)[]> = {
-	A: ['A', undefined], // Only level A and undefined (no level specified)
-	AA: ['A', 'AA', undefined], // Levels A, AA, and undefined
-	AAA: ['A', 'AA', 'AAA', undefined] // All levels and undefined
-};
+import { validLevels } from '$lib/validLevels';
 
 const structure: Structure = structureJson;
 
