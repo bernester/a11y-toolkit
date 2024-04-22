@@ -1,6 +1,4 @@
 <script lang="ts">
-	import BackButton from '$components/BackButton.svelte';
-	import TechniqueCard from '$components/TechniqueCard.svelte';
 	import TechniquesList from '$components/TechniquesList.svelte';
 	import * as config from '$lib/config';
 	export let data: {
@@ -16,7 +14,6 @@
 <!-- Posts -->
 <section>
 	<hgroup>
-		<BackButton />
 		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
 	</hgroup>
 
