@@ -1,16 +1,5 @@
-import type { Components, Level, Technique } from '$types/types';
+import type { Components, Level, Structure, Technique } from '$types/types';
 import structureJson from '$lib/structure.json';
-
-interface Structure {
-	categories: {
-		title: string;
-		description: string;
-		components: {
-			title: string;
-			description: string;
-		}[];
-	}[];
-}
 
 // Define level inclusion based on the requested level
 const validLevels: Record<Level, (string | undefined)[]> = {
@@ -34,7 +23,6 @@ function getDescription(component: string) {
 export async function load({ fetch, params, url }) {
 	const level = (url.searchParams.get('level') as Level) || ('AA' as Level);
 	// Access the slug from the parameters
-
 	const { slug } = params;
 	const introText = getDescription(slug);
 

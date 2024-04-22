@@ -15,6 +15,9 @@
 <section>
 	<hgroup>
 		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
+		{#if data.introText}
+			{@html data.introText}
+		{/if}
 	</hgroup>
 
 	<h2 class="page-subheader space-2">Accessibility Techniques:</h2>

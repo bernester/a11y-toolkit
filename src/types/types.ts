@@ -128,3 +128,14 @@ export type Technique = {
 export type CategoryData = {
 	[key: string]: Technique[];
 };
+
+export type Structure = {
+	categories: {
+		title: string;
+		description: string;
+		components: {
+			title: string;
+			description: string;
+		}[];
+	}[];
+};
