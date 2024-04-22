@@ -1,11 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import pkg from 'yaml';
-const { parse } = pkg;
 import type { RequestHandler } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
-import type { Level, Technique } from '$types/types';
-import { validLevels } from '$lib/validLevels';
+import type { Level, TechniqueMeta } from '$types/types';
+import { validLevels } from '$lib/levels';
 
 const structurePath = 'src/lib/structure.json';
 
@@ -24,8 +22,8 @@ export const GET: RequestHandler = async ({ url }) => {
 	try {
 		for (const file of files) {
 			const filePath = path.join(techniquesDir, file);
-			const fileContent = fs.readFileSync(filePath, 'utf-8');
-			const metadata = parse(fileContent.split('---')[1]) as Technique;
+			const fileContent = await import(filePath);
+			const metadata = fileContent.metadata as TechniqueMeta;
 
 			// Check if the post's level is included in the valid levels for the requested level
 			if (metadata.published && validLevels[level].includes(metadata.level)) {

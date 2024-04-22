@@ -1,6 +1,6 @@
-import type { Level, Structure, Technique } from '$types/types';
+import type { Level, Structure, TechniqueMeta } from '$types/types';
 import structureJson from '$lib/structure.json';
-import { validLevels } from '$lib/validLevels';
+import { validLevels } from '$lib/levels';
 
 const structure: Structure = structureJson;
 
@@ -20,7 +20,7 @@ export async function load({ fetch, params, url }) {
 	const introText = getDescription(slug);
 
 	const response = await fetch('../../api/techniques');
-	const techniques: Technique[] = await response.json();
+	const techniques: TechniqueMeta[] = await response.json();
 
 	// Filter posts to only include those where the `components` array contains the slug
 	const filteredTechniques = techniques.filter(

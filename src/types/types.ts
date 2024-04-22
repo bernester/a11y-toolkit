@@ -112,7 +112,7 @@ export type SuccessCriterias =
 	| '4.1.2'
 	| '4.1.3';
 
-export type Technique = {
+export type TechniqueMeta = {
 	title: string;
 	description?: string;
 	date: string;
@@ -126,7 +126,7 @@ export type Technique = {
 };
 
 export type CategoryData = {
-	[key: string]: Technique[];
+	[key: string]: TechniqueMeta[];
 };
 
 export type Structure = {

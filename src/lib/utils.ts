@@ -1,8 +1,15 @@
-type DateStyle = Intl.DateTimeFormatOptions['dateStyle']
+import type { RadioOnChangeEvent } from './events';
+
+type DateStyle = Intl.DateTimeFormatOptions['dateStyle'];
 
 export function formatDate(date: string, dateStyle: DateStyle = 'medium', locales = 'en') {
 	// Safari is mad about dashes in the date
-	const dateToFormat = new Date(date.replaceAll('-', '/'))
-	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle })
-	return dateFormatter.format(dateToFormat)
+	const dateToFormat = new Date(date.replaceAll('-', '/'));
+	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle });
+	return dateFormatter.format(dateToFormat);
+}
+
+export function handleRadioChange(event: RadioOnChangeEvent): string {
+	const value = event.currentTarget.value;
+	return value;
 }

@@ -1,16 +1,8 @@
 <script lang="ts">
 	import TechniqueCard from '$components/TechniqueCard.svelte';
-	import type { Components, Level } from '$types/types';
+	import type { TechniqueMeta } from '$types/types';
 
-	type Technique = {
-		title: string;
-		description: string;
-		slug: string;
-		components: Components[];
-		level: Level;
-	};
-
-	export let techniques: Technique[] = [];
+	export let techniques: TechniqueMeta[] = [];
 </script>
 
 <ul class="techniques">
@@ -19,8 +11,8 @@
 			<TechniqueCard
 				href={`/${technique.slug}`}
 				title={technique.title}
-				description={technique.description}
-				level={technique.level}
+				description={technique.description || ''}
+				level={technique.level || undefined}
 				components={technique.components}
 			/>
 		</li>

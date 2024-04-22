@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
-import type { Technique } from '$types/types';
+import type { TechniqueMeta } from '$types/types';
 
 async function getTechniques() {
-	const techniques: Technique[] = [];
+	const techniques: TechniqueMeta[] = [];
 
 	const paths = import.meta.glob('/src/lib/techniques/*.md', { eager: true });
 
@@ -11,8 +11,8 @@ async function getTechniques() {
 		const slug = path.split('/').at(-1)?.replace('.md', '');
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata as Omit<Technique, 'slug'>;
-			const technique = { ...metadata, slug } satisfies Technique;
+			const metadata = file.metadata as Omit<TechniqueMeta, 'slug'>;
+			const technique = { ...metadata, slug } satisfies TechniqueMeta;
 
 			technique.published && techniques.push(technique);
 		}

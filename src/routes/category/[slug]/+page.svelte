@@ -4,6 +4,7 @@
 	export let data: {
 		techniques: any;
 		slug: string;
+		introText: string;
 	};
 </script>
 
