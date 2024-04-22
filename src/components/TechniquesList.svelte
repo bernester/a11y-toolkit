@@ -15,13 +15,15 @@
 
 <ul class="techniques">
 	{#each techniques as technique}
-		<TechniqueCard
-			href={`/${technique.slug}`}
-			title={technique.title}
-			description={technique.description}
-			level={technique.level}
-			components={technique.components}
-		/>
+		<li>
+			<TechniqueCard
+				href={`/${technique.slug}`}
+				title={technique.title}
+				description={technique.description}
+				level={technique.level}
+				components={technique.components}
+			/>
+		</li>
 	{/each}
 </ul>
 
