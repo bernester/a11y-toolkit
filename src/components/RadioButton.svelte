@@ -66,18 +66,19 @@
 		border-radius: 100vh;
 		margin: 4px 12px 4px 8px;
 		flex: none;
+		transition: border-width 0s;
 	}
 
 	input:checked + label {
 		.radiobutton {
 			border-color: var(--link);
-			border-width: 0.25rem;
+			border-width: 0.4rem;
 		}
 
 		&:hover {
 			.radiobutton {
 				border-color: var(--link);
-				border-width: 0.4rem;
+				border-width: 0.25rem;
 			}
 		}
 	}

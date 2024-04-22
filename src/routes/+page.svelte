@@ -66,8 +66,7 @@
 		<section class="space-3">
 			<hgroup class="category-hgroup space-2">
 				<h3 class="page-header">{category}</h3>
-				<a href={`/category/${category}?level=${$selectedLevel}`} class="btn">Show all techniques</a
-				>
+				<a href={`/category/${category}?level=${$selectedLevel}`} class="btn">show all</a>
 			</hgroup>
 			<ul class="techniques unstyled">
 				{#each Object.entries(categoriesData[category].components) as [component, count]}
@@ -97,6 +96,7 @@
 
 	.category-hgroup {
 		display: flex;
+		gap: var(--size-4);
 		justify-content: space-between;
 		align-items: center;
 	}

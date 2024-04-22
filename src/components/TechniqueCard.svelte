@@ -19,7 +19,7 @@
 			<ul class="components-list">
 				{#each components as component}
 					<li>
-						<a href="/component/{component}" class="tag surface-4">&num;{component}</a>
+						<a href="/component/{component}" class="tag link">&num;{component}</a>
 					</li>
 				{/each}
 			</ul>
@@ -63,6 +63,11 @@
 			line-height: var(--font-lineheight-1);
 			text-wrap: balance;
 			margin-bottom: var(--size-2);
+		}
+
+		&:hover {
+			background-color: var(--surface-2);
+			box-shadow: 0 0 0 2px var(--border);
 		}
 	}
 

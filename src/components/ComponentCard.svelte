@@ -32,6 +32,7 @@
 		align-items: start;
 		padding: var(--size-3) var(--size-4);
 		border-radius: var(--radius-3);
+		text-decoration: none;
 		color: var(--link);
 		box-shadow:
 			inset 0 0 0 2px var(--link),

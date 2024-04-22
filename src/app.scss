@@ -1,4 +1,7 @@
 @import '@fontsource/lexend';
+@import 'styles/normalize';
+@import 'styles/btn';
+@import 'styles/tag';
 
 $surface-1-dark: #080c13;
 $surface-1-light: #fdfbf7;
@@ -32,9 +35,9 @@ html {
 	/* light */
 	--accent-light: var(--jungle-6);
 	--brand-light: var(--orange-10);
-	--link-light: #4000ff;
-	--text-1-light: #{$surface-1-dark};
-	--text-2-light: #{lighten($surface-1-dark, 40%)};
+	--link-light: #232ac6;
+	--text-1-light: var(--gray-10);
+	--text-2-light: var(--gray-8);
 	--text-contrast-light: #{$surface-1-light};
 	--surface-1-light: #{$surface-1-light};
 	--surface-2-light: #{darken($surface-1-light, 4%)};
@@ -241,27 +244,6 @@ p {
 
 .space-3 {
 	margin-bottom: var(--size-8);
-}
-
-.tag {
-	display: inline-block;
-	padding: var(--size-1) var(--size-2);
-	font-size: var(--font-size-00);
-	font-weight: var(--bold);
-	border-radius: var(--radius-2);
-	// text-transform: uppercase;
-}
-
-.pills,
-.tags {
-	display: flex;
-	gap: var(--size-2);
-}
-
-.pill {
-	padding: var(--size-2) var(--size-3);
-	border-radius: var(--radius-round);
-	@extend .surface-2;
 }
 
 .tint-link {

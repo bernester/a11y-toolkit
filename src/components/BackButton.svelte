@@ -6,7 +6,7 @@
 	}
 </script>
 
-<button on:click={goBack} class="button">
+<button on:click={goBack} class="btn">
 	<ArrowLeft role="presentation" />
 	Go Back
 </button>

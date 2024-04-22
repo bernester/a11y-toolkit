@@ -2,6 +2,6 @@
 	export let value: string;
 </script>
 
-<div class="tag surface-4">
+<div class="tag surface-3">
 	{value}
 </div>
