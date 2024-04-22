@@ -1,7 +1,6 @@
 export type Category = 'basics' | 'content' | 'data' | 'form' | 'special components' | 'navigation';
 export type Level = 'A' | 'AA' | 'AAA';
 export type Components =
-	| string
 	| 'document'
 	| 'language'
 	| 'color'
