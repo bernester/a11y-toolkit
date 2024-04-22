@@ -16,15 +16,13 @@
 
 	function handleLevelChange(event: RadioOnChangeEvent) {
 		selectedLevel = handleRadioChange(event) as Level;
-
-		console.log(selectedLevel);
 		updateLevel(selectedLevel);
 	}
 </script>
 
 <form>
 	<fieldset class="space-3">
-		<legend class="page-subheader space-1">Select a level</legend>
+		<legend class="page-subheader space-1">Select a conformance level</legend>
 		<div class="radiobutton-group">
 			<div class="radiobutton">
 				<RadioButton value="A" isChecked={selectedLevel === 'A'} onChange={handleLevelChange}

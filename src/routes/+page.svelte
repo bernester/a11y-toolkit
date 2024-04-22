@@ -14,8 +14,8 @@
 	};
 
 	export let data;
-	$: techniqueCount = data.techniqueCount;
-	$: categoriesData = data.categoriesData;
+	$: techniqueCount = data.techniqueCount as Number;
+	$: categoriesData = data.categoriesData as CategoriesData;
 
 	let selectedLevel = getCurrentLevel($page.url);
 </script>
@@ -38,7 +38,9 @@
 		<section class="space-3">
 			<hgroup class="category-hgroup space-2">
 				<h3 class="page-header">{category}</h3>
-				<a href={`/category/${category}?level=${selectedLevel}`} class="btn">show all</a>
+				<a href={`/category/${category}?level=${selectedLevel}`} class="btn"
+					>show all <span class="sr-only">techiques for {category}</span></a
+				>
 			</hgroup>
 			<ul class="techniques unstyled">
 				{#each Object.entries(categoriesData[category].components) as [component, count]}
