@@ -43,9 +43,8 @@ export async function load({ fetch, url }) {
 			console.error('Error details:', errorResponse);
 			throw new Error('Failed to fetch data');
 		}
-		const data = await response.json();
 
-		console.log('Data to return:', { categoriesData: data, techniqueCount: techniqueCount });
+		const data = await response.json();
 
 		return {
 			categoriesData: data,
