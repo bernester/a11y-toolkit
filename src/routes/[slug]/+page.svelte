@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
-	import BackButton from '$components/BackButton.svelte';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
 
@@ -44,7 +43,6 @@
 <article>
 	<!-- Title -->
 	<hgroup>
-		<BackButton />
 		<h1 class="page-title space-2">{data.meta.title}</h1>
 		{#if data.meta.level || data.meta.components.length > 0}
 			<div class="tags space-1">
