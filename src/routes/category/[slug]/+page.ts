@@ -14,18 +14,24 @@ function getDescription(category: string) {
 
 export async function load({ fetch, params, url }) {
 	const level = (url.searchParams.get('level') as Level) || ('AA' as Level);
-	// Access the slug from the parameters
+	// get category from params.slug
 	const { slug } = params;
-	// get the description of the category
 	const introText = getDescription(slug);
 
 	const response = await fetch('../../api/techniques');
 	const techniques: TechniqueMeta[] = await response.json();
+	const techniqueGroup: Record<string, string> = {};
+
+	techniques.forEach((technique) => {
+		if (technique.category.includes(slug) && validLevels[level].includes(technique.level)) {
+			techniqueGroup[technique.title] = technique.slug;
+		}
+	});
 
 	// Filter posts to only include those where the `components` array contains the slug
 	const filteredTechniques = techniques.filter(
 		(technique) => technique.category.includes(slug) && validLevels[level].includes(technique.level)
 	);
 
-	return { techniques: filteredTechniques, introText, slug };
+	return { techniques: filteredTechniques, techniqueGroup, introText, slug };
 }

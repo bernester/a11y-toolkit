@@ -4,8 +4,7 @@
 
 <!-- Footer -->
 <footer>
-	<!-- <p>{config.title} &copy {new Date().getFullYear()}</p> -->
-	<p>{config.title}</p>
+	<!-- <p>The A11y toolkit is created </p> -->
 </footer>
 
 <style>

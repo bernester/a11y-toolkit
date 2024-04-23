@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import LevelFilter from '$components/LevelFilter.svelte';
 	import TechniquesList from '$components/TechniquesList.svelte';
@@ -10,9 +12,24 @@
 		techniques: Techniques;
 		slug: string;
 		introText: string;
+		techniqueGroup: Record<string, string>;
 	};
 
 	let selectedLevel = getCurrentLevel($page.url);
+
+	onMount(() => {
+		if (browser) {
+			let storedTechniqueGroup = localStorage.getItem('techniqueGroup');
+			if (storedTechniqueGroup) {
+				data.techniqueGroup = JSON.parse(storedTechniqueGroup);
+			}
+		}
+	});
+
+	$: if (browser) {
+		localStorage.setItem('techniqueGroup', JSON.stringify(data.techniqueGroup));
+		console.log(localStorage.getItem('techniqueGroup'));
+	}
 </script>
 
 <svelte:head>

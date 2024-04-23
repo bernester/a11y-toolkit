@@ -4,7 +4,8 @@
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
 	import type { TechniqueMeta } from '$types/types';
-	import type { SvelteComponent } from 'svelte';
+	import { type SvelteComponent } from 'svelte';
+	import TechniqueNav from '$components/TechniqueNav.svelte';
 
 	export let data: {
 		url: string;
@@ -43,7 +44,8 @@
 </svelte:head>
 
 <article>
-	<!-- Title -->
+	<TechniqueNav title={data.meta.title} style="margin-bottom: var(--size-8);" />
+
 	<hgroup>
 		<h1 class="page-title space-2">{data.meta.title}</h1>
 		{#if data.meta.level || data.meta.components.length > 0}
@@ -98,6 +100,8 @@
 			{/each}
 		</section>
 	{/if}
+
+	<TechniqueNav title={data.meta.title} style="margin-top: var(--size-10);" />
 </article>
 
 <style>
