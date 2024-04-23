@@ -8,7 +8,7 @@ components:
 published: true
 successCriteria:
   - '1.4.3'
-level: 'recommended'
+level: 'AA'
 ---
 
 User interface components like buttons should have a minimum contrast ratio of 3:1
