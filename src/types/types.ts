@@ -121,7 +121,7 @@ export type TechniqueMeta = {
 	category: Category;
 	components: Components[];
 	successCriteria?: SuccessCriterias[];
-	level?: Level;
+	level: Level;
 	source?: string;
 };
 
@@ -139,3 +139,5 @@ export type Structure = {
 		}[];
 	}[];
 };
+
+export type Techniques = TechniqueMeta[];

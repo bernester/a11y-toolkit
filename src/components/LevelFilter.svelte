@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import { page } from '$app/stores';
-	import { getCurrentLevel } from '$lib/levels';
 	import type { RadioOnChangeEvent } from '$lib/events';
 	import { handleRadioChange } from '$lib/utils';
 	import type { Level } from '$types/types';

@@ -24,18 +24,15 @@
 </div>
 
 <style>
-
-
 	.logo {
 		display: flex;
 		align-items: center;
 		column-gap: 0.5em;
 		font-size: 1.25em;
 		color: var(--text-color-default);
-
 	}
-    .logo svg {
-        width: 48px;
-        height: 48px;
-    }
+	.logo svg {
+		width: 48px;
+		height: 48px;
+	}
 </style>

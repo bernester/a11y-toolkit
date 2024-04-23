@@ -14,7 +14,7 @@
 	};
 
 	export let data;
-	$: techniqueCount = data.techniqueCount as Number;
+	$: techniqueCount = data.techniqueCount as number;
 	$: categoriesData = data.categoriesData as CategoriesData;
 
 	let selectedLevel = getCurrentLevel($page.url);

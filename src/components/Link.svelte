@@ -4,7 +4,6 @@
 
 	export let href = '';
 	export let target: '_self' | '_blank' = '_self';
-	export let style: 'default' | 'secondary' | 'tertiary' | 'button' = 'default';
 	export let ariaLabel = '';
 
 	let link: HTMLAnchorElement;
@@ -13,19 +12,12 @@
 			link.rel = 'noopener noreferrer';
 		}
 	});
-
-	const classes: Record<'default' | 'secondary' | 'button', string> = {
-		default: '',
-		secondary: 'secondary',
-		button: 'btn'
-	};
 </script>
 
 <a
 	aria-label={ariaLabel !== '' ? ariaLabel : undefined}
 	{href}
 	{target}
-	class={classes[style]}
 	bind:this={link}
 	{...$$restProps}
 >
@@ -38,10 +30,6 @@
 		color: var(--link);
 		position: relative;
 		text-underline-position: under;
-
-		&.secondary {
-			color: var(--text-2);
-		}
 	}
 
 	:global(.blank-icon) {

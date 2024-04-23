@@ -4,8 +4,9 @@
 	import TechniquesList from '$components/TechniquesList.svelte';
 	import * as config from '$lib/config';
 	import { getCurrentLevel } from '$lib/levels';
+	import type { Techniques } from '$types/types';
 	export let data: {
-		techniques: any;
+		techniques: Techniques;
 		slug: string;
 		introText: string;
 	};

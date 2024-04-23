@@ -12,7 +12,7 @@
 				href={`/${technique.slug}`}
 				title={technique.title}
 				description={technique.description || ''}
-				level={technique.level || undefined}
+				level={technique.level}
 				components={technique.components}
 			/>
 		</li>

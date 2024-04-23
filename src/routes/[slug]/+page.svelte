@@ -10,6 +10,8 @@
 		meta: any;
 	};
 
+	console.log(data.content);
+
 	function findReferences(refId: string) {
 		const criteria = wcagData[0].success_criteria;
 		const criterion = criteria.find((c) => c.ref_id === refId);
