@@ -1,3 +1,4 @@
+import { transformerNotationHighlight } from '@shikijs/transformers';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
@@ -6,6 +7,8 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import path from 'path';
+
+const THEME = 'github-dark-default';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -16,11 +19,17 @@ const mdsvexOptions = {
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
-				themes: ['poimandres'],
+				themes: [THEME],
 				langs: ['javascript', 'typescript', 'html', 'css']
 			});
-			await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
+			// await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
+			const html = escapeSvelte(
+				highlighter.codeToHtml(code, {
+					lang,
+					theme: THEME,
+					transformers: [transformerNotationHighlight()]
+				})
+			);
 			return `{@html \`${html}\` }`;
 		}
 	},
