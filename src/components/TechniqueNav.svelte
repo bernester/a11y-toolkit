@@ -22,8 +22,6 @@
 				if (currentIndex < keys.length - 1) {
 					nextEntry = techniqueGroup[keys[currentIndex + 1]];
 				}
-
-				console.log(previousEntry, nextEntry);
 			}
 		}
 	});

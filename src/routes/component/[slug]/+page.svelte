@@ -28,7 +28,6 @@
 
 	$: if (browser) {
 		localStorage.setItem('techniqueGroup', JSON.stringify(data.techniqueGroup));
-		console.log(localStorage.getItem('techniqueGroup'));
 	}
 </script>
 
