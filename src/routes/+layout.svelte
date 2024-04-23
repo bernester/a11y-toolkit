@@ -4,7 +4,6 @@
 	import PageTransition from './transition.svelte';
 
 	import 'open-props/style';
-	// import 'open-props/normalize';
 
 	import '../app.scss';
 
