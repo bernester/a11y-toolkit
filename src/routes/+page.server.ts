@@ -12,7 +12,7 @@ async function getTechniqueCount(level: Level) {
 	let techniqueCount: number = 0;
 	for (const file of files) {
 		const filePath = path.join(techniquesDir, file);
-		const fileContent = await import(filePath);
+		const fileContent = await import(/* @vite-ignore */ filePath);
 		const metadata = fileContent.metadata as TechniqueMeta;
 
 		if (metadata.published && validLevels[level].includes(metadata.level)) {
