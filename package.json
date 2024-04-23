@@ -34,6 +34,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/lexend": "^5.0.19",
+		"@jill64/svelte-sanitize": "^1.2.14",
 		"lucide-svelte": "^0.366.0",
 		"open-props": "^1.7.2",
 		"rehype-slug": "^6.0.0",

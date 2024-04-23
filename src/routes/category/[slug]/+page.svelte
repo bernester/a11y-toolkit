@@ -5,6 +5,7 @@
 	import * as config from '$lib/config';
 	import { getCurrentLevel } from '$lib/levels';
 	import type { Techniques } from '$types/types';
+	import { Render } from '@jill64/svelte-sanitize';
 	export let data: {
 		techniques: Techniques;
 		slug: string;
@@ -23,7 +24,7 @@
 	<hgroup class="space-2">
 		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
 		{#if data.introText}
-			{@html data.introText}
+			<Render html={data.introText} />
 		{/if}
 	</hgroup>
 
