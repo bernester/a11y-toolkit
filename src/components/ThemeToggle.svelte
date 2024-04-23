@@ -4,16 +4,20 @@
 	import { theme, toggleTheme } from '$lib/theme';
 </script>
 
-<button on:click={toggleTheme} aria-label="Toggle theme">
+<button on:click={toggleTheme}>
 	{#if $theme === 'dark'}
 		<div in:fly={{ y: 10 }}>
 			<Sun />
+			<span class="sr-only">Toggle to </span>
 			<span>Light</span>
+			<span class="sr-only"> theme</span>
 		</div>
 	{:else}
 		<div in:fly={{ y: -10 }}>
 			<Moon />
+			<span class="sr-only">Toggle to </span>
 			<span>Dark</span>
+			<span class="sr-only"> theme</span>
 		</div>
 	{/if}
 </button>

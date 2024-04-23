@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Toggle from '$components/Toggle.svelte';
+	import ThemeToggle from '$components/ThemeToggle.svelte';
 	import Logo from '$components/Logo.svelte';
 </script>
 
@@ -12,7 +12,7 @@
 			<a href="/about">About</a>
 		</li>
 		<li>
-			<Toggle />
+			<ThemeToggle />
 		</li>
 	</ul>
 </nav>
