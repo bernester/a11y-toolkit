@@ -4,7 +4,7 @@
 </script>
 
 <nav>
-	<a href="/" class="title">
+	<a href="/" class="title" title="A11y Toolkit homepage">
 		<Logo />
 	</a>
 	<ul class="links">
