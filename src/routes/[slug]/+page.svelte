@@ -3,14 +3,16 @@
 	import wcagData from '$lib/wcag.json';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
+	import type { TechniqueMeta } from '$types/types';
+	import type { SvelteComponent } from 'svelte';
 
 	export let data: {
 		url: string;
-		content: any;
-		meta: any;
+		content: typeof SvelteComponent;
+		meta: TechniqueMeta;
 	};
 
-	console.log(data.content);
+	console.log(typeof data.content);
 
 	function findReferences(refId: string) {
 		const criteria = wcagData[0].success_criteria;
@@ -85,7 +87,7 @@
 			{#each enrichedSuccessCriteria as { refId, details, references }}
 				<div>
 					<div class="space-2">
-						<strong>{refId} {details.title}</strong> (Level: {details.level})
+						<strong>{refId} {details?.title || ''}</strong> (Level: {details?.level || ''})
 					</div>
 					<ul class="space-2">
 						{#each references as { url, title }}
