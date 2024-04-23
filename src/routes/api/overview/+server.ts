@@ -22,7 +22,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	try {
 		for (const file of files) {
 			const filePath = path.join(techniquesDir, file);
-			const fileContent = await import(filePath);
+			const fileContent = await import(/* @vite-ignore */ filePath);
 			const metadata = fileContent.metadata as TechniqueMeta;
 
 			// Check if the post's level is included in the valid levels for the requested level
