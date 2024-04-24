@@ -19,7 +19,6 @@
 <style lang="scss">
 	.component-title {
 		font-size: var(--font-size-fluid-1);
-		text-transform: capitalize;
 	}
 
 	.component-count {

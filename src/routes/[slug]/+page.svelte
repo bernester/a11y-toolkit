@@ -67,7 +67,7 @@
 				{/if}
 				{#if data.meta.components.length > 0}
 					{#each data.meta.components as component}
-						<a href="/component/{component}" class="tag link">&num;{component}</a>
+						<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
 					{/each}
 				{/if}
 			</div>
@@ -93,7 +93,7 @@
 	</div>
 
 	{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
-		<section class="enriched">
+		<section class="box">
 			<h2 class="page-subheader space-2">Learn more about the related success criteria:</h2>
 			{#each enrichedSuccessCriteria as { refId, details, references }}
 				<div>
@@ -114,11 +114,3 @@
 
 	<TechniqueNav title={data.meta.title} style="margin-top: var(--size-10);" />
 </article>
-
-<style>
-	.enriched {
-		padding: var(--size-6);
-		background-color: var(--surface-2);
-		border-radius: var(--radius-3);
-	}
-</style>

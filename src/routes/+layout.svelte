@@ -12,9 +12,10 @@
 
 <div class="layout">
 	<!-- Header -->
+	<a href="#main-content" class="btn skip-to">Skip to main content</a>
 	<Header />
 
-	<main>
+	<main id="main-content" tabindex="-1">
 		<PageTransition url={data.url}>
 			<slot />
 		</PageTransition>
@@ -24,7 +25,7 @@
 	<Footer />
 </div>
 
-<style>
+<style lang="scss">
 	.layout {
 		height: 100%;
 		max-inline-size: 800px;
@@ -41,6 +42,17 @@
 	@media (min-width: 1440px) {
 		.layout {
 			padding-inline: 0;
+		}
+	}
+
+	.skip-to {
+		position: absolute;
+		left: 50%;
+		transform: translateY(-100%);
+		transition: transform 0.3s;
+
+		&:focus {
+			transform: translateY(0%);
 		}
 	}
 </style>

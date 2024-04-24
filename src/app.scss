@@ -1,123 +1,18 @@
+@import 'styles/theme';
+@import 'styles/surface';
 @import '@fontsource/lexend';
 @import 'styles/normalize';
 @import 'styles/btn';
 @import 'styles/tag';
 @import 'styles/prose';
 
-$surface-1-dark: #080c13;
-$surface-1-light: #fdfbf7;
-
-html {
-	/* font */
-	--font-sans: 'Lexend Variable', sans-serif;
-	--font-mono: monospace;
-
-	--size-header-1: initial;
-	--size-content-3: initial;
-
-	--font-size-00: 12px;
-
-	--bold: var(--font-weight-8);
-
-	/* dark */
-	--accent-dark: var(--cyan-3);
-	--brand-dark: var(--orange-3);
-	--link-dark: #bba5ff;
-	--text-1-dark: var(--gray-1);
-	--text-2-dark: var(--gray-3);
-	--text-contrast-dark: #{$surface-1-dark};
-	--surface-1-dark: #{$surface-1-dark};
-	--surface-2-dark: #{lighten($surface-1-dark, 4%)};
-	--surface-3-dark: #{lighten($surface-1-dark, 12%)};
-	--surface-4-dark: #{lighten($surface-1-dark, 24%)};
-	--background-dark: #{$surface-1-dark};
-	--border-dark: var(--gray-5);
-
-	/* light */
-	--accent-light: var(--jungle-6);
-	--brand-light: var(--orange-10);
-	--link-light: #232ac6;
-	--text-1-light: var(--gray-10);
-	--text-2-light: var(--gray-8);
-	--text-contrast-light: #{$surface-1-light};
-	--surface-1-light: #{$surface-1-light};
-	--surface-2-light: #{darken($surface-1-light, 4%)};
-	--surface-3-light: #{darken($surface-1-light, 12%)};
-	--surface-4-light: #{darken($surface-1-light, 24%)};
-	--background-light: #{$surface-1-light};
-	--border-light: var(--gray-4);
-}
-
-@mixin light-theme {
-	color-scheme: light;
-
-	--accent: var(--accent-light);
-	--brand: var(--brand-light);
-	--link: var(--link-light);
-	--text-1: var(--text-1-light);
-	--text-2: var(--text-2-light);
-	--text-contrast: var(--text-contrast-light);
-	--surface-1: var(--surface-1-light);
-	--surface-2: var(--surface-2-light);
-	--surface-3: var(--surface-3-light);
-	--surface-4: var(--surface-4-light);
-	--background: var(--background-light);
-	--border: var(--border-light);
-}
-
-@mixin dark-theme {
-	color-scheme: dark;
-
-	--accent: var(--accent-dark);
-	--brand: var(--brand-dark);
-	--link: var(--link-dark);
-	--text-1: var(--text-1-dark);
-	--text-2: var(--text-2-dark);
-	--text-contrast: var(--text-contrast-dark);
-	--surface-1: var(--surface-1-dark);
-	--surface-2: var(--surface-2-dark);
-	--surface-3: var(--surface-3-dark);
-	--surface-4: var(--surface-4-dark);
-	--background: var(--background-dark);
-	--border: var(--border-dark);
-}
-
-:root {
-	@include dark-theme;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		@include light-theme;
-	}
-}
-
-[color-scheme='dark'] {
-	@include dark-theme;
-}
-
-[color-scheme='light'] {
-	@include light-theme;
-}
-
-html,
-body {
-	height: 100%;
-}
-
 html {
 	color: var(--text-1);
-	/* accent-color: var(--link); */
 	background-image: var(--background);
-	background-attachment: fixed;
 }
 
 img {
 	border-radius: var(--radius-3);
-}
-
-a {
-	color: var(--link);
 }
 
 ul,
@@ -132,40 +27,6 @@ ol {
 		padding: 0;
 		list-style: none;
 	}
-}
-
-.capitalize {
-	text-transform: capitalize;
-}
-
-.surface-1 {
-	background-color: var(--surface-1);
-	color: var(--text-2);
-}
-
-.surface-2 {
-	background-color: var(--surface-2);
-	color: var(--text-2);
-}
-
-.surface-3 {
-	background-color: var(--surface-3);
-	color: var(--text-1);
-}
-
-.surface-4 {
-	background-color: var(--surface-4);
-	color: var(--text-1);
-}
-
-.accent {
-	background-color: var(--accent);
-	color: var(--text-contrast);
-}
-
-.link {
-	background-color: var(--link);
-	color: var(--text-contrast);
 }
 
 .page-title,
@@ -232,4 +93,10 @@ fieldset {
 
 body:not(:-moz-handler-blocked) fieldset {
 	display: table-cell;
+}
+
+.box {
+	padding: var(--size-6);
+	background-color: var(--surface-2);
+	border-radius: var(--radius-3);
 }

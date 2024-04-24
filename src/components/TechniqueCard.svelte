@@ -27,7 +27,7 @@
 		{#if components.length > 0}
 			{#each components as component}
 				<li>
-					<a href="/component/{component}" class="tag link">&num;{component}</a>
+					<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
 				</li>
 			{/each}
 		{/if}

@@ -29,7 +29,7 @@
 
 <!-- Posts -->
 <section>
-	<h1 class="page-title space-2 capitalize">All techniques</h1>
+	<h1 class="page-title space-2">All techniques</h1>
 
 	<TechniquesList techniques={data.techniques} />
 </section>

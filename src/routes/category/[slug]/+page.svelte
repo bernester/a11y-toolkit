@@ -42,7 +42,7 @@
 <section>
 	<Breadcrumb current={data.slug} />
 	<hgroup class="space-2">
-		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
+		<h1 class="page-title space-2">{data.slug}</h1>
 		{#if data.introText}
 			<Render html={data.introText} />
 		{/if}

@@ -1,76 +1,25 @@
 :where(html) {
-	--link: var(--indigo-7);
-	--link-visited: var(--purple-7);
-	--text-1: var(--gray-12);
-	--text-2: var(--gray-7);
-	--surface-1: var(--gray-0);
-	--surface-2: var(--gray-2);
-	--surface-3: var(--gray-3);
-	--surface-4: var(--gray-4);
-	--scrollthumb-color: var(--gray-7);
 	-webkit-text-size-adjust: none;
-	accent-color: var(--brand, var(--link));
-	background-color: var(--surface-1);
+	accent-color: var(--accent);
 	block-size: 100%;
-	caret-color: var(--brand, var(--link));
-	color: var(--text-1);
+	caret-color: var(--link);
 	color-scheme: light;
 	font-family: var(--font-sans);
 	line-height: var(--font-lineheight-3);
 	scrollbar-color: var(--scrollthumb-color) transparent;
 }
-@media (dynamic-range: high) or (color-gamut: p3) {
-	@supports (color: color(display-p3 0 0 0)) {
-		:where(html) {
-			--link: color(display-p3 0.1 0.4 1);
-			--link-visited: color(display-p3 0.6 0.2 1);
-		}
-	}
-}
-:where(html) :where(dialog) {
-	background-color: var(--surface-1);
-}
-:where(html) :where(button, .btn) {
-	--_highlight: var(--_highlight-light);
-	--_bg: var(--_bg-light);
-	--_ink-shadow: var(--_ink-shadow-light);
-}
-:where(html) :where(button, .btn) :where([type='reset']) {
-	--_text: var(--red-6);
-	--_border: var(--red-3);
-}
-:where(html)
-	:where(button, .btn, input:is([type='button'], [type='submit'], [type='reset']))[disabled] {
-	--_text: var(--gray-6);
-}
-:where(html) :where(textarea, select, input:not([type='button'], [type='submit'], [type='reset'])) {
-	background-color: var(--surface-2);
-}
-@media (prefers-color-scheme: dark) {
-	:where(html) {
-		--link: var(--indigo-3);
-		--link-visited: var(--purple-3);
-		--text-1: var(--gray-1);
-		--text-2: var(--gray-4);
-		--surface-1: var(--gray-9);
-		--surface-2: var(--gray-8);
-		--surface-3: var(--gray-7);
-		--surface-4: var(--gray-6);
-		--scrollthumb-color: var(--gray-6);
-		--shadow-strength: 10%;
-		--shadow-color: 220 40% 2%;
-		color-scheme: dark;
-	}
-}
+
 :where(a[href]) {
-	color: var(--brand, var(--link));
+	color: var(--link);
 }
+
 :where(a[href]):where(:visited) {
-	color: var(--link-visited);
+	color: var(--link);
 }
 :focus-visible {
 	outline-color: var(--link);
 }
+
 *,
 :after,
 :before {
@@ -85,11 +34,13 @@
 	border-style: solid;
 	border-width: 0;
 }
+
 @media (prefers-reduced-motion: no-preference) {
 	:where(html) {
 		scroll-behavior: smooth;
 	}
 }
+
 @media (prefers-reduced-motion: no-preference) {
 	:where(:focus-visible) {
 		transition: outline-offset 145ms var(--ease-2);
@@ -98,17 +49,21 @@
 		transition-duration: 0.25s;
 	}
 }
+
 :where(:not(:active):focus-visible) {
-	outline-offset: 5px;
+	outline-offset: 6px;
 }
+
 :where(body) {
 	min-block-size: 100%;
 }
+
 :where(h1, h2, h3, h4, h5, h6) {
 	text-wrap: balance;
 	font-weight: var(--font-weight-9);
 	line-height: var(--font-lineheight-1);
 }
+
 :where(h1) {
 	font-size: var(--font-size-8);
 	max-inline-size: var(--size-header-1);
@@ -140,6 +95,7 @@
 		text-underline-offset: 2px;
 	}
 }
+
 :where(
 		a[href],
 		area,
@@ -160,6 +116,7 @@
 	) {
 	cursor: pointer;
 }
+
 :where(
 		a[href],
 		area,
@@ -174,22 +131,24 @@
 	-webkit-tap-highlight-color: transparent;
 	touch-action: manipulation;
 }
+
 :where(a):where([href]) {
 	text-decoration-color: inherit;
 }
+
 :where(a):where([href]):where(:visited) {
 	text-decoration-color: inherit;
 }
-:where(a):where(:not(:hover)) {
-	// text-decoration: inherit;
-}
+
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
 	display: block;
 }
+
 :where(img, svg, video) {
 	block-size: auto;
 	max-inline-size: 100%;
 }
+
 :where(input, button, textarea, select),
 :where(input[type='file'])::-webkit-file-upload-button {
 	color: inherit;
