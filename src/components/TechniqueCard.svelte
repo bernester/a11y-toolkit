@@ -10,26 +10,28 @@
 </script>
 
 <div class="technique">
-	<div class="technique--left">
-		<a {href} class="technique-title">{title}</a>
-		{#if description}
-			<p>{description || 'No description available.'}</p>
-		{/if}
-		{#if components.length > 0}
-			<ul class="components-list">
-				{#each components as component}
-					<li>
-						<a href="/component/{component}" class="tag link">&num;{component}</a>
-					</li>
-				{/each}
-			</ul>
-		{/if}
-	</div>
-	<div class="technique--right">
+	<a {href} class="technique-title">{title}</a>
+	{#if description}
+		<p>{description || 'No description available.'}</p>
+	{/if}
+	<ul class="tag-list">
 		{#if level}
-			<LevelTag value={level} />
+			<li>
+				<LevelTag value="WCAG 2.2" />
+			</li>
+			<li>
+				<LevelTag value={level} />
+			</li>
 		{/if}
-	</div>
+
+		{#if components.length > 0}
+			{#each components as component}
+				<li>
+					<a href="/component/{component}" class="tag link">&num;{component}</a>
+				</li>
+			{/each}
+		{/if}
+	</ul>
 </div>
 
 <style lang="scss">
@@ -40,14 +42,11 @@
 		border-width: var(--border-size-1);
 		border-radius: var(--radius-3);
 		display: flex;
-		gap: var(--size-4);
+		flex-direction: column;
+		gap: var(--size-1);
 
-		&--left {
-			flex: 1;
-		}
-
-		&--right {
-			flex: 0;
+		a {
+			text-decoration: none;
 		}
 
 		p {
@@ -71,7 +70,7 @@
 		}
 	}
 
-	.components-list {
+	.tag-list {
 		list-style: none;
 		display: flex;
 		gap: var(--size-2);
