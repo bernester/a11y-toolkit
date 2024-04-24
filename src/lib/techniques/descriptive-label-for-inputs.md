@@ -1,5 +1,5 @@
 ---
-title: descriptive label
+title: Descriptive label
 description: Provide a descriptive label for inputs.
 date: '2024-4-15'
 category: form
