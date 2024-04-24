@@ -30,8 +30,8 @@ If a web page is part of a sequence of pages or within a complex site structure,
 
 ## Developer notes
 
-1. This example uses `aria-label` and `<h2>` to provide further orientation to users
-2. `aria-current`
+1. This example uses [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) and `<h2>` to provide further orientation to users (SC 2.4.1)
+2. (optional) [`aria-current`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current) is used to identify that Laptops refers to the current page.
 3. The ordered list `<ol>` helps to keep the logical order even when the styling is not available (SC 1.3.1)
 4. Links used in breadcrumb should be descriptive, simple and clear (SC 2.4.1, SC 3.1.1)
 5. Using standard HTML ensures that breadcrumbs work well with assistive technologies like screen readers (SC 4.1.1)
