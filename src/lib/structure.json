@@ -52,13 +52,13 @@
 				},
 				{
 					"title": "navigation",
-					"description": "<p>…<p>"
+					"description": ""
 				}
 			]
 		},
 		{
 			"title": "content",
-			"description": "<p>…<p>",
+			"description": "",
 			"components": [
 				{
 					"title": "accordion",
@@ -69,12 +69,20 @@
 					"description": "<p>Chart and data are a very important topic for accessibility. Very often they are presented in a way that is not accessible to assistive technologies like screen readers. Which by the way also means that it is not accessible to search engines.</p>"
 				},
 				{
+					"title": "headings",
+					"description": "<p>Headings create an outline for the page, similar to a term paper outline or table of contents.</p>"
+				},
+				{
 					"title": "icon",
 					"description": "<p>Icons can transport a lot of information. The following techniques ensure that this information is also accessible when using assistive technologies like screen readers or braille keyboards.</p>"
 				},
 				{
 					"title": "image",
 					"description": "<p>Images are an important element of a user interface and storytelling . They provide context and orientation. The following techniques ensure that this information is also accessible when using assistive technologies like screen readers or braille keyboards.</p>"
+				},
+				{
+					"title": "lists",
+					"description": "<p>HTML lists convey a hierarchical content structure.</p>"
 				},
 				{
 					"title": "text",
@@ -84,7 +92,7 @@
 		},
 		{
 			"title": "form",
-			"description": "<p>…<p>",
+			"description": "",
 			"components": [
 				{
 					"title": "button",
@@ -104,7 +112,7 @@
 				},
 				{
 					"title": "rating",
-					"description": "<p>…<p>"
+					"description": ""
 				}
 			]
 		}
