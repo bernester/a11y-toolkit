@@ -5,7 +5,7 @@ import type { Level, TechniqueMeta } from '$types/types';
 import { getCurrentLevel, validLevels } from '$lib/levels';
 
 // get the directory of the `.md` files with techniques
-const techniquesDir = path.resolve('src/lib/techniques');
+const techniquesDir = path.resolve('src/techniques');
 const files = fs.readdirSync(techniquesDir);
 
 async function getTechniqueCount(level: Level) {

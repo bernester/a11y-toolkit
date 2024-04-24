@@ -4,7 +4,7 @@ import type { TechniqueMeta } from '$types/types';
 async function getTechniques() {
 	const techniques: TechniqueMeta[] = [];
 
-	const paths = import.meta.glob('/src/lib/techniques/*.md', { eager: true });
+	const paths = import.meta.glob('/src/techniques/*.md', { eager: true });
 
 	for (const path in paths) {
 		const file = paths[path];

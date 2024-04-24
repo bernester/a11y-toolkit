@@ -10,7 +10,7 @@ const structurePath = 'src/lib/structure.json';
 // get the structure from the
 const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
 
-const techniquesDir = path.resolve('src/lib/techniques');
+const techniquesDir = path.resolve('src/techniques');
 const files = fs.readdirSync(techniquesDir);
 
 export const GET: RequestHandler = async ({ url }) => {
