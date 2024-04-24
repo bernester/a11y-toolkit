@@ -1,4 +1,4 @@
-export type Category = 'basics' | 'content' | 'data' | 'form' | 'special components' | 'navigation';
+export type Category = 'basics' | 'content' | 'data' | 'form' | 'navigation';
 export type Level = 'A' | 'AA' | 'AAA';
 export type Components =
 	| 'document'
@@ -22,6 +22,8 @@ export type Components =
 	| 'language switcher'
 	| 'breadcrumb'
 	| 'multi-step'
+	| 'lists'
+	| 'headings'
 	| 'link';
 export type SuccessCriterias =
 	| '1.1.1'
