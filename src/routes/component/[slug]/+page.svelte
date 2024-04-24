@@ -8,6 +8,7 @@
 	import type { TechniqueMeta } from '$types/types';
 	import { Render } from '@jill64/svelte-sanitize';
 	import { browser } from '$app/environment';
+	import Breadcrumb from '$components/Breadcrumb.svelte';
 	export let data: {
 		techniques: TechniqueMeta[];
 		slug: string;
@@ -28,6 +29,8 @@
 
 	$: if (browser) {
 		localStorage.setItem('techniqueGroup', JSON.stringify(data.techniqueGroup));
+		localStorage.setItem('parentPage', data.slug);
+		localStorage.setItem('parentType', `component`);
 	}
 </script>
 
@@ -37,6 +40,8 @@
 
 <!-- Posts -->
 <section>
+	<Breadcrumb current={data.slug} parent={undefined} />
+
 	<hgroup class="space-2">
 		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
 		{#if data.introText}

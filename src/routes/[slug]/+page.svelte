@@ -6,12 +6,18 @@
 	import type { TechniqueMeta } from '$types/types';
 	import { type SvelteComponent } from 'svelte';
 	import TechniqueNav from '$components/TechniqueNav.svelte';
+	import { browser } from '$app/environment';
+	import Breadcrumb from '$components/Breadcrumb.svelte';
 
 	export let data: {
 		url: string;
 		content: typeof SvelteComponent;
 		meta: TechniqueMeta;
 	};
+
+	let parentPage: string = browser ? localStorage.getItem('parentPage') ?? '' : '';
+	let parentType: string = browser ? localStorage.getItem('parentType') ?? '' : '';
+	let parentLevel: string = browser ? localStorage.getItem('selectedLevel') ?? '' : '';
 
 	function findReferences(refId: string) {
 		const criteria = wcagData[0].success_criteria;
@@ -44,6 +50,11 @@
 </svelte:head>
 
 <article>
+	<Breadcrumb
+		current={data.meta.title}
+		parent={{ name: parentPage, type: parentType, level: parentLevel }}
+	/>
+
 	<TechniqueNav title={data.meta.title} style="margin-bottom: var(--size-8);" />
 
 	<hgroup>

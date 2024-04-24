@@ -8,6 +8,7 @@
 	import { getCurrentLevel } from '$lib/levels';
 	import type { Techniques } from '$types/types';
 	import { Render } from '@jill64/svelte-sanitize';
+	import Breadcrumb from '$components/Breadcrumb.svelte';
 	export let data: {
 		techniques: Techniques;
 		slug: string;
@@ -28,6 +29,8 @@
 
 	$: if (browser) {
 		localStorage.setItem('techniqueGroup', JSON.stringify(data.techniqueGroup));
+		localStorage.setItem('parentPage', data.slug);
+		localStorage.setItem('parentType', `category`);
 	}
 </script>
 
@@ -37,6 +40,7 @@
 
 <!-- Posts -->
 <section>
+	<Breadcrumb current={data.slug} />
 	<hgroup class="space-2">
 		<h1 class="page-title space-2 capitalize">{data.slug}</h1>
 		{#if data.introText}

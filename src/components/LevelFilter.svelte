@@ -4,10 +4,14 @@
 	import type { Level } from '$types/types';
 	import RadioButton from './RadioButton.svelte';
 	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	export let selectedLevel: Level;
 
 	function updateLevel(newLevel: Level) {
+		if (browser) {
+			localStorage.setItem('selectedLevel', newLevel);
+		}
 		goto(`?level=${newLevel}`, { replaceState: true, keepFocus: true });
 	}
 
