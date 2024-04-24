@@ -1,0 +1,44 @@
+.prose {
+	:is(h2, h3, h4, h5, h6) {
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+		max-inline-size: initial;
+	}
+
+	:is(h2) {
+		font-size: var(--font-size-fluid-2);
+	}
+
+	:is(h3, h4, h5, h6) {
+		font-size: var(--font-size-fluid-1);
+	}
+
+	p:not(:is(h2, h3, h4, h5, h6) + p) {
+		margin-top: var(--size-7);
+	}
+
+	:is(ul, ol) {
+		list-style-type: '🔥';
+		padding-left: var(--size-5);
+	}
+
+	:is(ul, ol) li {
+		margin-block: 1em;
+		padding-inline-start: 1em;
+		text-wrap: balance;
+	}
+
+	:where(li, dd, figcaption) {
+		max-inline-size: initial;
+	}
+
+	pre {
+		max-inline-size: 100%;
+		white-space: pre-wrap;
+		padding: 1rem;
+		font-size: var(--font-size-1);
+		border-radius: var(--radius-3);
+		tab-size: 2;
+		margin-top: var(--size-7);
+	}
+}

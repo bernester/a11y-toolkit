@@ -2,13 +2,14 @@
 @import 'styles/normalize';
 @import 'styles/btn';
 @import 'styles/tag';
+@import 'styles/prose';
 
 $surface-1-dark: #080c13;
 $surface-1-light: #fdfbf7;
 
 html {
 	/* font */
-	--font-sans: 'Lexend', sans-serif;
+	--font-sans: 'Lexend Variable', sans-serif;
 	--font-mono: monospace;
 
 	--size-header-1: initial;
@@ -165,34 +166,6 @@ ol {
 .link {
 	background-color: var(--link);
 	color: var(--text-contrast);
-}
-
-.prose :is(h2, h3, h4, h5, h6) {
-	margin-top: var(--size-8);
-	margin-bottom: var(--size-3);
-}
-
-.prose p:not(:is(h2, h3, h4, h5, h6) + p) {
-	margin-top: var(--size-7);
-}
-
-.prose :is(ul, ol) {
-	list-style-type: '🔥';
-	padding-left: var(--size-5);
-}
-
-.prose :is(ul, ol) li {
-	margin-block: var(--size-2);
-	padding-inline-start: var(--size-2);
-}
-
-.prose pre {
-	max-inline-size: 100%;
-	white-space: pre-wrap;
-	padding: 1rem;
-	border-radius: 8px;
-	tab-size: 2;
-	margin-top: var(--size-7);
 }
 
 .page-title,
