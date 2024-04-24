@@ -1,10 +1,13 @@
 <script lang="ts">
 	import ThemeToggle from '$components/ThemeToggle.svelte';
 	import Logo from '$components/Logo.svelte';
+	import { browser } from '$app/environment';
+
+	let selectedLevel = browser ? localStorage.getItem('selectedLevel') : 'AA';
 </script>
 
 <nav>
-	<a href="/" class="title" title="A11y Toolkit homepage">
+	<a href="/?level={selectedLevel}" class="title" title="A11y Toolkit homepage">
 		<Logo />
 	</a>
 	<ul class="links">
