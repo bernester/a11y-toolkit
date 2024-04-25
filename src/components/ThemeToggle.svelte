@@ -22,18 +22,18 @@
 	{/if}
 </button>
 
-<style>
+<style lang="scss">
 	button {
 		padding: 0;
 		font-weight: inherit;
 		background: none;
 		border: none;
 		box-shadow: none;
-		overflow: hidden;
-	}
 
-	button > * {
-		display: flex;
-		gap: var(--size-2);
+		> div {
+			gap: var(--size-2);
+			display: inline-flex;
+			align-items: center;
+		}
 	}
 </style>

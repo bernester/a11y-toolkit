@@ -42,7 +42,7 @@
 					>show all <span class="sr-only">techiques for {category}</span></a
 				>
 			</hgroup>
-			<ul class="techniques unstyled">
+			<ul class="techniques">
 				{#each Object.entries(categoriesData[category].components) as [component, count]}
 					<li>
 						<ComponentCard {component} {count} level={selectedLevel} />
@@ -57,14 +57,21 @@
 
 <style lang="scss">
 	.techniques {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
 		align-items: start;
-		column-gap: var(--size-4);
-		row-gap: var(--size-6);
+		row-gap: var(--size-4);
 
 		li {
 			flex: 1 0;
+		}
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: var(--size-4);
+			row-gap: var(--size-6);
 		}
 	}
 

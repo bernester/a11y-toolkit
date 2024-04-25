@@ -32,7 +32,11 @@
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		margin-inline: auto;
-		padding-inline: var(--size-7);
+		padding-inline: var(--size-3);
+
+		@media (min-width: 768px) {
+			padding-inline: var(--size-7);
+		}
 	}
 
 	main {

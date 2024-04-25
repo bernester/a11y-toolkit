@@ -9,11 +9,21 @@
 			>
 		</p>
 	</div>
+	<nav>
+		<strong> A11y toolkit </strong>
+		<a href="/about">About</a>
+	</nav>
 	<!-- <p>The A11y toolkit is created </p> -->
 </footer>
 
 <style>
 	footer {
+		padding-block: var(--size-7);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
 		padding-block: var(--size-7);
 	}
 </style>
