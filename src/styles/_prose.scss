@@ -3,6 +3,7 @@
 		margin-top: 1em;
 		margin-bottom: 0.5em;
 		max-inline-size: initial;
+		line-height: var(--font-lineheight-1);
 	}
 
 	:is(h2) {
@@ -13,18 +14,18 @@
 		font-size: var(--font-size-fluid-1);
 	}
 
-	p:not(:is(h2, h3, h4, h5, h6) + p) {
-		margin-top: var(--size-7);
+	:is(ul) {
+		list-style-type: square;
 	}
 
 	:is(ul, ol) {
-		list-style-type: '🔥';
-		padding-left: var(--size-5);
+		padding-left: var(--size-8);
+		margin-bottom: var(--size-8);
 	}
 
 	:is(ul, ol) li {
 		margin-block: 1em;
-		padding-inline-start: 1em;
+		padding-inline-start: var(--size-3);
 		text-wrap: balance;
 	}
 
@@ -36,9 +37,20 @@
 		max-inline-size: 100%;
 		white-space: pre-wrap;
 		padding: 1rem;
-		font-size: var(--font-size-1);
+		font-size: var(--font-size-fluid-8);
 		border-radius: var(--radius-3);
 		tab-size: 2;
-		margin-top: var(--size-7);
+		margin-block: var(--size-8);
+	}
+
+	:is(blockquote) {
+		max-inline-size: initial;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-3);
+		margin-block: var(--size-8);
+
+		p {
+			font-size: var(--font-size-fluid-1);
+		}
 	}
 }

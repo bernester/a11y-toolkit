@@ -57,7 +57,7 @@
 
 	<TechniqueNav title={data.meta.title} style="margin-bottom: var(--size-8);" />
 
-	<hgroup>
+	<hgroup class="space-3">
 		<h1 class="page-title space-2">{data.meta.title}</h1>
 		{#if data.meta.level || data.meta.components.length > 0}
 			<div class="tags space-1">

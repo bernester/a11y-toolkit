@@ -1,0 +1,47 @@
+:root {
+	--font-size-fluid-0: clamp(0.75rem, 2vw, 1rem); // 14px min, 16px max
+	--font-size-fluid-1: clamp(1rem, 4vw, 1.5rem); // 16px min, 24px max
+	--font-size-fluid-2: clamp(1.5rem, 6vw, 2rem); // 24px min, 32px max
+	--font-size-fluid-3: clamp(2rem, 9vw, 3rem); // 32px min, 48px max
+}
+
+.page-title,
+.page-header,
+.page-subheader {
+	max-inline-size: initial;
+	line-height: var(--font-lineheight-1);
+}
+
+.page-title {
+	font-size: var(--font-size-fluid-3);
+}
+
+.page-header {
+	font-size: var(--font-size-fluid-2);
+}
+
+.page-subheader {
+	font-size: var(--font-size-fluid-1);
+}
+
+p {
+	font-size: var(--font-size-fluid-1);
+	line-height: var(--font-lineheight-3);
+	max-inline-size: initial;
+}
+
+ul,
+ol {
+	font-size: var(--font-size-fluid-1);
+	line-height: var(--font-lineheight-3);
+	padding-inline-start: var(--size-6);
+
+	li {
+		padding-inline-start: var(--size-1);
+	}
+
+	&.unstyled {
+		padding: 0;
+		list-style: none;
+	}
+}

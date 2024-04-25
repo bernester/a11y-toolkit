@@ -36,9 +36,4 @@
 	p {
 		margin-block: 1em 0.5em;
 	}
-
-	p {
-		line-height: var(--font-lineheight-3);
-		font-size: var(--font-size-3);
-	}
 </style>

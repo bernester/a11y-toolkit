@@ -51,7 +51,7 @@
 
 		p {
 			text-wrap: balance;
-			font-size: var(--font-size-1);
+			font-size: var(--font-size-fluid-0);
 			line-height: var(--font-lineheight-1);
 			color: var(--text-2);
 		}
