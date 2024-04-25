@@ -30,6 +30,7 @@
 		list-style: none;
 		padding: 0;
 		margin-block: var(--size-7);
+		font-size: var(--font-size-fluid-0);
 	}
 
 	a {

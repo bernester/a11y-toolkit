@@ -19,13 +19,14 @@
 
 <style lang="scss">
 	ol {
+		font-size: var(--font-size-fluid-0);
 		list-style: none;
 		display: flex;
 		gap: var(--size-2);
 		padding: 0;
 		margin: 0 0 var(--size-4) 0;
 		align-items: baseline;
-
+		color: var(--text-2);
 		li {
 			padding: 0;
 		}

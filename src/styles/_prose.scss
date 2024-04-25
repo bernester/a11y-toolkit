@@ -14,6 +14,10 @@
 		font-size: var(--font-size-fluid-1);
 	}
 
+	:is(p) {
+		margin-block: 1em;
+	}
+
 	:is(ul) {
 		list-style-type: square;
 	}
@@ -31,6 +35,10 @@
 
 	:where(li, dd, figcaption) {
 		max-inline-size: initial;
+	}
+
+	:where(:not(pre) > code) {
+		font-size: 0.75em;
 	}
 
 	pre {
