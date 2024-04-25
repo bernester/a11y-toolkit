@@ -6,7 +6,7 @@ components:
   - icon
 published: true
 source: https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/
-level:
+level: A
 ---
 
 ```html

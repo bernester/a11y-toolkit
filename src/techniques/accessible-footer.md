@@ -37,3 +37,5 @@ If you can't use semantic HTML give the element a specific attribute to define i
 ```html
 <div role="contentinfo" tabindex="-1" id="example-footer">&copy; 2021 Site Name</div>
 ```
+
+The [`role="contentinfo"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#roles_defined_on_mdn) role defines a footer, containing identifying information such as copyright information, navigation links, and privacy statements, found on every document within a site. This section is commonly called a footer.

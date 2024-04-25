@@ -12,7 +12,7 @@ level: A
 source: https://html.spec.whatwg.org/multipage/images.html#a-phrase-or-paragraph-with-an-alternative-graphical-representation:-charts,-diagrams,-graphs,-maps,-illustrations
 ---
 
-_Example_
+In the following example we have a flowchart in image form, with text in the alt attribute rephrasing the flowchart in prose form:
 
 ```html
 <p>
