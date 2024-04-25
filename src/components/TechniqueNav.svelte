@@ -30,18 +30,28 @@
 <div class="technique-nav" {...$$restProps}>
 	<div class="technique-nav--prev">
 		{#if previousEntry}
-			<a href={previousEntry} class="btn">
-				<ArrowLeft role="presentation" style="margin-left: -8px" />
-				<span>Previous technique</span>
+			<a href={previousEntry} class="btn icon-btn">
+				<ArrowLeft role="presentation" />
+				<span class="sr-only">Previous technique</span>
 			</a>
+		{:else}
+			<div class="btn icon-btn disabled">
+				<ArrowLeft role="presentation" />
+				<span class="sr-only">Previous technique</span>
+			</div>
 		{/if}
 	</div>
 	<div class="technique-nav--next">
 		{#if nextEntry}
-			<a href={nextEntry} class="btn">
-				<span>Next technique</span>
-				<ArrowRight role="presentation" style="margin-right: -8px" />
+			<a href={nextEntry} class="btn icon-btn">
+				<span class="sr-only">Next technique</span>
+				<ArrowRight role="presentation" />
 			</a>
+		{:else}
+			<div class="btn icon-btn disabled">
+				<span class="sr-only">Next technique</span>
+				<ArrowRight role="presentation" />
+			</div>
 		{/if}
 	</div>
 </div>
@@ -49,6 +59,6 @@
 <style lang="scss">
 	.technique-nav {
 		display: flex;
-		justify-content: space-between;
+		gap: var(--size-2);
 	}
 </style>

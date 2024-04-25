@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
-	import { SquareArrowOutUpRight } from 'lucide-svelte';
+	import { SquareArrowOutUpRight, SquareCheck, Square } from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
 	import type { TechniqueMeta } from '$types/types';
-	import { type SvelteComponent } from 'svelte';
+	import { onMount, type SvelteComponent } from 'svelte';
 	import TechniqueNav from '$components/TechniqueNav.svelte';
 	import { browser } from '$app/environment';
 	import Breadcrumb from '$components/Breadcrumb.svelte';
@@ -13,11 +13,42 @@
 		url: string;
 		content: typeof SvelteComponent;
 		meta: TechniqueMeta;
+		slug: string;
 	};
+
+	console.log(data.slug);
+
+	let resolved: boolean = false;
 
 	let parentPage: string = browser ? localStorage.getItem('parentPage') ?? '' : '';
 	let parentType: string = browser ? localStorage.getItem('parentType') ?? '' : '';
 	let parentLevel: string = browser ? localStorage.getItem('selectedLevel') ?? '' : '';
+	let resolvedList: string[];
+
+	onMount(() => {
+		if (browser) {
+			resolvedList = JSON.parse(localStorage.getItem('resolvedList') || '[]');
+			if (resolvedList.includes(data.slug)) {
+				resolved = true;
+			} else {
+				resolved = false;
+			}
+		}
+	});
+
+	function toggleResolved(technique: string) {
+		if (!resolved) {
+			resolvedList.push(technique);
+			localStorage.setItem('resolvedList', JSON.stringify(resolvedList));
+			resolved = true;
+		} else {
+			resolvedList = resolvedList.filter((item: string) => item !== technique);
+			localStorage.setItem('resolvedList', JSON.stringify(resolvedList));
+			resolved = false;
+		}
+
+		console.log(resolvedList);
+	}
 
 	function findReferences(refId: string) {
 		const criteria = wcagData[0].success_criteria;
@@ -55,7 +86,18 @@
 		parent={{ name: parentPage, type: parentType, level: parentLevel }}
 	/>
 
-	<TechniqueNav title={data.meta.title} style="margin-bottom: var(--size-8);" />
+	<div class="toolbar">
+		<button class="btn" on:click={() => toggleResolved(data.slug)}>
+			{#if resolved}
+				<SquareCheck />
+				Mark as not resolved
+			{:else}
+				<Square />
+				Mark as resolved
+			{/if}
+		</button>
+		<TechniqueNav title={data.meta.title} />
+	</div>
 
 	<hgroup class="space-3">
 		<h1 class="page-title space-2">{data.meta.title}</h1>
@@ -114,3 +156,13 @@
 
 	<TechniqueNav title={data.meta.title} style="margin-top: var(--size-10);" />
 </article>
+
+<style lang="scss">
+	.toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--size-4);
+		margin-block: var(--size-7);
+	}
+</style>
