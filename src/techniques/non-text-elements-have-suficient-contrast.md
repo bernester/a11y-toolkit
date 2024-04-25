@@ -1,5 +1,6 @@
 ---
 title: Non-text elements have sufficient contrast
+description: Ensure that the contrast between the non-text element and its background meets the minimum contrast ratio.
 date: '2024-4-15'
 category: content
 components:

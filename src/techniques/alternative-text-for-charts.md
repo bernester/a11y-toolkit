@@ -1,11 +1,10 @@
 ---
-title: Alternative text for charts
+title: User alternative text for chart graphics
 description: Use alternative text to describe the content of charts
 date: '2024-4-15'
 category: content
 components:
   - charts
-  - image
 published: true
 successCriteria:
   - '1.1.1'
