@@ -5,8 +5,8 @@
 
 <nav aria-label="Breadcrumbs">
 	<ol>
-		<li><a href="/">home</a> /</li>
-		{#if parent}
+		<li><a href="/?level={parent.level}">home</a> /</li>
+		{#if parent.name}
 			<li>
 				<a href="{parent.type ? parent.type + '/' : ''}{parent.name}?level={parent.level}"
 					>{parent.name}</a
