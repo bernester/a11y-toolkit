@@ -22,8 +22,6 @@
 		slug: string;
 	};
 
-	console.log(data.slug);
-
 	let resolved: boolean = false;
 
 	$: resolvedClass = resolved ? 'resolved' : '';
@@ -54,8 +52,6 @@
 			localStorage.setItem('resolvedList', JSON.stringify(resolvedList));
 			resolved = false;
 		}
-
-		console.log(resolvedList);
 	}
 
 	function findReferences(refId: string) {
