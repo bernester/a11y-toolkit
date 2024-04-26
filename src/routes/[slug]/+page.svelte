@@ -1,7 +1,13 @@
 <script lang="ts">
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
-	import { SquareArrowOutUpRight, SquareCheck, Square } from 'lucide-svelte';
+	import {
+		SquareArrowOutUpRight,
+		SquareCheck,
+		Square,
+		CircleCheckBig,
+		Circle
+	} from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
 	import type { TechniqueMeta } from '$types/types';
 	import { onMount, type SvelteComponent } from 'svelte';
@@ -19,6 +25,8 @@
 	console.log(data.slug);
 
 	let resolved: boolean = false;
+
+	$: resolvedClass = resolved ? 'resolved' : '';
 
 	let parentPage: string = browser ? localStorage.getItem('parentPage') ?? '' : '';
 	let parentType: string = browser ? localStorage.getItem('parentType') ?? '' : '';
@@ -87,74 +95,77 @@
 	/>
 
 	<div class="toolbar">
-		<button class="btn" on:click={() => toggleResolved(data.slug)}>
+		<button class="btn toggle-resolve" on:click={() => toggleResolved(data.slug)}>
 			{#if resolved}
-				<SquareCheck />
+				<div class="icon">
+					<CircleCheckBig />
+				</div>
 				Mark as not resolved
 			{:else}
-				<Square />
+				<div class="icon">
+					<Circle />
+				</div>
 				Mark as resolved
 			{/if}
 		</button>
 		<TechniqueNav title={data.meta.title} />
 	</div>
+	<div class={resolvedClass}>
+		<hgroup class="space-3">
+			<h1 class="page-title space-2">{data.meta.title}</h1>
+			{#if data.meta.level || data.meta.components.length > 0}
+				<div class="tags space-1">
+					{#if data.meta.level}
+						<div class="tag surface-3">WCAG 2.2</div>
+						<LevelTag value={data.meta.level} />
+					{/if}
+					{#if data.meta.components.length > 0}
+						{#each data.meta.components as component}
+							<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
+						{/each}
+					{/if}
+				</div>
+			{/if}
+		</hgroup>
 
-	<hgroup class="space-3">
-		<h1 class="page-title space-2">{data.meta.title}</h1>
-		{#if data.meta.level || data.meta.components.length > 0}
-			<div class="tags space-1">
-				{#if data.meta.level}
-					<div class="tag surface-3">WCAG 2.2</div>
-					<LevelTag value={data.meta.level} />
-				{/if}
-				{#if data.meta.components.length > 0}
-					{#each data.meta.components as component}
-						<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
-					{/each}
-				{/if}
+		<!-- Post -->
+		<div class="prose space-3">
+			<div class="space-2">
+				<svelte:component this={data.content} />
 			</div>
-		{/if}
-	</hgroup>
 
-	<!-- Post -->
-	<div class="prose space-3">
-		<div class="space-2">
-			<svelte:component this={data.content} />
+			{#if data.meta.source}
+				<a
+					aria-label={`Our source for ${data.meta.title}`}
+					href={data.meta.source}
+					target="_blank"
+					class="btn"
+					>Source of this technique <SquareArrowOutUpRight class="blank-icon" />
+					<span class="sr-only">&nbsp;Opens in a new window</span></a
+				>
+			{/if}
 		</div>
 
-		{#if data.meta.source}
-			<a
-				aria-label={`Our source for ${data.meta.title}`}
-				href={data.meta.source}
-				target="_blank"
-				class="btn"
-				>Source of this technique <SquareArrowOutUpRight class="blank-icon" />
-				<span class="sr-only">&nbsp;Opens in a new window</span></a
-			>
+		{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
+			<section class="box">
+				<h2 class="page-subheader space-2">Learn more about the related success criteria:</h2>
+				{#each enrichedSuccessCriteria as { refId, details, references }}
+					<div>
+						<div class="space-2">
+							<strong>{refId} {details?.title || ''}</strong> (Level: {details?.level || ''})
+						</div>
+						<ul class="space-2">
+							{#each references as { url, title }}
+								<li>
+									<Link href={url} target="_blank">{title}</Link>
+								</li>
+							{/each}
+						</ul>
+					</div>
+				{/each}
+			</section>
 		{/if}
 	</div>
-
-	{#if enrichedSuccessCriteria && enrichedSuccessCriteria.length > 0}
-		<section class="box">
-			<h2 class="page-subheader space-2">Learn more about the related success criteria:</h2>
-			{#each enrichedSuccessCriteria as { refId, details, references }}
-				<div>
-					<div class="space-2">
-						<strong>{refId} {details?.title || ''}</strong> (Level: {details?.level || ''})
-					</div>
-					<ul class="space-2">
-						{#each references as { url, title }}
-							<li>
-								<Link href={url} target="_blank">{title}</Link>
-							</li>
-						{/each}
-					</ul>
-				</div>
-			{/each}
-		</section>
-	{/if}
-
-	<TechniqueNav title={data.meta.title} style="margin-top: var(--size-10);" />
 </article>
 
 <style lang="scss">
@@ -163,6 +174,46 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--size-4);
+		padding-block: var(--size-4);
 		margin-block: var(--size-7);
+		margin-inline: -48px;
+		padding-inline: 48px;
+		position: sticky;
+		top: 0;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--color-surface);
+			z-index: -1;
+			backdrop-filter: blur(8px);
+			mask: linear-gradient(to top, transparent, black 50%);
+			background-color: var(--toolbar);
+		}
+	}
+
+	.resolved {
+		.page-title {
+			text-decoration: line-through;
+		}
+	}
+
+	.toggle-resolve {
+		padding-left: 0;
+		align-items: center;
+
+		.icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 48px;
+			border-right: 1px solid var(--border);
+			font-size: 24px;
+			margin-right: var(--size-2);
+		}
 	}
 </style>

@@ -25,6 +25,7 @@ html {
 	--surface-3-dark: #{lighten($surface-1-dark, 12%)};
 	--surface-4-dark: #{lighten($surface-1-dark, 24%)};
 	--background-dark: #{$surface-1-dark};
+	--toolbar-dark: #{rgba($surface-1-dark, 0.8)};
 	--border-dark: var(--gray-5);
 
 	/* light */
@@ -39,6 +40,7 @@ html {
 	--surface-3-light: #{darken($surface-1-light, 12%)};
 	--surface-4-light: #{darken($surface-1-light, 24%)};
 	--background-light: #{$surface-1-light};
+	--toolbar-light: #{rgba($surface-1-light, 0.8)};
 	--border-light: var(--gray-4);
 }
 
@@ -56,6 +58,7 @@ html {
 	--surface-3: var(--surface-3-light);
 	--surface-4: var(--surface-4-light);
 	--background: var(--background-light);
+	--toolbar: var(--toolbar-light);
 	--border: var(--border-light);
 }
 
@@ -73,6 +76,7 @@ html {
 	--surface-3: var(--surface-3-dark);
 	--surface-4: var(--surface-4-dark);
 	--background: var(--background-dark);
+	--toolbar: var(--toolbar-dark);
 	--border: var(--border-dark);
 }
 
@@ -92,4 +96,9 @@ html {
 
 [color-scheme='light'] {
 	@include light-theme;
+}
+
+body {
+	background-color: var(--background);
+	color: var(--text-1);
 }
