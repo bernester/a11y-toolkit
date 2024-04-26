@@ -143,3 +143,13 @@ export type Structure = {
 };
 
 export type Techniques = TechniqueMeta[];
+
+export type ComponentStats = {
+	[key: string]: { total: number; resolved: number };
+};
+
+export type CategoriesTree = {
+	[key: string]: {
+		components: ComponentStats;
+	};
+};

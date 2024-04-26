@@ -8,7 +8,8 @@ import { getCurrentLevel, validLevels } from '$lib/levels';
 const techniquesDir = path.resolve('src/techniques');
 const files = fs.readdirSync(techniquesDir);
 
-async function getTechniqueCount(level: Level) {
+// get the total count of techniques for the selected level
+async function getTotalCount(level: Level) {
 	let techniqueCount: number = 0;
 	for (const file of files) {
 		const filePath = path.join(techniquesDir, file);
@@ -22,25 +23,36 @@ async function getTechniqueCount(level: Level) {
 	return techniqueCount;
 }
 
-export async function load({ fetch, url }) {
+async function getSummary(level: Level) {
+	let summary: { slug: string; components: string[] }[] = [];
+
+	for (const file of files) {
+		const slug = file.replace('.md', '');
+		const filePath = path.join(techniquesDir, file);
+		const fileContent = await import(/* @vite-ignore */ filePath);
+		const metadata = fileContent.metadata as TechniqueMeta;
+
+		if (metadata.published && validLevels[level].includes(metadata.level)) {
+			const fileSummary = {
+				slug,
+				components: metadata.components
+			};
+			summary.push(fileSummary);
+		}
+	}
+
+	return summary;
+}
+
+export async function load({ url }) {
 	const currentLevel = getCurrentLevel(url);
 
 	try {
-		const techniqueCount = await getTechniqueCount(currentLevel);
-		const response = await fetch(`/api/overview?level=${currentLevel}`);
-
-		if (!response.ok) {
-			console.error('Failed to fetch data:', response.statusText);
-			// Log additional details from the response for debugging
-			const errorResponse = await response.text(); // Capture the plain text response if any
-			console.error('Error details:', errorResponse);
-			throw new Error('Failed to fetch data');
-		}
-
-		const data = await response.json();
+		const techniqueCount = await getTotalCount(currentLevel);
+		const summary = await getSummary(currentLevel);
 
 		return {
-			categoriesData: data,
+			summary: summary,
 			techniqueCount: techniqueCount
 		};
 	} catch (err) {

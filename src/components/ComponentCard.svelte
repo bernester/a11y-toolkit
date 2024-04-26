@@ -1,14 +1,14 @@
 <script lang="ts">
 	export let component: string;
-	export let count: number;
+	export let count: { total: number; resolved: number };
 	export let level: string;
 </script>
 
 <a href="/component/{component}?level={level}" class="component">
 	<strong class="component-title">{component}</strong>
 	<small class="component-count">
-		{count}
-		{#if count > 1}
+		{count.resolved || 0}/{count.total}
+		{#if count.total > 1}
 			Techniques
 		{:else}
 			Technique
