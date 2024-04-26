@@ -125,6 +125,7 @@ export type TechniqueMeta = {
 	successCriteria?: SuccessCriterias[];
 	level: Level;
 	source?: string;
+	resolved?: boolean;
 };
 
 export type CategoryData = {

@@ -22,7 +22,7 @@
 </script>
 
 <fieldset class="space-3">
-	<legend class="page-subheader space-1">Select a conformance level</legend>
+	<legend class="page-subheader space-2">Select a conformance level</legend>
 	<div class="radiobutton-group">
 		<div class="radiobutton">
 			<RadioButton

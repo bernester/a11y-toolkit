@@ -1,23 +1,66 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import TechniqueCard from '$components/TechniqueCard.svelte';
 	import type { TechniqueMeta } from '$types/types';
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 
 	export let techniques: TechniqueMeta[] = [];
+	let resolvedList: any[] = [];
+
+	onMount(async () => {
+		if (browser) {
+			resolvedList = JSON.parse(localStorage.getItem('resolvedList') || '[]');
+		}
+	});
+
+	$: {
+		if (resolvedList) {
+			techniques = techniques.map((technique) => {
+				technique.resolved = resolvedList.includes(technique.slug);
+				return technique;
+			});
+		}
+	}
 </script>
 
 <ul class="techniques">
 	{#if techniques.length > 0}
-		{#each techniques as technique}
-			<li>
-				<TechniqueCard
-					href={`/${technique.slug}`}
-					title={technique.title}
-					description={technique.description || ''}
-					level={technique.level}
-					components={technique.components}
-				/>
-			</li>
+		{#each techniques as technique, i}
+			{#if i === 0}
+				<li style="margin-top: var(--size-4)">
+					<h2 class="page-subheader">Available techniques</h2>
+				</li>
+			{/if}
+			{#if !technique.resolved}
+				<li>
+					<TechniqueCard
+						href={`/${technique.slug}`}
+						title={technique.title}
+						description={technique.description || ''}
+						level={technique.level}
+						components={technique.components}
+					/>
+				</li>
+			{/if}
+		{/each}
+		{#each techniques as technique, i}
+			{#if i === 0}
+				<li style="margin-top: var(--size-4)">
+					<h2 class="page-subheader">Resolved techniques</h2>
+				</li>
+			{/if}
+			{#if technique.resolved}
+				<li>
+					<TechniqueCard
+						href={`/${technique.slug}`}
+						title={technique.title}
+						description={technique.description || ''}
+						level={technique.level}
+						components={technique.components}
+					/>
+				</li>
+			{/if}
 		{/each}
 	{:else}
 		<li>
