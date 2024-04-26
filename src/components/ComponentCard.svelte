@@ -2,9 +2,13 @@
 	export let component: string;
 	export let count: { total: number; resolved: number };
 	export let level: string;
+
+	const resolved: boolean = count.total === count.resolved;
+
+	$: resolvedClass = resolved ? 'resolved' : '';
 </script>
 
-<a href="/component/{component}?level={level}" class="component">
+<a href="/component/{component}?level={level}" class="component {resolvedClass}">
 	<strong class="component-title">{component}</strong>
 	<small class="component-count">
 		{count.resolved || 0}/{count.total}
@@ -52,5 +56,13 @@
 			transform: translateY(4px);
 			box-shadow: inset 0 0 0 2px var(--link);
 		}
+	}
+
+	.resolved {
+		opacity: 0.6;
+		transform: translateY(2px);
+		box-shadow:
+			inset 0 0 0 2px var(--link),
+			0 2px 0 0 var(--link);
 	}
 </style>
