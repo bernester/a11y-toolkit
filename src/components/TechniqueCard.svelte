@@ -1,37 +1,62 @@
 <script lang="ts">
 	import type { Components, Level } from '$types/types';
 	import LevelTag from './LevelTag.svelte';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 
 	export let href: string;
 	export let title: string;
 	export let description: string;
 	export let level: Level;
 	export let components: Components[] = [];
+
+	let slug = href.slice(1);
+
+	let resolved: boolean = false;
+	let resolvedList: string[];
+	$: resolvedClass = resolved ? 'resolved' : '';
+
+	onMount(() => {
+		if (browser) {
+			resolvedList = JSON.parse(localStorage.getItem('resolvedList') || '[]');
+			if (resolvedList.includes(slug)) {
+				resolved = true;
+			} else {
+				resolved = false;
+			}
+		}
+	});
 </script>
 
-<div class="technique">
+<div class="technique {resolvedClass}">
+	{#if resolved}
+		<div class="sr-only">Marked as resolved:</div>
+	{/if}
+
 	<a {href} class="technique-title">{title}</a>
-	{#if description}
+	{#if description && !resolved}
 		<p>{description || 'No description available.'}</p>
 	{/if}
-	<ul class="tag-list">
-		{#if level}
-			<li>
-				<LevelTag value="WCAG 2.2" />
-			</li>
-			<li>
-				<LevelTag value={level} />
-			</li>
-		{/if}
-
-		{#if components.length > 0}
-			{#each components as component}
+	{#if !resolved}
+		<ul class="tag-list">
+			{#if level}
 				<li>
-					<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
+					<LevelTag value="WCAG 2.2" />
 				</li>
-			{/each}
-		{/if}
-	</ul>
+				<li>
+					<LevelTag value={level} />
+				</li>
+			{/if}
+
+			{#if components.length > 0}
+				{#each components as component}
+					<li>
+						<a href="/component/{component}" class="tag surface-link">&num;{component}</a>
+					</li>
+				{/each}
+			{/if}
+		</ul>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -67,6 +92,15 @@
 		&:hover {
 			background-color: var(--surface-2);
 			box-shadow: 0 0 0 2px var(--border);
+		}
+
+		&.resolved {
+			opacity: 0.6;
+
+			.technique-title {
+				text-decoration: line-through;
+				margin-bottom: 0;
+			}
 		}
 	}
 
