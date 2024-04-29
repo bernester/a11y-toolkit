@@ -50,7 +50,5 @@
 
 	<LevelFilter {selectedLevel} />
 
-	<h2 class="page-subheader space-2">Accessibility Techniques:</h2>
-
 	<TechniquesList techniques={data.techniques} />
 </section>
