@@ -45,12 +45,12 @@
 			{/if}
 		{/each}
 		{#each techniques as technique, i}
-			{#if i === 0}
-				<li style="margin-top: var(--size-4)">
-					<h2 class="page-subheader">Resolved techniques</h2>
-				</li>
-			{/if}
 			{#if technique.resolved}
+				{#if i === 0}
+					<li style="margin-top: var(--size-4)">
+						<h2 class="page-subheader">Resolved techniques</h2>
+					</li>
+				{/if}
 				<li>
 					<TechniqueCard
 						href={`/${technique.slug}`}
