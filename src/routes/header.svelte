@@ -1,9 +1,11 @@
 <script lang="ts">
 	import ThemeToggle from '$components/ThemeToggle.svelte';
 	import Logo from '$components/Logo.svelte';
-	import { browser } from '$app/environment';
+	import type { Level } from '$types/types';
+	import { getCurrentLevel } from '$lib/levels';
+	import { page } from '$app/stores';
 
-	let selectedLevel = browser ? localStorage.getItem('selectedLevel') : 'AA';
+	$: selectedLevel = getCurrentLevel($page.url) as Level;
 </script>
 
 <nav>

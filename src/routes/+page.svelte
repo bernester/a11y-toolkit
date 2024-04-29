@@ -13,9 +13,9 @@
 	$: techniqueCount = data.techniqueCount as number;
 	$: componentStats = {} as ComponentStats;
 	$: categoryTree = {} as CategoriesTree;
+	$: selectedLevel = getCurrentLevel($page.url) as Level;
 
 	let structure: Structure;
-	let selectedLevel: Level = getCurrentLevel($page.url);
 	let resolvedList: string[] = [];
 
 	onMount(async () => {
