@@ -7,6 +7,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import type { CategoriesTree, ComponentStats, Level, Structure } from '$types/types.js';
+	import ResetResolved from '$components/ResetResolved.svelte';
 	export let data;
 
 	$: techniqueCount = data.techniqueCount as number;
@@ -65,11 +66,15 @@
 </svelte:head>
 
 {#if categoryTree}
-	<h1 class="page-title space-3">
-		<span class="tint-link">
-			{techniqueCount || 0} techniques
-		</span> to avoid the most common accessibility failures.
-	</h1>
+	<hgroup class="space-3">
+		<h1 class="page-title space-2">
+			<span class="tint-link">
+				{techniqueCount || 0} techniques
+			</span> to avoid the most common accessibility failures.
+		</h1>
+
+		<ResetResolved />
+	</hgroup>
 
 	<LevelFilter {selectedLevel} />
 
