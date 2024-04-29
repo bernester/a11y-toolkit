@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 
 	export let techniques: TechniqueMeta[] = [];
-	let resolvedList: any[] = [];
+	let resolvedList: string[] = [];
 
 	onMount(async () => {
 		if (browser) {

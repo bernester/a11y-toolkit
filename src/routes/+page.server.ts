@@ -24,7 +24,7 @@ async function getTotalCount(level: Level) {
 }
 
 async function getSummary(level: Level) {
-	let summary: { slug: string; components: string[] }[] = [];
+	const summary: { slug: string; components: string[] }[] = [];
 
 	for (const file of files) {
 		const slug = file.replace('.md', '');

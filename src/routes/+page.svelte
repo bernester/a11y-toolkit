@@ -15,7 +15,7 @@
 
 	let structure: Structure;
 	let selectedLevel: Level = getCurrentLevel($page.url);
-	let resolvedList: any[] = [];
+	let resolvedList: string[] = [];
 
 	onMount(async () => {
 		// get the structure.json file

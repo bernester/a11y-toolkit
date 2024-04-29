@@ -1,13 +1,7 @@
 <script lang="ts">
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
-	import {
-		SquareArrowOutUpRight,
-		SquareCheck,
-		Square,
-		CircleCheckBig,
-		Circle
-	} from 'lucide-svelte';
+	import { SquareArrowOutUpRight, CircleCheckBig, Circle } from 'lucide-svelte';
 	import LevelTag from '$components/LevelTag.svelte';
 	import type { TechniqueMeta } from '$types/types';
 	import { onMount, type SvelteComponent } from 'svelte';
