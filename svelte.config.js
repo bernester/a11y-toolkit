@@ -23,7 +23,7 @@ const mdsvexOptions = {
 				themes: [THEME],
 				langs: ['javascript', 'typescript', 'html', 'css']
 			});
-			// await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
+			await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
 			const html = escapeSvelte(
 				highlighter.codeToHtml(code, {
 					lang,
