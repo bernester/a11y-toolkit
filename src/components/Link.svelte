@@ -21,7 +21,7 @@
 	bind:this={link}
 	{...$$restProps}
 >
-	<slot />{#if target === '_blank'}<SquareArrowOutUpRight class="blank-icon" />
+	<slot />{#if target === '_blank'}<SquareArrowOutUpRight class="blank-icon" role="presentation" />
 		<span class="sr-only">&nbsp;Opens in a new window</span>{/if}
 </a>
 

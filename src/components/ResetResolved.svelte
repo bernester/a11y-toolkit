@@ -19,7 +19,7 @@
 
 {#if resolvedList.length > 0}
 	<button class="btn" on:click={resetResolved}>
-		<ListRestart />
+		<ListRestart role="presentation" />
 		reset resolved
 	</button>
 {/if}

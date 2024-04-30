@@ -7,14 +7,14 @@
 <button on:click={toggleTheme}>
 	{#if $theme === 'dark'}
 		<div in:fly={{ y: 10 }}>
-			<Sun />
+			<Sun role="presentation" />
 			<span class="sr-only">Toggle to </span>
 			<span>Light</span>
 			<span class="sr-only"> theme</span>
 		</div>
 	{:else}
 		<div in:fly={{ y: -10 }}>
-			<Moon />
+			<Moon role="presentation" />
 			<span class="sr-only">Toggle to </span>
 			<span>Dark</span>
 			<span class="sr-only"> theme</span>

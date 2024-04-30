@@ -9,7 +9,6 @@
 	import TechniqueNav from '$components/TechniqueNav.svelte';
 	import { browser } from '$app/environment';
 	import Breadcrumb from '$components/Breadcrumb.svelte';
-	import TechniqueCard from '$components/TechniqueCard.svelte';
 
 	export let data: {
 		url: string;
@@ -90,12 +89,12 @@
 		<button class="btn toggle-resolve" on:click={() => toggleResolved(data.slug)}>
 			{#if resolved}
 				<div class="icon">
-					<CircleCheckBig />
+					<CircleCheckBig role="presentation" />
 				</div>
 				Mark as not resolved
 			{:else}
 				<div class="icon">
-					<Circle />
+					<Circle role="presentation" />
 				</div>
 				Mark as resolved
 			{/if}
