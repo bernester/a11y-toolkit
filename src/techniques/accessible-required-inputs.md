@@ -1,5 +1,5 @@
 ---
-title: Accessible required inputs
+title: Identify required inputs
 description: Visibly mark required inputs
 date: '2024-4-15'
 category: form

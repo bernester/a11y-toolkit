@@ -1,5 +1,5 @@
 ---
-title: Invisible labels
+title: Invisible labels for inputs
 description: Use aria-label to provide an invisible label where a visible label cannot be used
 date: '2024-4-15'
 category: form
