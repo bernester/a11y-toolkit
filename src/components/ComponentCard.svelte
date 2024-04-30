@@ -3,8 +3,9 @@
 	export let count: { total: number; resolved: number };
 	export let level: string;
 
-	const resolved: boolean = count.total === count.resolved;
+	let resolved: boolean;
 
+	$: resolved = count.total === count.resolved;
 	$: resolvedClass = resolved ? 'resolved' : '';
 </script>
 
