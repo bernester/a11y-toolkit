@@ -1,23 +1,24 @@
 import { error } from '@sveltejs/kit';
-import fs from 'fs';
-import path from 'path';
-import type { Level, TechniqueMeta } from '$types/types';
+import structureJson from '$lib/data/structure.json';
+import type { Level, Structure, TechniqueMeta } from '$types/types';
 import { getCurrentLevel, validLevels } from '$lib/levels';
-
-// get the directory of the `.md` files with techniques
-const techniquesDir = path.resolve('src/techniques');
-const files = fs.readdirSync(techniquesDir);
 
 // get the total count of techniques for the selected level
 async function getTotalCount(level: Level) {
 	let techniqueCount: number = 0;
-	for (const file of files) {
-		const filePath = path.join(techniquesDir, file);
-		const fileContent = await import(/* @vite-ignore */ filePath);
-		const metadata = fileContent.metadata as TechniqueMeta;
 
-		if (metadata.published && validLevels[level].includes(metadata.level)) {
-			techniqueCount++;
+	const paths = import.meta.glob('/src/techniques/*.md', { eager: true });
+
+	for (const path in paths) {
+		const file = paths[path];
+		const slug = path.split('/').at(-1)?.replace('.md', '');
+
+		if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			const metadata = file.metadata as Omit<TechniqueMeta, 'slug'>;
+
+			if (metadata.published && validLevels[level].includes(metadata.level)) {
+				techniqueCount++;
+			}
 		}
 	}
 	return techniqueCount;
@@ -25,19 +26,22 @@ async function getTotalCount(level: Level) {
 
 async function getSummary(level: Level) {
 	const summary: { slug: string; components: string[] }[] = [];
+	const paths = import.meta.glob('/src/techniques/*.md', { eager: true });
 
-	for (const file of files) {
-		const slug = file.replace('.md', '');
-		const filePath = path.join(techniquesDir, file);
-		const fileContent = await import(/* @vite-ignore */ filePath);
-		const metadata = fileContent.metadata as TechniqueMeta;
+	for (const path in paths) {
+		const file = paths[path];
+		const slug = path.split('/').at(-1)?.replace('.md', '');
 
-		if (metadata.published && validLevels[level].includes(metadata.level)) {
-			const fileSummary = {
-				slug,
-				components: metadata.components
-			};
-			summary.push(fileSummary);
+		if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			const metadata = file.metadata as Omit<TechniqueMeta, 'slug'>;
+
+			if (metadata.published && validLevels[level].includes(metadata.level)) {
+				const fileSummary = {
+					slug,
+					components: metadata.components
+				};
+				summary.push(fileSummary);
+			}
 		}
 	}
 
@@ -45,15 +49,16 @@ async function getSummary(level: Level) {
 }
 
 export async function load({ url }) {
-	const currentLevel = getCurrentLevel(url);
-
 	try {
+		const currentLevel = getCurrentLevel(url);
+		const structure: Structure = structureJson;
 		const techniqueCount = await getTotalCount(currentLevel);
 		const summary = await getSummary(currentLevel);
 
 		return {
 			summary: summary,
-			techniqueCount: techniqueCount
+			techniqueCount: techniqueCount,
+			structure: structure
 		};
 	} catch (err) {
 		// Check if the error is an instance of Error

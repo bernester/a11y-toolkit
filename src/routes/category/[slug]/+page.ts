@@ -1,5 +1,5 @@
 import type { Level, Structure, TechniqueMeta } from '$types/types';
-import structureJson from '$lib/structure.json';
+import structureJson from '$lib/data/structure.json';
 import { validLevels } from '$lib/levels';
 
 const structure: Structure = structureJson;

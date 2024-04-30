@@ -6,7 +6,7 @@
 	import LevelFilter from '$components/LevelFilter.svelte';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
-	import type { CategoriesTree, ComponentStats, Level, Structure } from '$types/types.js';
+	import type { CategoriesTree, ComponentStats, Level } from '$types/types.js';
 	import ResetResolved from '$components/ResetResolved.svelte';
 	export let data;
 
@@ -14,15 +14,11 @@
 	$: componentStats = {} as ComponentStats;
 	$: categoryTree = {} as CategoriesTree;
 	$: selectedLevel = getCurrentLevel($page.url) as Level;
+	$: structure = data.structure;
 
-	let structure: Structure;
 	let resolvedList: string[] = [];
 
 	onMount(async () => {
-		// get the structure.json file
-		const structureJson = await fetch('/src/lib/structure.json');
-		structure = await structureJson.json();
-
 		// get the list of resolved techniques
 		// from the local storage
 		if (browser) {
