@@ -9,8 +9,13 @@
 	font-size: var(--font-size-1);
 	line-height: var(---font-lineheight-1);
 	border-radius: var(--radius-2);
-	border: 1px solid var(--border);
+	box-shadow: inset 0 0 0 1px var(--border);
 	gap: var(--size-2);
+	background-color: var(--background);
+
+	@media (forced-colors: active) {
+		border: 2px solid LinkText;
+	}
 
 	&:not(.disabled) {
 		background-color: var(--surface-2);
@@ -18,10 +23,13 @@
 		cursor: pointer;
 
 		&:hover {
-			box-shadow: inset 0 0 0 1px var(--link);
-			border-color: var(--link);
+			box-shadow: inset 0 0 0 2px var(--link);
 			color: var(--link);
 		}
+	}
+
+	&:hover {
+		text-decoration: none;
 	}
 
 	&.disabled {

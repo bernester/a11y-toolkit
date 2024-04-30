@@ -171,18 +171,20 @@
 		position: sticky;
 		top: 0;
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: var(--color-surface);
-			z-index: -1;
-			backdrop-filter: blur(8px);
-			mask: linear-gradient(to top, transparent, black 50%);
-			background-color: var(--toolbar);
+		@media (forced-colors: none) {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: var(--color-surface);
+				z-index: -1;
+				backdrop-filter: blur(8px);
+				mask: linear-gradient(to top, transparent, black 50%);
+				background-color: var(--toolbar);
+			}
 		}
 	}
 
