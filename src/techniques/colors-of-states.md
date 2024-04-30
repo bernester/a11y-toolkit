@@ -1,5 +1,5 @@
 ---
-title: Colors of states
+title: Colors of interative states
 description: Define colors for states with sufficient contrast.
 date: '2024-4-15'
 category: basics
@@ -12,6 +12,8 @@ level: AA
 ---
 
 Interactive elements have different states like `:hover`, `:focus`, `:active`, `:visited`, `:disabled`. When defining the color palette for your UI also think about colors for these states and check the compliance with a contrast color.
+
+> Important: Keep in mind that you should not rely on colors only to visualise the state if an interactive element.
 
 ```css
 --primary: #9b293c;
