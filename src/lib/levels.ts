@@ -8,5 +8,9 @@ export const validLevels: Record<Level, (string | undefined)[]> = {
 };
 
 export function getCurrentLevel(url: URL): Level {
-	return (url.searchParams.get('level') as Level) || ('AA' as Level);
+	const level = url.searchParams.get('level') as Level;
+	if (level && Object.keys(validLevels).includes(level)) {
+		return level;
+	}
+	return 'AA'; // Default level if the provided level is invalid or not provided
 }
