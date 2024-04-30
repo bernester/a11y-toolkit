@@ -1,6 +1,6 @@
 :root {
 	--font-size-fluid-0: clamp(0.75rem, 2vw, 1rem); // 14px min, 16px max
-	--font-size-fluid-1: clamp(1rem, 4vw, 1.5rem); // 16px min, 24px max
+	--font-size-fluid-1: clamp(1rem, 4vw, 1.25rem); // 16px min, 20px max
 	--font-size-fluid-2: clamp(1.5rem, 6vw, 2rem); // 24px min, 32px max
 	--font-size-fluid-3: clamp(2rem, 9vw, 3rem); // 32px min, 48px max
 }
