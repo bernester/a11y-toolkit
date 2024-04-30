@@ -91,6 +91,10 @@
 				{
 					"title": "text",
 					"description": "<p>Content is king. This is also a good reason why you should make sure that the king is accessible for everyone.  A good color contrast and font-size ensures that your audience actually can read the content. Even if the sun shines on their monitor.</p>"
+				},
+				{
+					"title": "tooltip",
+					"description": "<p>Tooltips display additional information upon hover or focus that is contextual, helpful, and nonessential while providing the ability to communicate and give clarity to a user.</p>"
 				}
 			]
 		},

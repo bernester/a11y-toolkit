@@ -25,7 +25,8 @@ export type Components =
 	| 'lists'
 	| 'headings'
 	| 'link'
-	| 'title';
+	| 'title'
+	| 'tooltip';
 export type SuccessCriterias =
 	| '1.1.1'
 	| '1.2.1'
