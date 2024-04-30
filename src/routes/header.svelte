@@ -8,7 +8,7 @@
 	$: selectedLevel = getCurrentLevel($page.url) as Level;
 </script>
 
-<nav>
+<nav aria-label="Header nav">
 	<a href="/?level={selectedLevel}" class="title" title="A11y Toolkit homepage">
 		<Logo />
 	</a>

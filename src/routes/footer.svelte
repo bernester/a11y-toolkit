@@ -9,7 +9,7 @@
 			>
 		</p>
 	</div>
-	<nav>
+	<nav aria-label="Footer nav">
 		<strong> A11y toolkit </strong>
 		<a href="/about">About</a>
 	</nav>
