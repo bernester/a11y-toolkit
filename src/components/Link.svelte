@@ -29,7 +29,6 @@
 	a {
 		color: var(--link);
 		position: relative;
-		text-underline-position: under;
 	}
 
 	:global(.blank-icon) {

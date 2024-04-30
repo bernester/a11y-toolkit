@@ -11,6 +11,11 @@
 
 :where(a[href]) {
 	color: var(--link);
+	text-underline-position: under;
+
+	&:hover {
+		text-decoration-thickness: 0.2em;
+	}
 }
 
 :where(a[href]):where(:visited) {
