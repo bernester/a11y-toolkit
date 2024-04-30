@@ -14,3 +14,9 @@ export function getCurrentLevel(url: URL): Level {
 	}
 	return 'AA'; // Default level if the provided level is invalid or not provided
 }
+
+export const levelDescriptions = {
+	A: 'basic',
+	AA: 'recommended',
+	AAA: 'advanced'
+};

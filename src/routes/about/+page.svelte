@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>What's the A11y toolkit?</title>
+	<title>What is the A11y toolkit?</title>
 </svelte:head>
 
 <h1>What's the A11y toolkit?</h1>

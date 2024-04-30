@@ -4,8 +4,8 @@
 	import LevelFilter from '$components/LevelFilter.svelte';
 	import TechniquesList from '$components/TechniquesList.svelte';
 	import * as config from '$lib/config';
-	import { getCurrentLevel } from '$lib/levels';
-	import type { TechniqueMeta } from '$types/types';
+	import { getCurrentLevel, levelDescriptions } from '$lib/levels';
+	import type { Level, TechniqueMeta } from '$types/types';
 	import { Render } from '@jill64/svelte-sanitize';
 	import { browser } from '$app/environment';
 	import Breadcrumb from '$components/Breadcrumb.svelte';
@@ -16,7 +16,7 @@
 		techniqueGroup: Record<string, string>;
 	};
 
-	let selectedLevel = getCurrentLevel($page.url);
+	let selectedLevel: Level = 'AA';
 
 	onMount(() => {
 		if (browser) {
@@ -28,6 +28,7 @@
 	});
 
 	$: if (browser) {
+		selectedLevel = getCurrentLevel($page.url);
 		localStorage.setItem('techniqueGroup', JSON.stringify(data.techniqueGroup));
 		localStorage.setItem('parentPage', data.slug);
 		localStorage.setItem('parentType', `component`);
@@ -35,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>{config.title} - techniques for {data.slug}</title>
+	<title>{levelDescriptions[selectedLevel]} techniques for {data.slug} | {config.title}</title>
 </svelte:head>
 
 <!-- Posts -->

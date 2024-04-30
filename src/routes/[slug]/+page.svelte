@@ -1,4 +1,5 @@
 <script lang="ts">
+	import * as config from '$lib/config';
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
 	import { SquareArrowOutUpRight, CircleCheckBig, Circle } from 'lucide-svelte';
@@ -8,6 +9,7 @@
 	import TechniqueNav from '$components/TechniqueNav.svelte';
 	import { browser } from '$app/environment';
 	import Breadcrumb from '$components/Breadcrumb.svelte';
+	import TechniqueCard from '$components/TechniqueCard.svelte';
 
 	export let data: {
 		url: string;
@@ -73,7 +75,7 @@
 
 <!-- SEO -->
 <svelte:head>
-	<title>{data.meta.title}</title>
+	<title>{data.meta.title} | Technique | {config.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>

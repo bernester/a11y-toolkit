@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as config from '$lib/config';
 	import ComponentCard from '$components/ComponentCard.svelte';
-	import { getCurrentLevel } from '$lib/levels.js';
+	import { getCurrentLevel, levelDescriptions } from '$lib/levels.js';
 	import { page } from '$app/stores';
 	import LevelFilter from '$components/LevelFilter.svelte';
 	import { browser } from '$app/environment';
@@ -58,7 +58,9 @@
 </script>
 
 <svelte:head>
-	<title>{config.title}</title>
+	<title>
+		{levelDescriptions[selectedLevel]} techniques for accessibility champions - {config.title}
+	</title>
 </svelte:head>
 
 {#if categoryTree}
