@@ -16,9 +16,10 @@ Buttons are for clicking. By ensuring that they are big enough, you make sure th
 Here is one example how you could ensure a clickable area of min. 44x44px:
 
 ```css
-…
-font-size: 16px;
-line-height: 20px;
-padding: 12px 24px;
-…
+/* line-height in padding combined create a height of at least 44px*/
+.btn {
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 24px;
+}
 ```
