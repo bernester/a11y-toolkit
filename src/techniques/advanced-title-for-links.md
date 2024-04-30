@@ -1,6 +1,6 @@
 ---
 title: Advanced title for links
-description: Ese the title attribute for links to help users predict where they are going.
+description: Use the title attribute for links to help users predict where they are going.
 date: '2024-4-15'
 category: navigation
 components:
@@ -15,7 +15,7 @@ source: https://www.nngroup.com/articles/title-attribute/
 
 ## Appropriate reasons to use a title attribute for links:
 
-### Link leads to an external site
+The link leads to an external site:
 
 ```html
 <a
@@ -26,13 +26,13 @@ source: https://www.nngroup.com/articles/title-attribute/
 </a>
 ```
 
-### Link leads to a sub-site on the same website
+The link leads to a sub-site on the same website:
 
 ```html
 <a href="" title="Member Area: Your Profile"> My profile </a>
 ```
 
-### Additional information about the content type on the linked page
+There is additional information about the content type on the linked page:
 
 ```html
 <a
@@ -43,7 +43,7 @@ source: https://www.nngroup.com/articles/title-attribute/
 </a>
 ```
 
-### Warnings about possible problems at the other end of the link (for example, "Subscription required")
+There is a warning about possible problems at the other end of the link (for example, "Subscription required")
 
 ```html
 <a
@@ -54,7 +54,7 @@ source: https://www.nngroup.com/articles/title-attribute/
 </a>
 ```
 
-### General guidelines for using the titles attribute for links
+## General guidelines for using the titles attribute for links
 
 - The title helps users predict what will happen if they follow a link.
 - The link itself doesn't require the title to be useful.

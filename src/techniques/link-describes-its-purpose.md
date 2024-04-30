@@ -12,11 +12,13 @@ level: AAA
 source: https://www.w3.org/WAI/WCAG21/Techniques/general/G91.html
 ---
 
+**Example:**
+
 ```html
 <a href="routes.html"> Current routes at Boulders Climbing Gym </a>
 ```
 
-### Guidelines for links
+## Guidelines for links
 
 - Don't include the word "link" inside a link. Most screen readers say "link" before each link. For example, a "products" link would be read as "link products" by JAWS.
 - Avoid "click here," "more," "click for details," and similar ambiguous phrases. Links should make sense out of context.
