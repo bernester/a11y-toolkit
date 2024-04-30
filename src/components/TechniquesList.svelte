@@ -27,12 +27,12 @@
 <ul class="techniques">
 	{#if techniques.length > 0}
 		{#each techniques as technique, i}
-			{#if i === 0}
-				<li style="margin-top: var(--size-4)">
-					<h2 class="page-subheader">Available techniques:</h2>
-				</li>
-			{/if}
 			{#if !technique.resolved}
+				{#if i === 0}
+					<li style="margin-top: var(--size-4)">
+						<h2 class="page-subheader">Available techniques:</h2>
+					</li>
+				{/if}
 				<li>
 					<TechniqueCard
 						href={`/${technique.slug}`}
