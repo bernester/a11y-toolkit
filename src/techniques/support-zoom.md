@@ -23,3 +23,10 @@ People with low vision need the ability to enlarge the page on mobile and deskto
 	/>
 </head>
 ```
+
+## How to test for web
+
+| When I use | I see/hear                                                    |
+| ---------- | ------------------------------------------------------------- |
+| Tab        | Enters the page and visibly focuses only interactive elements |
+| Zoom       | Content zooms up to 200%                                      |

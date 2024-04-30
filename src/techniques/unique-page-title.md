@@ -4,7 +4,7 @@ description: Give users orientation with a unique page title
 date: '2024-4-15'
 category: basics
 components:
-  - document
+  - title
 published: true
 successCriteria:
   - '2.4.2'
@@ -35,3 +35,6 @@ If the URL changes, your page needs title unique to that page.
 <!-- A screenreader will read this as: 
 Page title minus colon colon minus section title minus colon colon minus site name -->
 ```
+
+Also check our this article about [The Sound of the Accessible Title Text Separator
+](https://www.standards-schmandards.com/index.html%3Fp=15.html)
