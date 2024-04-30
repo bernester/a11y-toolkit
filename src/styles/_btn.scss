@@ -9,7 +9,6 @@
 	font-size: var(--font-size-1);
 	line-height: var(---font-lineheight-1);
 	border-radius: var(--radius-2);
-	box-shadow: inset 0 0 0 1px var(--border);
 	gap: var(--size-2);
 	background-color: var(--background);
 
@@ -20,6 +19,7 @@
 	&:not(.disabled) {
 		background-color: var(--surface-2);
 		color: var(--link);
+		box-shadow: inset 0 0 0 1px var(--link);
 		cursor: pointer;
 
 		&:hover {
@@ -30,6 +30,10 @@
 
 	&:hover {
 		text-decoration: none;
+	}
+
+	&:active {
+		transform: translateY(2px);
 	}
 
 	&.disabled {
