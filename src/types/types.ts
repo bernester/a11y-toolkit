@@ -24,7 +24,8 @@ export type Components =
 	| 'multi-step'
 	| 'lists'
 	| 'headings'
-	| 'link';
+	| 'link'
+	| 'title';
 export type SuccessCriterias =
 	| '1.1.1'
 	| '1.2.1'

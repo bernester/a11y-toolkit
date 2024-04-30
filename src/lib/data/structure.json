@@ -31,6 +31,10 @@
 				{
 					"title": "main",
 					"description": "<p>The main element is an important landmark and belongs to the main structure of your document.</p>"
+				},
+				{
+					"title": "title",
+					"description": "<p>Document titles are often the first thing user enounter.</p>"
 				}
 			]
 		},
