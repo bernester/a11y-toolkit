@@ -7,7 +7,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import type { CategoriesTree, ComponentStats, Level } from '$types/types.js';
-	import ResetResolved from '$components/ResetResolved.svelte';
+	import { ListRestart } from 'lucide-svelte';
 	export let data;
 
 	$: techniqueCount = data.techniqueCount as number;
@@ -17,6 +17,11 @@
 	$: structure = data.structure;
 
 	let resolvedList: string[] = [];
+
+	function resetResolved() {
+		localStorage.setItem('resolvedList', '[]');
+		location.reload();
+	}
 
 	onMount(async () => {
 		// get the list of resolved techniques
@@ -71,7 +76,12 @@
 			</span> to avoid the most common accessibility failures.
 		</h1>
 
-		<ResetResolved />
+		{#if resolvedList.length > 0}
+			<button class="btn" on:click={resetResolved}>
+				<ListRestart role="presentation" />
+				reset resolved
+			</button>
+		{/if}
 	</hgroup>
 
 	<LevelFilter {selectedLevel} />
