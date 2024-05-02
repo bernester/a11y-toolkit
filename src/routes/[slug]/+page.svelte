@@ -3,7 +3,7 @@
 	import Link from '$components/Link.svelte';
 	import wcagData from '$lib/wcag.json';
 	import { SquareArrowOutUpRight, CircleCheckBig, Circle } from 'lucide-svelte';
-	import LevelTag from '$components/LevelTag.svelte';
+	import Tag from '$components/Tag.svelte';
 	import type { TechniqueMeta } from '$types/types';
 	import { onMount, type SvelteComponent } from 'svelte';
 	import TechniqueNav from '$components/TechniqueNav.svelte';
@@ -108,7 +108,7 @@
 				<div class="tags space-1">
 					{#if data.meta.level}
 						<div class="tag surface-3">WCAG 2.2</div>
-						<LevelTag value={data.meta.level} />
+						<Tag value={data.meta.level} />
 					{/if}
 					{#if data.meta.components.length > 0}
 						{#each data.meta.components as component}

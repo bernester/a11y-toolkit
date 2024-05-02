@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Components, Level } from '$types/types';
-	import LevelTag from './LevelTag.svelte';
+	import Tag from './Tag.svelte';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 
@@ -41,10 +41,10 @@
 		<ul class="tag-list">
 			{#if level}
 				<li>
-					<LevelTag value="WCAG 2.2" />
+					<Tag value="WCAG 2.2" />
 				</li>
 				<li>
-					<LevelTag value={level} />
+					<Tag value={level} />
 				</li>
 			{/if}
 
