@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Footer from '../components/layout/footer.svelte';
 	import Header from '../components/layout/header.svelte';
-	import PageTransition from './transition.svelte';
+	import PageTransition from './PageTransition.svelte';
 
 	import 'open-props/style';
 
