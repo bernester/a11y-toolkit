@@ -1,11 +1,15 @@
+<script lang="ts">
+	import Link from '$components/Link.svelte';
+</script>
+
 <!-- Footer -->
 <footer>
 	<div class="box">
-		<h2 class="page-header space-1">Wanna help?</h2>
+		<h2 class="page-subheader space-1">Wanna help?</h2>
 		<p>
-			Do you also know a technique best practise that should be included in the A11y toolkit? Share
-			your technique with us and <a href="mailto:a11y-checklist@thoughtworks.com"
-				>send us an email.</a
+			Do you also know a technique or best practise that should be included in the A11y toolkit? <Link
+				href="https://github.com/bernester/a11y-toolkit"
+				target="_blank">Share it with us.</Link
 			>
 		</p>
 	</div>
