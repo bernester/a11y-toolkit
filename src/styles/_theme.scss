@@ -21,7 +21,7 @@ html {
 	--text-2-dark: var(--gray-3);
 	--text-contrast-dark: #{$surface-1-dark};
 	--surface-1-dark: #{$surface-1-dark};
-	--surface-2-dark: #{lighten($surface-1-dark, 4%)};
+	--surface-2-dark: #{lighten($surface-1-dark, 6%)};
 	--surface-3-dark: #{lighten($surface-1-dark, 12%)};
 	--surface-4-dark: #{lighten($surface-1-dark, 24%)};
 	--background-dark: #{$surface-1-dark};
@@ -36,7 +36,7 @@ html {
 	--text-2-light: var(--gray-8);
 	--text-contrast-light: #{$surface-1-light};
 	--surface-1-light: #{$surface-1-light};
-	--surface-2-light: #{darken($surface-1-light, 4%)};
+	--surface-2-light: #{darken($surface-1-light, 6%)};
 	--surface-3-light: #{darken($surface-1-light, 12%)};
 	--surface-4-light: #{darken($surface-1-light, 24%)};
 	--background-light: #{$surface-1-light};
