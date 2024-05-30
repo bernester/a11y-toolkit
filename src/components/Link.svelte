@@ -6,7 +6,6 @@
 	export let target: '_self' | '_blank' = '_self';
 	export let ariaLabel = '';
 
-
 	let link: HTMLAnchorElement;
 	onMount(() => {
 		if (link.target === '_blank') {
@@ -21,12 +20,8 @@
 	{target}
 	bind:this={link}
 	{...$$restProps}
->
-	<slot />{#if target === '_blank'}<SquareArrowOutUpRight
-			class="blank-icon"
-			role="presentation"
-		/>
-		<span class="sr-only">&nbsp;Opens in a new window</span>{/if}
+	><slot />{#if target === '_blank'}<span class="sr-only">&nbsp;Opens in a new window</span
+		><SquareArrowOutUpRight class="blank-icon" role="presentation" />{/if}
 </a>
 
 <style lang="scss">
@@ -39,6 +34,6 @@
 		user-select: none;
 		width: 0.75em;
 		height: 0.75em;
-		margin-left: 0.25em;
+		margin-inline: 0.25em;
 	}
 </style>
