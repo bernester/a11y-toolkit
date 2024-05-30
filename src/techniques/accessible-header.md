@@ -4,8 +4,7 @@ description: Use semantic HTML for header.
 date: '2024-4-15'
 category: basics
 components:
-  - header
-  - layout
+  - structure
 published: true
 successCriteria:
   - '1.3.1'

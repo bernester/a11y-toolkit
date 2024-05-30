@@ -13,6 +13,10 @@
 					"description": "<p>Colors are a very important topic. These best practices help you to make sure that your color palette is useful also for people with low vision or color blindness.</p>"
 				},
 				{
+					"title": "structure",
+					"description": "<p>The structure helps all users to navigate and browse an application, but it is particularly important for users of assistive technologies such as screen readers, as they cannot easily ignore confusing and irrelevant content.</p>"
+				},
+				{
 					"title": "document",
 					"description": "<p>There are some basic things you ensure to make your application or website accessible.</p>"
 				},

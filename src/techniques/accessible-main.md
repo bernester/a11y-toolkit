@@ -4,8 +4,7 @@ description: Use semantic HTML for main.
 date: '2024-4-15'
 category: basics
 components:
-  - main
-  - layout
+  - structure
 published: true
 successCriteria:
   - '1.3.1'

@@ -5,7 +5,7 @@ date: '2024-4-15'
 category: basics
 components:
   - document
-  - layout
+  - structure
 published: true
 successCriteria:
   - '1.3.1'
