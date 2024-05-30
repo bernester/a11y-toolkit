@@ -19,12 +19,12 @@ Here is one example how you could ensure a clickable area of min. 44x44px:
 ```css
 .btn {
 	display: inline-flex;
-  	align-items: center;
-  	justify-content: center;
+	align-items: center;
+	justify-content: center;
 	font-size: inherit;
 	line-height: 1.1;
 	padding: 0.25em 0.75em;
-  	min-width: 10ch;
-  	min-height: 44px;
+	min-width: 10ch;
+	min-height: 44px;
 }
 ```

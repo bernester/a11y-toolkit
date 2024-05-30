@@ -34,8 +34,7 @@
 	fix.
 </p>
 
-<style lang="scss">
-	h2,
+<style>
 	p {
 		margin-block: 1em 0.5em;
 	}

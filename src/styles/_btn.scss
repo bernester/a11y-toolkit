@@ -1,15 +1,14 @@
 .btn {
-
 	text-decoration: none;
 	display: inline-flex;
-	
-  	align-items: center;
-  	justify-content: center;
+
+	align-items: center;
+	justify-content: center;
 	font-size: inherit;
 	line-height: 1.1;
 	padding: 0.25em 0.75em;
-  	min-width: 10ch;
-  	min-height: 44px;
+	min-width: 10ch;
+	min-height: 44px;
 	border-radius: var(--radius-2);
 	gap: var(--size-2);
 	background-color: var(--background);

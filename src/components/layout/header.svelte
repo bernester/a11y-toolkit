@@ -6,7 +6,6 @@
 	import { page } from '$app/stores';
 	import Github from '$components/Github.svelte';
 
-
 	$: selectedLevel = getCurrentLevel($page.url) as Level;
 </script>
 
