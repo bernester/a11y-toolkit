@@ -1,11 +1,11 @@
 ---
 title: Use descriptive labels
-description: Provide a descriptive label for inputs.
+description: Provide a descriptive labels for inputs.
 date: '2024-4-15'
 category: form
 components:
-  - input
-  - label
+  - inputs
+  - labels
 published: true
 successCriteria:
   - '3.3.2'

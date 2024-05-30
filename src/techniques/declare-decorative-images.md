@@ -4,7 +4,7 @@ description: Ensure that purely decorative image can be ignored by assistive tec
 date: '2024-4-15'
 category: content
 components:
-  - image
+  - images
 published: true
 successCriteria:
   - '1.1.1'

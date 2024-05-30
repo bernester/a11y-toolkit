@@ -4,7 +4,7 @@ description: Use the right HTML elements to group radio-buttons and labels
 date: '2024-4-15'
 category: form
 components:
-  - radio
+  - radio-buttons
 published: true
 successCriteria:
   - '1.3.5'

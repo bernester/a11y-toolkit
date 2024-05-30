@@ -4,8 +4,8 @@ description: If label is not visible offer a text alternative for assistive tech
 date: '2024-4-15'
 category: form
 components:
-  - input
-  - label
+  - inputs
+  - labels
 published: true
 successCriteria:
   - '3.3.2'

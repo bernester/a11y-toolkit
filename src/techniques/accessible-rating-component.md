@@ -4,7 +4,7 @@ description: Create a rating component with semantic HTMl
 date: '2024-4-15'
 category: form
 components:
-  - rating
+  - ratings
 published: true
 successCriteria:
   - '1.1.1'

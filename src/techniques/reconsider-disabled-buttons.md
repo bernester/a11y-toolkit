@@ -3,7 +3,7 @@ title: Reconsider disabled buttons
 date: '2024-4-15'
 category: content
 components:
-  - button
+  - buttons
 published: true
 successCriteria:
   - '2.4.3'

@@ -4,7 +4,7 @@ description: Buttons should have a clickable area of min. 44x44px
 date: '2024-4-10'
 category: form
 components:
-  - button
+  - buttons
 published: true
 successCriteria:
   - '2.5.5'

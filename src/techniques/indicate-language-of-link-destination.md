@@ -1,9 +1,9 @@
 ---
 title: Indicate language of link destination
 date: '2024-4-15'
-category: navigation
+category: navigations
 components:
-  - link
+  - links
 published: true
 successCriteria:
   - '3.2.1'

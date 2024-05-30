@@ -4,8 +4,8 @@ description: Use aria-label to provide an invisible label where a visible label 
 date: '2024-4-15'
 category: form
 components:
-  - input
-  - label
+  - inputs
+  - labels
 published: true
 successCriteria:
   - '4.1.2'

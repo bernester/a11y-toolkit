@@ -4,7 +4,7 @@ description: Use the `autocomplete` attribute to identify the purpose if the inp
 date: '2024-4-15'
 category: form
 components:
-  - input
+  - inputs
 published: true
 successCriteria:
   - '1.3.5'

@@ -3,7 +3,7 @@ title: Consider using SVG for icons
 date: '2024-4-10'
 category: content
 components:
-  - icon
+  - icons
 published: true
 source: https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/
 level: A

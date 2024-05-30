@@ -9,8 +9,8 @@
 					"description": "<p>Here are some general techniques that are useful for a variety of components and usecases.</p>"
 				},
 				{
-					"title": "color",
-					"description": "<p>Color is a very important topic. These best practices help you to make sure that your color palette is useful also for people with low vision or color blindness.</p>"
+					"title": "colors",
+					"description": "<p>Colors are a very important topic. These best practices help you to make sure that your color palette is useful also for people with low vision or color blindness.</p>"
 				},
 				{
 					"title": "document",
@@ -26,7 +26,7 @@
 				},
 				{
 					"title": "language",
-					"description": "<p>Missing language information makes up for 18.6% of all accessibility failures <a href=\"https://webaim.org/projects/million/\">WebAIM million report &#39;23</a>. To fix this is really simple. Here are some techniques that will help you.</p>"
+					"description": "<p>Missing language information makes up for 18.6% of all accessibility failures. To fix this is really simple. Here are some techniques that will help you.</p>"
 				},
 				{
 					"title": "main",
@@ -39,23 +39,23 @@
 			]
 		},
 		{
-			"title": "navigation",
+			"title": "navigations",
 			"description": "",
 			"components": [
 				{
-					"title": "breadcrumb",
-					"description": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Breadcrumbs serve as a guiding mechanism, allowing users to seamlessly progress through multi-page websites. Users with disabilities can benefit from structured and well-designed navigation, reducing confusion and frustration. Informing people of where they are within a set of pages is accessible to those with cognitive and attention- related disorders.</p>"
+					"title": "breadcrumbs",
+					"description": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Breadcrumbs serve as a guiding mechanism, allowing users to seamlessly progress through multi-page websites. Users with disabilities can benefit from structured and well-designed navigations, reducing confusion and frustration. Informing people of where they are within a set of pages is accessible to those with cognitive and attention- related disorders.</p>"
 				},
 				{
-					"title": "link",
+					"title": "links",
 					"description": "<p>Links are one of the biggest sources for accessibility failures. 50% of all websites contain empty links. These are links that have no accessible information about their purpose, like for example a link with just an icon and no alternative text. This means that a person who uses a screen reader or braille displays just knows that there is a link but not what it does.</p>"
 				},
 				{
 					"title": "multi-step",
-					"description": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Multi-step indicators serve as a guiding mechanism, allowing users to seamlessly progress through multi-step processes. Users with disabilities can benefit from structured and well-designed navigation, reducing confusion and frustration.</p><p>Informing people of where they are within a set of pages is accessible to those with cognitive and attention- related disorders.</p>"
+					"description": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Multi-step indicators serve as a guiding mechanism, allowing users to seamlessly progress through multi-step processes.</p>"
 				},
 				{
-					"title": "navigation",
+					"title": "navigations",
 					"description": ""
 				}
 			]
@@ -65,7 +65,7 @@
 			"description": "",
 			"components": [
 				{
-					"title": "accordion",
+					"title": "accordions",
 					"description": "<p>Accordions are a great way to keep your UI clean and tidy. Accordions are great to reduce the need to scroll when presenting multiple sections of content on a single page. Here are some techniques that help to ensure that information is available to a wider range of users.</p>"
 				},
 				{
@@ -77,11 +77,11 @@
 					"description": "<p>Headings create an outline for the page, similar to a term paper outline or table of contents.</p>"
 				},
 				{
-					"title": "icon",
+					"title": "icons",
 					"description": "<p>Icons can transport a lot of information. The following techniques ensure that this information is also accessible when using assistive technologies like screen readers or braille keyboards.</p>"
 				},
 				{
-					"title": "image",
+					"title": "images",
 					"description": "<p>Images are an important element of a user interface and storytelling . They provide context and orientation. The following techniques ensure that this information is also accessible when using assistive technologies like screen readers or braille keyboards.</p>"
 				},
 				{
@@ -93,7 +93,7 @@
 					"description": "<p>Content is king. This is also a good reason why you should make sure that the king is accessible for everyone.  A good color contrast and font-size ensures that your audience actually can read the content. Even if the sun shines on their monitor.</p>"
 				},
 				{
-					"title": "tooltip",
+					"title": "tooltips",
 					"description": "<p>Tooltips display additional information upon hover or focus that is contextual, helpful, and nonessential while providing the ability to communicate and give clarity to a user.</p>"
 				}
 			]
@@ -103,23 +103,23 @@
 			"description": "",
 			"components": [
 				{
-					"title": "button",
+					"title": "buttons",
 					"description": "<p>Here is a list of techniques to ensure that buttons are useful for individuals with disabilities, visible or invisible and in different situations. They also help to ensure that buttons can be used with keyboard only and with assistive technologies like screen readers or braille keyboards.</p>"
 				},
 				{
-					"title": "input",
+					"title": "inputs",
 					"description": "<p>Missing form input labels is in place rank 4 on the top 6 list of most common WCAG failures with 45.9%. But don't worry, the fix is really simple.</p>"
 				},
 				{
-					"title": "label",
+					"title": "labels",
 					"description": "<p>Missing form input labels is in place rank 4 on the top 6 list of most common WCAG failures with 45.9%. But don't worry, the fix is really simple.</p>"
 				},
 				{
-					"title": "radio",
+					"title": "radio-buttons",
 					"description": "<p>Radio buttons are another important component we use when creating forms and interfaces. Here are some techniques to make sure they are useable for everyone.</p>"
 				},
 				{
-					"title": "rating",
+					"title": "ratings",
 					"description": ""
 				}
 			]

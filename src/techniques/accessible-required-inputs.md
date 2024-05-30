@@ -4,8 +4,8 @@ description: Visibly mark required inputs
 date: '2024-4-15'
 category: form
 components:
-  - input
-  - label
+  - inputs
+  - labels
 published: true
 successCriteria:
   - '3.3.2'

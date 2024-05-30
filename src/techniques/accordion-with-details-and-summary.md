@@ -1,10 +1,10 @@
 ---
-title: Accordion with details and summary
+title: Accordions with details and summary
 description: Create an accordion-like component with details and summary
 date: '2024-4-10'
 category: content
 components:
-  - accordion
+  - accordions
 published: true
 successCriteria:
   - '1.1.1'

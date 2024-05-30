@@ -4,8 +4,8 @@ description: If needed provide user with further information for inputs.
 date: '2024-4-15'
 category: form
 components:
-  - label
-  - input
+  - labels
+  - inputs
 published: true
 successCriteria:
   - '3.3.2'

@@ -4,9 +4,9 @@ description: Icons with adjacent text can be ignored by assistive technology.
 date: '2024-4-15'
 category: content
 components:
-  - icon
-  - button
-  - link
+  - icons
+  - buttons
+  - links
 published: true
 successCriteria:
   - '1.1.1'

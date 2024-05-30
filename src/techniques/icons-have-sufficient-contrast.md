@@ -3,7 +3,7 @@ title: Icons have sufficient contrast
 date: '2024-4-15'
 category: content
 components:
-  - icon
+  - icons
 published: true
 successCriteria:
   - '1.4.11'

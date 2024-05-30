@@ -4,8 +4,8 @@ description: Ensure that icon buttons are accessible for screenreader and other 
 date: '2024-4-15'
 category: form
 components:
-  - icon
-  - button
+  - icons
+  - buttons
 published: true
 successCriteria:
   - '1.1.1'

@@ -4,7 +4,7 @@ description: Here is a pattern to create accessible tooltips
 date: '2024-4-15'
 category: content
 components:
-  - tooltip
+  - tooltips
 published: true
 successCriteria:
   - '1.4.13'
@@ -16,7 +16,7 @@ Tooltips display additional information upon hover or focus that is contextual, 
 
 These implementations follow the guidance of the [ARIA Authoring Practices Guide.](https://w3c.github.io/aria-practices/#tooltip)
 
-**Tooltip on a button **
+**Tooltips on a button **
 
 ```html
 <div class="tooltip-container">
@@ -25,7 +25,7 @@ These implementations follow the guidance of the [ARIA Authoring Practices Guide
 </div>
 ```
 
-**Tooltip on a link **
+**Tooltips on a link **
 
 ```html
 <p>

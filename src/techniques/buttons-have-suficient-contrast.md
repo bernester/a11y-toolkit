@@ -4,7 +4,7 @@ description: Buttons have have a minimum contrast ratio of 3:1
 date: '2024-4-10'
 category: form
 components:
-  - button
+  - buttons
 published: true
 successCriteria:
   - '1.4.3'

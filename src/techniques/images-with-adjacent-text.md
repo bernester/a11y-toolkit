@@ -4,7 +4,7 @@ description: Images that are already described by adjacent text can be ignored b
 date: '2024-4-15'
 category: content
 components:
-  - image
+  - images
   - text
 published: true
 successCriteria:

@@ -4,7 +4,7 @@ date: '2024-4-10'
 description: 'users undestand the purpose of generic buttons like edit, add or remove.'
 category: form
 components:
-  - button
+  - buttons
 published: true
 successCriteria:
   - '4.1.2'

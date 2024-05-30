@@ -3,7 +3,7 @@ title: Inputs have sufficient contrast
 date: '2024-4-15'
 category: form
 components:
-  - input
+  - inputs
 published: true
 successCriteria:
   - '1.4.11'

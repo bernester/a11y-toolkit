@@ -1,10 +1,10 @@
 ---
 title: link or button?
 date: '2024-4-15'
-category: navigation
+category: navigations
 components:
-  - link
-  - button
+  - links
+  - buttons
 published: true
 successCriteria:
   - '4.1.2'

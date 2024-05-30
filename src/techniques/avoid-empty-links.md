@@ -2,10 +2,10 @@
 title: Avoid empty links
 description: Links with just a visible icon offer a text alternative for assistive technologies
 date: '2024-4-15'
-category: navigation
+category: navigations
 components:
-  - icon
-  - link
+  - icons
+  - links
 published: true
 successCriteria:
   - '1.1.1'

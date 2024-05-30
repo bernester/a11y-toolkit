@@ -4,7 +4,7 @@ description: Ensure that the contrast between the non-text element and its backg
 date: '2024-4-15'
 category: content
 components:
-  - image
+  - images
   - icons
 published: true
 successCriteria:

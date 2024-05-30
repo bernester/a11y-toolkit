@@ -2,9 +2,9 @@
 title: Advanced title for links
 description: Use the title attribute for links to help users predict where they are going.
 date: '2024-4-15'
-category: navigation
+category: navigations
 components:
-  - link
+  - links
 published: true
 successCriteria:
   - '2.4.4'

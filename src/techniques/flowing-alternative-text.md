@@ -4,7 +4,7 @@ description: Alternative text for inline images continues the reading flow
 date: '2024-4-10'
 category: content
 components:
-  - image
+  - images
   - text
 published: true
 level: A

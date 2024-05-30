@@ -4,7 +4,7 @@ description: Define colors for states with sufficient contrast.
 date: '2024-4-15'
 category: basics
 components:
-  - color
+  - colors
 published: true
 successCriteria:
   - '1.4.3'

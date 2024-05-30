@@ -4,7 +4,7 @@ description: Confirm that high contrast mode is supported
 date: '2024-4-10'
 category: basics
 components:
-  - color
+  - colors
 published: true
 level: AAA
 successCriteria:

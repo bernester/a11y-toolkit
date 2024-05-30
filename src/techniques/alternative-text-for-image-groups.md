@@ -4,7 +4,7 @@ description: Using a text alternative on one item within a group of images that 
 date: '2024-4-15'
 category: content
 components:
-  - image
+  - images
 published: true
 successCriteria:
   - '1.1.1'
