@@ -77,7 +77,7 @@
 	<title>{data.meta.title} | Technique | {config.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
-	<meta name="description" content="Free technique to make {parentPage} more accessible">
+	<meta name="description" content="Free technique to make {parentPage} more accessible" />
 </svelte:head>
 
 <article>

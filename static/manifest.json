@@ -1,9 +1,9 @@
 {
-    "name": "A11y toolkit",
-    "short_name": "A11y toolkit",
-    "theme_color": "#bba5ff",
-    "background_color": "#080c13",
-    "display": "browser",
-    "scope": "/",
-    "start_url": "/"
-  }
+	"name": "A11y toolkit",
+	"short_name": "A11y toolkit",
+	"theme_color": "#bba5ff",
+	"background_color": "#080c13",
+	"display": "browser",
+	"scope": "/",
+	"start_url": "/"
+}

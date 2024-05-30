@@ -4,7 +4,10 @@
 
 <svelte:head>
 	<title>What is the A11y toolkit?</title>
-	<meta name="description" content="A quick introduction to the A11y toolkit. An open source collection for techniques to avoid the most common accessibility failures.">
+	<meta
+		name="description"
+		content="A quick introduction to the A11y toolkit. An open source collection for techniques to avoid the most common accessibility failures."
+	/>
 </svelte:head>
 
 <h1>What's the A11y toolkit?</h1>

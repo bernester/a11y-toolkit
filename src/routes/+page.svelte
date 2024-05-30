@@ -66,7 +66,10 @@
 	<title>
 		{levelDescriptions[selectedLevel]} techniques for accessibility champions - {config.title}
 	</title>
-	<meta name="description" content="An open-source library of techniques to avoid the most common accessibility failures.">
+	<meta
+		name="description"
+		content="An open-source library of techniques to avoid the most common accessibility failures."
+	/>
 </svelte:head>
 
 {#if categoryTree}
