@@ -1,13 +1,15 @@
 .btn {
+
 	text-decoration: none;
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: var(--size-2) var(--size-4);
-	min-height: 48px;
-	min-width: 48px;
-	font-size: var(--font-size-1);
-	line-height: var(---font-lineheight-1);
+	
+  	align-items: center;
+  	justify-content: center;
+	font-size: inherit;
+	line-height: 1.1;
+	padding: 0.25em 0.75em;
+  	min-width: 10ch;
+  	min-height: 44px;
 	border-radius: var(--radius-2);
 	gap: var(--size-2);
 	background-color: var(--background);
@@ -50,4 +52,5 @@
 
 :is(.icon-btn) {
 	padding: var(--size-2);
+	min-width: 44px;
 }
