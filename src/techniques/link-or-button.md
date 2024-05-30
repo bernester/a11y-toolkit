@@ -1,7 +1,7 @@
 ---
 title: link or button?
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - links
   - buttons

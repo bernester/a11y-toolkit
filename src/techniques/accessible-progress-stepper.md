@@ -2,7 +2,7 @@
 title: Accessible progress-stepper
 description: Create an accessible multi-step progress bar.
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - progress
 published: true

@@ -27,7 +27,7 @@
 			]
 		},
 		{
-			"title": "navigations",
+			"title": "navigation",
 			"description": "",
 			"components": [
 				{
@@ -43,7 +43,7 @@
 					"description": "<p>With the complexity of many websites and apps today, it can be easy to lose track of where you are. Multi-step indicators serve as a guiding mechanism, allowing users to seamlessly progress through multi-step processes.</p>"
 				},
 				{
-					"title": "navigations",
+					"title": "navigation",
 					"description": ""
 				}
 			]

@@ -1,7 +1,7 @@
 ---
 title: Describe the purpose of a link
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - links
 published: true

@@ -2,7 +2,7 @@
 title: Accessible icons in breadcrumbs
 description: Icons used in breadcrumbs need an accessible title
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - breadcrumbs
 published: true

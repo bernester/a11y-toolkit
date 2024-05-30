@@ -1,7 +1,7 @@
 ---
 title: Provide a breadcrumb trail
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - breadcrumbs
 published: true

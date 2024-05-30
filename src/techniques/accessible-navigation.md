@@ -4,7 +4,7 @@ description: Use semantic HTML for navigation.
 date: '2024-4-15'
 category: basics
 components:
-  - navigations
+  - navigation
   - layout
 published: true
 successCriteria:

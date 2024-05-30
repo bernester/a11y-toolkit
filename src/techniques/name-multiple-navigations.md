@@ -1,10 +1,10 @@
 ---
-title: Name multiple navigations
+title: Name multiple navigation
 description: When there is more than one navigation element, they must have a name.
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
-  - navigations
+  - navigation
 published: true
 successCriteria:
   - '1.3.1'

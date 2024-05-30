@@ -2,7 +2,7 @@
 title: Avoid empty links
 description: Links with just a visible icon offer a text alternative for assistive technologies
 date: '2024-4-15'
-category: navigations
+category: navigation
 components:
   - icons
   - links
