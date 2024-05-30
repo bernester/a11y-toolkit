@@ -11,17 +11,13 @@
 </script>
 
 <div class="layout">
-	<!-- Header -->
 	<a href="#main-content" class="btn skip-to">Skip to main content</a>
 	<Header />
-
 	<main id="main-content" tabindex="-1">
 		<PageTransition url={data.url}>
 			<slot />
 		</PageTransition>
 	</main>
-
-	<!-- Footer -->
 	<Footer />
 </div>
 
