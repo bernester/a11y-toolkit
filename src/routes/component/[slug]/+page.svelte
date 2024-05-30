@@ -18,6 +18,10 @@
 
 	let selectedLevel: Level = 'AA';
 
+	// In preparation to user the component description as page description
+	const regexForStripHTML = /(<([^>]+)>)/ig;
+	const description: string = data.introText ? data.introText.replaceAll(regexForStripHTML, '') : "Techniques to make ${data.slug} more accessible";
+
 	onMount(() => {
 		if (browser) {
 			let storedTechniqueGroup = localStorage.getItem('techniqueGroup');
@@ -37,6 +41,7 @@
 
 <svelte:head>
 	<title>{levelDescriptions[selectedLevel]} techniques for {data.slug} | {config.title}</title>
+	<meta name="description" content="Free techniques to make {data.slug} more accessible">
 </svelte:head>
 
 <!-- Posts -->
