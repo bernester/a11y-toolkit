@@ -4,6 +4,8 @@
 	import type { Level } from '$types/types';
 	import { getCurrentLevel } from '$lib/levels';
 	import { page } from '$app/stores';
+	import Github from '$components/Github.svelte';
+
 
 	$: selectedLevel = getCurrentLevel($page.url) as Level;
 </script>
@@ -12,7 +14,10 @@
 	<a href="/?level={selectedLevel}" class="title" title="A11y Toolkit homepage">
 		<Logo />
 	</a>
-	<ThemeToggle />
+	<div>
+		<ThemeToggle />
+		<Github />
+	</div>
 </nav>
 
 <style>
@@ -26,5 +31,11 @@
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	div {
+		display: inline-flex;
+		align-items: baseline;
+		gap: var(--size-5);
 	}
 </style>
