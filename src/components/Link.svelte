@@ -6,7 +6,6 @@
 	export let target: '_self' | '_blank' = '_self';
 	export let ariaLabel = '';
 
-	const LabelId = crypto.randomUUID();
 
 	let link: HTMLAnchorElement;
 	onMount(() => {
@@ -26,9 +25,8 @@
 	<slot />{#if target === '_blank'}<SquareArrowOutUpRight
 			class="blank-icon"
 			role="presentation"
-			aria-labelledby="LabelId"
 		/>
-		<span class="sr-only" id="LabelId">&nbsp;Opens in a new window</span>{/if}
+		<span class="sr-only">&nbsp;Opens in a new window</span>{/if}
 </a>
 
 <style lang="scss">

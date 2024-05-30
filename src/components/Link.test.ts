@@ -15,12 +15,11 @@ describe('LinkComponent', () => {
 		expect(link).toHaveAttribute('rel', 'noopener noreferrer');
 	});
 
-	test('renders additional icon and text if target is _blank', () => {
+	test('renders additional text if target is _blank', () => {
 		render(Link, {
 			props: { href: 'https://example.com', target: '_blank', ariaLabel: 'Open Example' }
 		});
-		const icon = screen.getByLabelText('Opens in a new window'); // Assumes the icon uses aria-label correctly.
-		expect(icon).toBeInTheDocument();
+		expect(screen.getByText('Opens in a new window')).toBeInTheDocument();
 	});
 
 	test('does not add rel attribute if target is not _blank', () => {
