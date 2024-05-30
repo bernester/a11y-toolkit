@@ -39,6 +39,7 @@
 	<title>
 		{levelDescriptions[selectedLevel]} techniques for {data.slug} | {config.title}
 	</title>
+	<meta name="description" content="Free techniques to make {data.slug} more accessible">
 </svelte:head>
 
 <!-- Posts -->
