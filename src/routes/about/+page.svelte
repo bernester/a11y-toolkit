@@ -14,7 +14,7 @@
 <p>
 	The A11y toolkit is an open source collection for techniques to avoid the most common
 	accessibility failures. The A11y toolkit started as a community project at <Link
-		href="https://webaim.org/projects/million/"
+		href="https://www.thoughtworks.com/"
 		target="_blank">Thoughtworks</Link
 	> and later was launched as an open source project to help other to build better products for more
 	people.
