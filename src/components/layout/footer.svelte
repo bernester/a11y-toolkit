@@ -7,7 +7,7 @@
 	<div class="box">
 		<h2 class="page-subheader space-1">Wanna help?</h2>
 		<p>
-			Do you also know a technique or best practise that should be included in the A11y toolkit? <Link
+			Do you also know an accessibility technique that should be included in the A11y toolkit? <Link
 				href="https://github.com/bernester/a11y-toolkit"
 				target="_blank">Share it with us.</Link
 			>
