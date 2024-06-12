@@ -13,7 +13,7 @@ level: AA
 
 Interactive elements have different states like `:hover`, `:focus`, `:active`, `:visited`, `:disabled`. When defining the color palette for your UI also think about colors for these states and check the compliance with a contrast color.
 
-> Important: Keep in mind that you should not rely on colors only to visualise the state if an interactive element.
+> Important: Keep in mind that you should not rely on colors only to visualise the state of an interactive element.
 
 ```css
 --primary: #9b293c;
