@@ -1,5 +1,5 @@
 ---
-title: Colors of interative states
+title: Colors of interactive states
 description: Define colors for states with sufficient contrast.
 date: '2024-4-15'
 category: basics
