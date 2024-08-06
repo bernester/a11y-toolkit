@@ -13,7 +13,7 @@
 
 <style>
 	a {
-		font-size: 24px;
+		font-size: 1.5rem;
 		color: var(--text-1);
 		opacity: 0.8;
 		transition: opacity 0.2s;

@@ -206,7 +206,7 @@
 			justify-content: center;
 			width: 48px;
 			border-right: 1px solid var(--border);
-			font-size: 24px;
+			font-size: 1.5rem;
 			margin-right: var(--size-2);
 		}
 	}
