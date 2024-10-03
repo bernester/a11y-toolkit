@@ -9,5 +9,15 @@ export default defineConfig({
 			$lib: '/src/lib'
 			// Add other aliases if needed
 		}
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'modern-compiler', // or "modern", "legacy"
+				importers: [
+					// ...
+				]
+			}
+		}
 	}
 });
