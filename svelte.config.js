@@ -1,15 +1,34 @@
-import { transformerNotationHighlight } from '@shikijs/transformers';
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex, escapeSvelte } from 'mdsvex';
-import { getHighlighter } from 'shiki';
-import remarkUnwrapImages from 'remark-unwrap-images';
-import remarkToc from 'remark-toc';
-import rehypeSlug from 'rehype-slug';
+import { mdsvex } from 'mdsvex';
 import path from 'path';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSlug from 'rehype-slug';
+import remarkToc from 'remark-toc';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import { createHighlighter } from 'shiki';
+import { transformerNotationHighlight } from '@shikijs/transformers';
+import { escapeSvelte } from 'mdsvex';
 
 const THEME = 'github-dark-default';
+
+let highlighterPromise;
+
+const getHighlighter = async () => {
+	if (!highlighterPromise) {
+		highlighterPromise = createHighlighter({
+			themes: [THEME],
+			langs: ['javascript', 'typescript', 'html', 'css']
+		}).then(async (highlighter) => {
+			await highlighter.loadLanguage('javascript');
+			await highlighter.loadLanguage('typescript');
+			await highlighter.loadLanguage('html');
+			await highlighter.loadLanguage('css');
+			return highlighter;
+		});
+	}
+	return highlighterPromise;
+};
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -19,11 +38,7 @@ const mdsvexOptions = {
 	},
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await getHighlighter({
-				themes: [THEME],
-				langs: ['javascript', 'typescript', 'html', 'css']
-			});
-			await highlighter.loadLanguage('javascript', 'typescript', 'html', 'css');
+			const highlighter = await getHighlighter();
 			const html = escapeSvelte(
 				highlighter.codeToHtml(code, {
 					lang,
