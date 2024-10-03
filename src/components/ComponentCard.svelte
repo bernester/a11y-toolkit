@@ -39,8 +39,8 @@
 		text-decoration: none;
 		color: var(--link);
 		box-shadow:
-			inset 0 0 0 2px var(--link),
-			0 6px 0 0 var(--link);
+			inset 0 0 0 2px var(--input-border),
+			0 6px 0 0 var(--input-border);
 
 		&:hover,
 		&:focus {
