@@ -21,9 +21,9 @@
 
 	$: resolvedClass = resolved ? 'resolved' : '';
 
-	let parentPage: string = browser ? localStorage.getItem('parentPage') ?? '' : '';
-	let parentType: string = browser ? localStorage.getItem('parentType') ?? '' : '';
-	let parentLevel: string = browser ? localStorage.getItem('selectedLevel') ?? '' : '';
+	let parentPage: string = browser ? (localStorage.getItem('parentPage') ?? '') : '';
+	let parentType: string = browser ? (localStorage.getItem('parentType') ?? '') : '';
+	let parentLevel: string = browser ? (localStorage.getItem('selectedLevel') ?? '') : '';
 	let resolvedList: string[];
 
 	onMount(() => {

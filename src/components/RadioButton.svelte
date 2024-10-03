@@ -27,7 +27,7 @@
 	/>
 	<label for={inputId}>
 		<div class="radiobutton" />
-		<div>
+		<div class="radiobutton-label">
 			<slot />
 		</div>
 	</label>
@@ -35,7 +35,7 @@
 
 <style lang="scss">
 	label {
-		padding: var(--size-2);
+		padding: var(--size-3);
 		display: flex;
 		flex: 1 1 0;
 	}
@@ -61,7 +61,7 @@
 	.radiobutton {
 		width: 1.25rem;
 		height: 1.25rem;
-		border: 2px solid var(--border);
+		border: 2px solid var(--input-border);
 		background-color: var(--surface-1);
 		border-radius: 100vh;
 		margin: 4px 12px 4px 8px;
@@ -86,5 +86,10 @@
 	input:focus-visible + label {
 		outline: 5px auto Highlight;
 		outline: 5px auto -webkit-focus-ring-color;
+	}
+
+	.radiobutton-label {
+		display: flex;
+		flex-direction: column;
 	}
 </style>

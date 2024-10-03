@@ -121,8 +121,8 @@
 		align-items: start;
 		row-gap: var(--size-4);
 		grid-template-columns: 1fr 1fr;
-			column-gap: var(--size-2);
-			row-gap: var(--size-4);
+		column-gap: var(--size-2);
+		row-gap: var(--size-4);
 
 		li {
 			flex: 1 0;

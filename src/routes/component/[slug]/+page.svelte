@@ -18,7 +18,7 @@
 
 	let selectedLevel: Level = 'AA';
 
-	// In preparation to user the component description as page description
+	// In preparation to use the component description as page description
 	const regexForStripHTML = /(<([^>]+)>)/gi;
 	const description: string = data.introText
 		? data.introText.replaceAll(regexForStripHTML, '')
@@ -49,17 +49,12 @@
 <!-- Posts -->
 <section>
 	<Breadcrumb current={data.slug} parent={{ name: '', type: '', level: selectedLevel }} />
-
 	<hgroup class="space-2">
 		<h1 class="page-title space-2">{data.slug}</h1>
 		{#if data.introText}
 			<Render html={data.introText} />
 		{/if}
 	</hgroup>
-
 	<LevelFilter {selectedLevel} />
-
-	<!-- <h2 class="page-subheader space-2">Accessibility techniques:</h2> -->
-
 	<TechniquesList techniques={data.techniques} />
 </section>

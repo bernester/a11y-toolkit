@@ -30,7 +30,7 @@
 				isChecked={selectedLevel === 'A'}
 				onChange={handleLevelChange}
 				name="level"
-				><strong>Basic</strong><br />
+				><strong>Basic</strong>
 				<small>Level A</small>
 			</RadioButton>
 		</div>
@@ -40,7 +40,7 @@
 				isChecked={selectedLevel === 'AA'}
 				onChange={handleLevelChange}
 				name="level"
-				><strong>Recommended</strong><br />
+				><strong>Recommended</strong>
 				<small>Level AA and lower</small>
 			</RadioButton>
 		</div>
@@ -50,7 +50,7 @@
 				isChecked={selectedLevel === 'AAA'}
 				onChange={handleLevelChange}
 				name="level"
-				><strong>Advanced</strong><br />
+				><strong>Advanced</strong>
 				<small>Level AAA and lower</small>
 			</RadioButton>
 		</div>
